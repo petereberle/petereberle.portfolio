@@ -1,4 +1,4 @@
-"use client"
+"client export"
 
 import * as React from "react";
 
