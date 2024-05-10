@@ -20,10 +20,8 @@ const MainPage = () => (
 
 		<a href="about">Test Router</a>
 
-			<Projects />
-
 		<CustomRouter>
-		
+			<Projects path="/" />
 			<LazyComponent Component = {About} path="about"/>
 		</CustomRouter>
 

@@ -14,9 +14,6 @@ module.exports = {
     author: `Peter Eberle`,
     siteUrl: `localhost:8000`,
   },
-  flags: {
-    PARTIAL_HYDRATION: true
-  },
   plugins: [
     `gatsby-plugin-image`,
     {
