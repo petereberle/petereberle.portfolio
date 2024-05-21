@@ -1,0 +1,6 @@
+/*IMAGES*/
+
+.cover{
+	object-fit: cover;
+    background-size: cover;
+}

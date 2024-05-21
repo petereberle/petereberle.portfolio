@@ -1,0 +1,21 @@
+@media screen and (min-width: 2000px) {
+
+	:root{
+
+		--screen-width: 2000px;
+		--page-margin:auto;
+
+	}
+
+}
+
+@media screen and (max-width: 900px) {
+
+	:root{
+
+		/*CARD WIDTH*/
+    	--card-width:50%;
+
+	}
+
+}

@@ -6,10 +6,11 @@ const CustomRouter = ({ children }) => (
   <Location>
     {({ location }) => (
        
-          <Router location={location}>{children}</Router>
+          <Router primary={false} location={location}>{children}</Router>
         
     )}
   </Location>
+
 )
 
 export default CustomRouter

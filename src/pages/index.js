@@ -1,33 +1,44 @@
-import React from "react"
+import React from "react";
 
-import CustomRouter from "../components/router"
+import CustomRouter from "../components/router";
+import { Link } from "@reach/router";
 
-import Layout from "../components/layout"
-import Projects from "../components/projects/projects"
+import Layout from "../components/layout";
 
-const About = React.lazy(() => import("../components/about"));
+import Header from "../components/header";
+import menuLinks from "../components/menu-links";
+
+import * as containerStyles from "../components/styles/containers.module.css";
+
+import About from "../components/about"
+
+const Projects = React.lazy(() => import("../components/projects/projects"));
+const Contact = React.lazy(() => import("../components/contact"));
 
 const LazyComponent = ({ Component, ...props }) => (
-  <React.Suspense>
+  <React.Suspense fallback={null}>
     <Component {...props} />
   </React.Suspense>
 )
 
 
-const MainPage = () => (
+const MainPage = ({location}) => {
 
-	<Layout>
+	return (
 
-		<a href="about">Test Router</a>
+			<Layout path={location} >
 
-		<CustomRouter>
-			<Projects path="/" />
-			<LazyComponent Component = {About} path="about"/>
-		</CustomRouter>
+				<CustomRouter>
+						<About path="/"/>
+						<LazyComponent Component = {Projects} path="/projects/" urlParam={location}/>
+						<LazyComponent Component = {Contact} path="/contact/"/>
+				</CustomRouter>
 
-	</Layout>
+			</Layout>
+
+	)
 	
-)
+}
 
 export default MainPage
 

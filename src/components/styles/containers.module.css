@@ -1,0 +1,160 @@
+.page {
+
+	position:relative;
+	min-height:100vh;
+	margin-right:var(--page-margin);
+	margin-left:var(--page-margin);
+	max-width: var(--screen-width);
+}
+
+.homepage{
+
+}
+
+.inner{
+	display: block;
+    width:100%;
+    height:100%;
+    min-height:100vh;
+    padding: 0;
+}
+
+
+.content_section{
+	box-sizing: border-box;
+	width:100%;
+	padding: var(--item-padding);
+}
+
+
+/* GRID LAYOUT */
+
+:root{
+
+}
+
+.sidebar{
+
+}
+
+.sidebar_inner{
+	padding:var(--item-padding);
+}
+
+.grid._25_50_25{
+	display:grid;
+	grid-template-columns: 25% 50% 25%;
+	grid-template-rows:100%;
+}
+
+
+.grid._75_25{
+	display:grid;
+	grid-template-columns: 75% 25%;
+	grid-template-rows:100%;
+}
+
+.grid._15_85{
+	display:grid;
+	grid-template-columns: calc(var(--screen-width)/6.66) 1fr;
+	grid-template-rows:100%;
+}
+
+/*FLEXBOX LAYOUT*/
+
+.flex_row {
+
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+
+}
+
+.flex_column{
+	display:flex;
+	flex-direction:column;
+	justify-content: flex-start;
+}
+
+.justify_space_between{
+	justify-content: space-between;
+}
+
+.justify_center{
+	justify-content: center;
+}
+
+.align_end{
+	align-items:flex-end;
+}
+
+.align_center{
+	align-items: center;
+}
+
+.align_self_center{
+	align-self:center;
+}
+
+.align_self_start{
+	align-self:start;
+}
+
+
+/* CARD GALLERY */
+
+.index{
+	
+	display: flex;
+	flex-wrap: wrap;
+    height: -moz-fit-content;
+    height: fit-content;
+
+}
+
+.card{
+	box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    width: var(--card-width);
+    display: flex;
+    position: relative;
+}
+
+.card_wrapper {
+    flex: 1 0 auto;
+    padding: var(--item-padding);
+    border: var(--border-solid);
+}
+
+.card_landscape_inner {
+    padding-top: 66%;
+    position: relative;
+}
+
+.card_portrait_inner {
+    padding-top: 125%;
+    position: relative;
+}
+
+.card_image {
+	border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    inset: 0;
+}
+
+.card_image>div>img{
+	display:none!important;
+}
+
+@media screen and (max-width: 900px) {
+
+	.grid._75_25, .grid._15_85, .grid._25_50_25{
+		grid-template-columns: 100%;
+	}
+
+}

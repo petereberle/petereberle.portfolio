@@ -3,8 +3,16 @@ slug: artwalla
 title: ArtWalla
 year_start: 2019
 year_end: 2020
+featured_image: ../images/projects/artwalla.com_fin.jpg
+project_images: 
+  - {source: ../images/projects/artwalla.com_mobile.jpg, 
+    caption: Responsive mobile experience}
+  - {source: ../images/projects/artwalla_old_fin.jpg, 
+    caption: Version 1 iteration of artwalla.com}
 tags:
-  - Web
+  - web
+  - marketing
+  - non-profit
 ---
 
 

@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import ProjectIndex from "./project-index/project-index"
 
-const Projects = () => {
+const Projects = ({urlParam}) => {
 
   const {allMarkdownRemark} = useStaticQuery(graphql`
-	        query Projects {
+	    query Projects {
 			  allMarkdownRemark(
 			    filter: { fileAbsolutePath: { regex: "/(projects)/" } }
 					sort: { frontmatter: {year_end: DESC} } 
@@ -15,35 +15,34 @@ const Projects = () => {
 			  edges {
 			    node {
 			      id
-			      excerpt
+			      html
 			      frontmatter {
 			        slug
 			        title
 			        year_start
 			        year_end
+			        tags
+			        featured_image {
+                childImageSharp {
+                  gatsbyImageData(
+                  width: 800
+                  placeholder: BLURRED
+                  formats: AUTO
+                  )
+                }
+              }
+			      }
+			      fields {
+			      	slug
 			      }
 			    } 
 			  }
 			}	 
 		}`
-    ),
-  	PassProjects = () => (
-
-  		allMarkdownRemark.edges.map( (props, index) => {
-
-  				return (
-
-  					<ProjectIndex key={index} {...props} />
-  					
-  				)
-  			}
-  		)
-
-  	)
-
+    )
 
     return (
-    	<PassProjects/>
+    	<ProjectIndex data = {allMarkdownRemark.edges} urlParam={urlParam}/>
     )
 
 }

@@ -16,37 +16,44 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `resources`,
+        path: `${__dirname}/content/images/resources`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects-images`,
+        path: `${__dirname}/content/images/projects`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `about-markdown`,
-        path: `${__dirname}/src/content/about`,
+        path: `${__dirname}/content/about`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contact-markdown`,
+        path: `${__dirname}/content/contact`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects-markdown`,
-        path: `${__dirname}/src/content/projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-images`,
-        path: `${__dirname}/src/content/images`,
-      },
-    },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
