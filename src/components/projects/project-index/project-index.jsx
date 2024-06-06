@@ -45,9 +45,7 @@ const ProjectIndex = ({ data, urlParam }) => {
     	setProject(newProject);
   	};
 
-  	useEffect( ()=> { 
-
-  		console.log(hash)
+  	useEffect( ()=> {
 
   		if ( menuItems().includes(hash) ) { 
 
@@ -55,7 +53,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
   		} else if (!hash || hash === undefined) {
 
-  		 filterProject('all'); console.log('all')
+  		 filterProject('all');
 
   		} 
 
@@ -71,7 +69,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 			</div>
 
-			<div className={`${containerStyles.index} ${containerStyles.content_section}`}>
+			<div className={`${containerStyles.index}`}>
 
 	         	<IndexCards className={containerStyles.index} project = {project} />
 

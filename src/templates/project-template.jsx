@@ -4,9 +4,11 @@ import {graphql} from "gatsby"
 
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
+import { Link } from "@reach/router";
+
 import Layout from "../components/layout"
 
-import { Link } from "@reach/router";
+import ContentRouterAnimation from "../components/partials/content-router-animation"
 
 import ProjectNavigation from "../components/project-navigation/project-navigation"
 
@@ -35,21 +37,19 @@ const ProjectTemplate = ({ data, pageContext, location}) => {
 		)
 
 	return (
-
 		<Layout path={location}>
 
-				<div className={containerStyles.content_section}>
-					<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between} ${generalStyles.position_sticky}`}>
-						<ProjectNavigation projectTags={projectTags} pageContext={pageContext} />
-					</div>
-					<GatsbyImage image={featuredImage} alt={frontmatter.title} />
-					<h1>{frontmatter.title}</h1>
-					<div  dangerouslySetInnerHTML={{ __html: html }}/>
-					<ProjectImages />
+			<ContentRouterAnimation urlParam={location}>
+				<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between} ${generalStyles.position_sticky}`}>
+					<ProjectNavigation projectTags={projectTags} pageContext={pageContext} />
 				</div>
+				<GatsbyImage image={featuredImage} alt={frontmatter.title} />
+				<h1>{frontmatter.title}</h1>
+				<div  dangerouslySetInnerHTML={{ __html: html }}/>
+				<ProjectImages />
+			</ContentRouterAnimation>
 
 		</Layout>
-
 	)
 
 }

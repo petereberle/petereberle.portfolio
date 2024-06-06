@@ -3,11 +3,13 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
+import ContentRouterAnimation from "./partials/content-router-animation"
+
 import * as generalStyles from "./styles/general.module.css"
 import * as containerStyles from "./styles/containers.module.css"
 import * as mediaStyles from "./styles/media.module.css"
 
-const About = () => {
+const About = ({urlParam}) => {
 
   const {markdownRemark} = useStaticQuery(graphql`
         query {
@@ -34,12 +36,12 @@ const About = () => {
 
     return (
 
-      <div className={containerStyles.content_section}>
+      <ContentRouterAnimation urlParam={urlParam}>
         <div className={generalStyles.profile_wrapper}>
           <GatsbyImage style={{position: "relative"}} className={`${generalStyles.profile} ${generalStyles.ellipse_clip}`} image={profileImage} alt={title} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-      </div>
+      </ContentRouterAnimation>
     )
 
 

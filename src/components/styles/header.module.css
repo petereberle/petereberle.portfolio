@@ -37,6 +37,26 @@
 
 }
 
+.toggle_wrapper{
+
+}
+
+.toggle_inner{
+
+}
+
+.toggle{
+    display:block;
+    width:20px;
+    height:2px;
+    background-color: black;
+    margin-top:5px;
+}
+
+.toggle:first-child{
+    margin:0;
+}
+
 /*HOMEPAGE MENU*/
 
 .splash_header{

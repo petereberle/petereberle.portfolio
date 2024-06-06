@@ -29,9 +29,9 @@ const MainPage = ({location}) => {
 			<Layout path={location} >
 
 				<CustomRouter>
-						<About path="/"/>
+						<About path="/" urlParam={location}/>
 						<LazyComponent Component = {Projects} path="/projects/" urlParam={location}/>
-						<LazyComponent Component = {Contact} path="/contact/"/>
+						<LazyComponent Component = {Contact} path="/contact/" urlParam={location}/>
 				</CustomRouter>
 
 			</Layout>

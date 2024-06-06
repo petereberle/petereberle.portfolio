@@ -156,6 +156,10 @@ a, button {
     color:#fff;
 }
 
+.tag.active>button{
+    color:#fff;
+}
+
 .tag:first-child{
     margin-left:unset;
 }
@@ -164,12 +168,19 @@ a, button {
     margin-right:unset;
 }
 
-button{
+button, .tag{
     -webkit-filter: invert(0); 
     filter: invert(0);
 }
 
-button:hover{
+.button:hover{
+    -webkit-filter: invert(1); 
+    filter: invert(1);
+    transform: skew(-5deg);
+    transition: all .35s ease;
+}
+
+.tag:hover{
     -webkit-filter: invert(1); 
     filter: invert(1);
     transform: skew(-5deg);

@@ -2,9 +2,11 @@ import React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 
+import ContentRouterAnimation from "./partials/content-router-animation"
+
 import * as containerStyles from "./styles/containers.module.css";
 
-const Contact = () => {
+const Contact = ({urlParam}) => {
 
   const {markdownRemark} = useStaticQuery(graphql`
         query {
@@ -20,7 +22,7 @@ const Contact = () => {
 
     return (
 
-      <div className={containerStyles.content_section}>
+      <ContentRouterAnimation urlParam={urlParam}>
         <div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
           <div>
               <p>{markdownRemark.frontmatter.message}</p>
@@ -29,7 +31,7 @@ const Contact = () => {
             <p>{markdownRemark.frontmatter.email}</p>
           </div>
         </div> 
-      </div>
+      </ContentRouterAnimation>
 
     )
 

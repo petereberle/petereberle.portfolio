@@ -11,9 +11,9 @@ const ProjectNavigation = ({projectTags, pageContext}) => {
 			Tags = ({tags}) => (tags.map(
 					(t) => (
 
-						<button key={t} className={`${generalStyles.tag} ${projectTags.includes(t) ? generalStyles.active : ''}`}>
-							<Link to={`/projects/#${t}`}>{t.toUpperCase()}</Link>
-						</button>
+						
+							<Link className={`${generalStyles.tag} ${projectTags.includes(t) ? generalStyles.active : ''}`} key={t} to={`/projects/#${t}`}><button>{t.toUpperCase()}</button></Link>
+				
 
 					)
 				) 
@@ -26,12 +26,12 @@ const ProjectNavigation = ({projectTags, pageContext}) => {
 				return (
 					<>
 
-					{ prevProject && (	<button className={`${generalStyles.tag} ${generalStyles.navigation} ${generalStyles.prev}`}>
-											<Link to={prevProject.url}>{prevProject.title}</Link>
-										</button>)}
-					{ nextProject && (	<button className={`${generalStyles.tag} ${generalStyles.navigation} ${generalStyles.next}`}>
-											<Link to={nextProject.url}>{nextProject.title}</Link>
-										</button>)}
+					{ prevProject && <Link className={generalStyles.tag} to={`${prevProject.url}#previous_project`}>
+							<button className={`${generalStyles.navigation} ${generalStyles.prev}`}>{prevProject.title}</button>
+						</Link>}
+					{ nextProject && <Link className={generalStyles.tag} to={`${nextProject.url}#next_project`}>
+						<button className={`${generalStyles.navigation} ${generalStyles.next}`}>{nextProject.title} </button>
+						</Link>}
 				
 					</>
 				)
