@@ -1,8 +1,11 @@
-import * as React from "react";
+import React, {useState} from "react";
+
+import useWindowWidth from "./partials/check-window-width"
 
 import "normalize.css"
 import "./styles/general.module.css"
 import "./styles/typography.module.css"
+
 import * as generalStyles from "./styles/general.module.css"
 import * as containerStyles from "./styles/containers.module.css"
 import * as headerStyles from "./styles/header.module.css"
@@ -14,6 +17,14 @@ import menuLinks from "./menu-links"
 
 const Layout = ({ children, path}) => {
 
+	const 	[isToggled, setToggle] = useState(false),
+			toggleMenu = (toggleState) => {
+				!isToggled ? setToggle(toggleState) : setToggle(false);
+			},
+			windowWidth = useWindowWidth().value,
+			mobileWindow = windowWidth < 900,
+			checkToggleState = () => { return isToggled && mobileWindow ? true : false };
+
 	const checkChildren = () => {
 
 		return children.length !== undefined ? children.filter( (c)=>{ 
@@ -21,7 +32,7 @@ const Layout = ({ children, path}) => {
 			return c.props.prop !== 'homepage'
 
 		} ) : children;
-	}
+	};
 
 	return path.pathname === "test" ? (
 
@@ -29,9 +40,9 @@ const Layout = ({ children, path}) => {
 
 	) : (
 
-		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
+		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative} ${checkToggleState() ? generalStyles.locked : ''}`}>
 
-			<Header paths={menuLinks} layout={path.pathname}/>
+			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState} setToggle={setToggle} toggleMenu={toggleMenu}/>
 
 			<main className={`${containerStyles.inner}`}>{checkChildren()}</main> 
 

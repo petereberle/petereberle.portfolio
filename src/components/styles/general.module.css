@@ -15,6 +15,10 @@
 
     /*CARD WIDTH*/
     --card-width:33%;
+
+    /*VISIBILITY*/
+    --mobile-visibility: none;
+    --desktop-visibility: block;
 }
 
 /*GENERAL ELEMENTS*/
@@ -44,6 +48,13 @@ a, button {
     border:unset;
     background: unset;
     transition: opacity .25s ease-in-out;
+}
+
+/*LOCK SCROLL POSITION*/
+.locked{
+    overflow:hidden;
+    position:fixed!important;
+    z-index:49;
 }
 
 /*POSTION*/
