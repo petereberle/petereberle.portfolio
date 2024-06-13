@@ -2,13 +2,15 @@
 
 :root{
     --border-color: #000;
-    --border-solid: 2px solid var(--border-color);
+    --border-width: 2px;
+    --border-solid: var(--border-width) solid var(--border-color);
     --background-color: #fff;
     --item-padding: 10px;
     --head-space:65px;
 
     /* MAX SCREEN WIDTH*/
     --screen-width: 100vw;
+    --screen-height: 100vh;
 
     /*PAGE MARGIN */
     --page-margin: 0;
@@ -172,7 +174,7 @@ a, button {
 }
 
 .tag:first-child{
-    margin-left:unset;
+/*    margin-left:var(--border-width);*/
 }
 
 .tag:last-child{

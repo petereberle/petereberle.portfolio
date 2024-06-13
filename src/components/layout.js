@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import useWindowWidth from "./partials/check-window-width"
+import useMobileWindow from "./partials/mobile-window"
 
 import "normalize.css"
 import "./styles/general.module.css"
@@ -21,8 +21,7 @@ const Layout = ({ children, path}) => {
 			toggleMenu = (toggleState) => {
 				!isToggled ? setToggle(toggleState) : setToggle(false);
 			},
-			windowWidth = useWindowWidth().value,
-			mobileWindow = windowWidth < 900,
+			mobileWindow = useMobileWindow(),
 			checkToggleState = () => { return isToggled && mobileWindow ? true : false };
 
 	const checkChildren = () => {

@@ -2,12 +2,15 @@ import React from "react"
 
 import {Link} from "gatsby"
 
+import useMobileWindow from "../partials/mobile-window"
+
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 
 const ProjectNavigation = ({projectTags, pageContext}) => {
 
-	const	allTags = pageContext.tags,
+	const	mobileWindow = useMobileWindow(),
+			allTags = pageContext.tags,
 			Tags = ({tags}) => (tags.map(
 					(t) => (
 
@@ -47,7 +50,7 @@ const ProjectNavigation = ({projectTags, pageContext}) => {
 
 		</div>
 
-		<div className={containerStyles.flex_row}>
+		<div className={`${containerStyles.flex_row} ${mobileWindow ? containerStyles.flex_1_0_auto : ''}`}>
 
 			<Navigation/>
 

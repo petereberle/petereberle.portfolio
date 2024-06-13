@@ -17,14 +17,14 @@ h1, h2, h3, h4 {
 h1 {
     font-size: 3rem;
     color: #3b3b43;
-    margin: 0.67em 0;
+    margin: 0.47em 0;
 }
 
 h2 {
 
     font-size: 2rem;
     color: #3b3b43;
-    margin: 0.67em 0;
+    margin: 0.47em 0;
 }
 
 h3{
@@ -50,6 +50,19 @@ button{
 /*TEXT COLOR*/
 .white{
     color:white;
+}
+
+/*TEXT JUSTIFICATION*/
+.text_left{
+    text-align: left;
+}
+
+.text_right{
+    text-align: right;
+}
+
+.text_center{
+    text-align: center;
 }
 
 /*HIGHLIGHT SELECTION*/

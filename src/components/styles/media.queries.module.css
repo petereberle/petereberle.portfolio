@@ -2,16 +2,23 @@
 
 	:root{
 
+		/* MAX SCREEN VARIABLES*/
 		--screen-width: 2000px;
+
 		--page-margin:auto;
+
+
 
 	}
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1150px) {
 
 	:root{
+
+		/* MAX SCREEN VARIABLES*/
+		 --screen-height: unset;
 
 		/*CARD WIDTH*/
     	--card-width:50%;

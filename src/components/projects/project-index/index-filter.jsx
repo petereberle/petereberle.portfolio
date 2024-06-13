@@ -1,11 +1,15 @@
 import React from "react"
 
+import useMobileWindow from "../../partials/mobile-window"
+
 import * as generalStyles from "../../styles/general.module.css"
 import * as containerStyles from "../../styles/containers.module.css"
 
 const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) => {
 
-  const buttonStyles = `${generalStyles.filter_button} ${generalStyles.item} ${containerStyles.align_self_start}`,
+  const mobileWindow = useMobileWindow();
+
+  const buttonStyles = `${generalStyles.filter_button} ${mobileWindow ? generalStyles.tag : generalStyles.item} ${containerStyles.align_self_start}`,
         activeStyle = (tag) => ( tag === filter ? generalStyles.active : '' ),
         resetPath = () => {
 
@@ -14,11 +18,11 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
               window.location.hash = 'filter'
 
             }
-        }
+        };
 
   return (
     <>
-      <div className={`${containerStyles.flex_column} ${containerStyles.sidebar_inner} ${generalStyles.position_relative} ${generalStyles.position_sticky}`}>
+      <div className={`${ mobileWindow ? containerStyles.flex_row : containerStyles.flex_column} ${containerStyles.sidebar_inner} ${generalStyles.position_relative} ${ mobileWindow ? '' : generalStyles.position_sticky}`}>
         {menuItems.map((tag, id) => {
           return (
             <button className={ `${buttonStyles} ${activeStyle(tag)}` } onClick={() => { filterProject(tag); resetPath() } }  key={id} >
