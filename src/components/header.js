@@ -55,6 +55,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 			</div>
 
 			<Menu/>
+			
 		</>
 	)
 

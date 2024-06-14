@@ -55,12 +55,14 @@ const ProjectTemplate = ({ data, pageContext, location}) => {
 						</div>
 					</div>
 					<div className={`${containerStyles.grid} ${mobileWindow ? containerStyles.reverse : ''}`}>
-						<div className={generalStyles.position_sticky}>
-							<h1>{frontmatter.title}</h1>
-							<span>{year_start !== year_end ? year_start + ' - ' + year_end : year_start}</span>
-							<div  dangerouslySetInnerHTML={{ __html: html }} />
-							<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
-								<ProjectNavigation projectTags={projectTags} pageContext={pageContext} />
+						<div className={`${generalStyles.position_sticky} ${containerStyles.sidebar}`}>
+							<div className={containerStyles.sidebar_inner}>
+								<h1>{frontmatter.title}</h1>
+								<span>{year_start !== year_end ? year_start + ' - ' + year_end : year_start}</span>
+								<div  dangerouslySetInnerHTML={{ __html: html }} />
+								<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
+									<ProjectNavigation projectTags={projectTags} pageContext={pageContext} />
+								</div>
 							</div>
 						</div>
 					</div>

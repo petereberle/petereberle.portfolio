@@ -3,4 +3,14 @@
 .cover{
 	object-fit: cover;
     background-size: cover;
+    inset:0;
+}
+
+/* FULL COVER VIDEO */
+
+.reel{
+	position:absolute;
+	width:100%;
+	height:100%;
+	inset:0;
 }

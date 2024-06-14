@@ -36,6 +36,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `artwork-images`,
+        path: `${__dirname}/content/images/artwork`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `about-markdown`,
         path: `${__dirname}/content/about`,
       },
@@ -52,6 +59,13 @@ module.exports = {
       options: {
         name: `projects-markdown`,
         path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `artwork-markdown`,
+        path: `${__dirname}/content/artwork`,
       },
     },
     {

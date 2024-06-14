@@ -13,6 +13,7 @@ import * as containerStyles from "../components/styles/containers.module.css";
 import About from "../components/about"
 
 const Projects = React.lazy(() => import("../components/projects/projects"));
+const Artwork = React.lazy(() => import("../components/artwork/artwork"));
 const Contact = React.lazy(() => import("../components/contact"));
 
 const LazyComponent = ({ Component, ...props }) => (
@@ -31,6 +32,7 @@ const MainPage = ({location}) => {
 				<CustomRouter>
 						<About path="/" urlParam={location}/>
 						<LazyComponent Component = {Projects} path="/projects/" urlParam={location}/>
+						<LazyComponent Component = {Artwork} path="/artwork/" urlParam={location}/>
 						<LazyComponent Component = {Contact} path="/contact/" urlParam={location}/>
 				</CustomRouter>
 
