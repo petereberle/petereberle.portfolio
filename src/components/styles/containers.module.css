@@ -115,6 +115,36 @@
 	align-self:start;
 }
 
+/* LIGHTBOX */
+
+.card.lightbox{
+	background-color:#ffffff;
+	position:absolute;
+	z-index: 100;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: 0 auto 0 auto;
+	width:100%;
+	height:100%;
+}
+
+.card.lightbox>.card_wrapper{
+	border:unset;
+}
+
+
+.lightbox_toggle{
+    position: fixed;
+    z-index: 150;
+    width: fit-content;
+    height: fit-content;
+    margin: 50px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
 
 /* CARD GALLERY */
 
@@ -134,6 +164,7 @@
     width: var(--card-width);
     display: flex;
     position: relative;
+    flex-flow:unset;
 }
 
 .card_wrapper {

@@ -52,6 +52,14 @@ a, button {
     transition: opacity .25s ease-in-out;
 }
 
+.hide{
+    display: none!important;
+}
+
+.show{
+    display: block!important;
+}
+
 /*LOCK SCROLL POSITION*/
 .locked{
     overflow:hidden;

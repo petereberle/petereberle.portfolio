@@ -4,6 +4,8 @@ import { Link } from "@reach/router";
 
 import {motion} from "framer-motion"
 
+import MenuToggle from "./partials/menu-toggle"
+
 import * as generalStyles from "./styles/general.module.css"
 import * as headerStyles from "./styles/header.module.css"
 import * as containerStyles from "./styles/containers.module.css"
@@ -44,12 +46,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 				<div className={`${headerStyles.header_wrapper} ${containerStyles.flex_row} ${containerStyles.align_center} ${containerStyles.justify_center}`}>
 					<div className={`${headerStyles.header_inner} ${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
 						<Link target="_blank" onClick={ () => { toggleMenu(false) } } className={`${headerStyles.menu_item} ${generalStyles.last}`} to='/'><h3 className={generalStyles._0_margin}>Peter Eberle</h3></Link> 
-						<button className={`${headerStyles.menu_item} ${headerStyles.toggle_wrapper}`} onClick={ () => { toggleMenu(true) } }>
-							<ul className={`${headerStyles.toggle_inner} ${isToggled() ? headerStyles.active : ''}`}>
-								<li id={headerStyles.toggle_1} className={`${headerStyles.toggle}`}/>
-								<li id={headerStyles.toggle_2}  className={`${headerStyles.toggle}`}/>
-							</ul>
-						</button>
+						<MenuToggle isToggled={isToggled} toggleMenu={toggleMenu} initialState={true} visibility={false}/>
 					</div>
 				</div>
 			</div>
