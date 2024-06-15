@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: artsinhealth
 title: Arts in Health
 year_start: 2020

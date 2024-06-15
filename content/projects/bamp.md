@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: bamp
 title: BAMP
 year_start: 2016

@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: artwalla
 title: ArtWalla
 year_start: 2019

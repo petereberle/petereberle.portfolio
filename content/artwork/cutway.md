@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Cutway
 year: 2020
 featured_image: ../images/artwork/Cutway_oil_on_canvas.jpg

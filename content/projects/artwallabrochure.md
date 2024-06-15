@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: artwallabrochure
 title: ArtWalla Brochure
 year_start: 2020

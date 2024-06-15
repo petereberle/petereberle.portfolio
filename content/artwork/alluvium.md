@@ -1,13 +1,14 @@
 ---
+isDraft: false
 title: Alluvium
 year: 2020
 featured_image: ../images/artwork/thesis_test.jpg
 artwork_images: 
-  - {image_source: ../images/artwork/Alluvium_1.jpg, 
+  - {source: ../images/artwork/Alluvium_1.jpg, 
     caption: front}
-  - {image_source: ../images/artwork/Alluvium_2.jpg, 
+  - {source: ../images/artwork/Alluvium_2.jpg, 
     caption: wall detail}
-  - {image_source: ../images/artwork/Alluvium_3.jpg, 
+  - {source: ../images/artwork/Alluvium_3.jpg, 
     caption: floor detail}
 ---
 

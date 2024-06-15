@@ -25,6 +25,8 @@ const Projects = ({urlParam}) => {
 			        year_end
 			        tags
 			        featured_image {
+			        	extension
+			        	publicURL
                 childImageSharp {
                   gatsbyImageData(
                   width: 800

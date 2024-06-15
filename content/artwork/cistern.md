@@ -1,9 +1,10 @@
 ---
+isDraft: false
 title: Cistern
 year: 2019
 featured_image: ../images/artwork/cistern.jpg
 artwork_images: 
-  - {image_source: ../images/artwork/cistern_detail.jpg, 
+  - {source: ../images/artwork/cistern_detail.jpg, 
     caption: trough detail}
 ---
 

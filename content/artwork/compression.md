@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Compression
 year: 2017
 featured_image: ../images/artwork/Compression_oil.jpg

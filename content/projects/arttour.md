@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: arttour
 title: ArtWalla Art Tour
 year_start: 2020

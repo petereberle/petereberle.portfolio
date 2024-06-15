@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: writersatharriman
 title: Writers at Harriman
 year_start: 2016

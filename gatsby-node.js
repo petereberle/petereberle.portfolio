@@ -77,6 +77,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 }
 
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type MarkdownRemark implements Node {
+//       frontmatter: Frontmatter
+//     }
+//     type Frontmatter {
+//       featured_image: File! 
+//     }
+
+//     type File {
+//       extension: String!
+//       publicURL: String!
+//       childImageSharp: ImageSharp
+//     }
+//   `
+//   createTypes(typeDefs)
+// }
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+      MarkdownRemarkFrontmatter: {
+          isDraft: {
+            type: 'Boolean',
+            resolve: ({ isDraft }) => isDraft || false,
+          },
+        },
+  });
+};
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {

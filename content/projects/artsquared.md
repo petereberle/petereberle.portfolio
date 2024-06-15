@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: artsquared
 title: ArtSquared
 year_start: 2020

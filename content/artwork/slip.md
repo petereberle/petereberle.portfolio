@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Slip
 year: 2019
 featured_image: ../images/artwork/Slip_oil.jpg

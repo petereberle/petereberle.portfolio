@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Excavation
 year: 2019
 featured_image: ../images/artwork/Excavation.jpg

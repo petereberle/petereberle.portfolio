@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Liquid Sleep
 year: 2018
 featured_image: ../images/artwork/Liquid_Sleep.jpg

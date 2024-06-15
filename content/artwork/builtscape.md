@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Builtscape
 year: 2019
 featured_image: ../images/artwork/Builtscape_lino.jpg

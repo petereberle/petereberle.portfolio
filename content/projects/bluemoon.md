@@ -1,4 +1,5 @@
 ---
+isDraft: false
 slug: bluemoon
 title: blue moon vol. 33
 year_start: 2020

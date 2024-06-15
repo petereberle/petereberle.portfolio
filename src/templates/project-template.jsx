@@ -88,6 +88,8 @@ export const pageQuery = graphql`
 				year_end
 				tags
 				featured_image {
+					extension
+					publicURL
 	                childImageSharp {
 	                  gatsbyImageData(
 	                  width: 800

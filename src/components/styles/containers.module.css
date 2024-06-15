@@ -117,8 +117,34 @@
 
 /* LIGHTBOX */
 
+.lightbox_background{
+	visibility: hidden;
+	z-index:-1;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color: #ffffffd6;
+	opacity:0;
+	width:100%;
+	height:100%;
+}
+
+.lightbox_background.lightbox{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+@supports ((-webkit-backdrop-filter:blur(8px)) or (backdrop-filter:blur(8px))) {
+    .lightbox_background.lightbox {
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+}
+
 .card.lightbox{
-	background-color:#ffffff;
 	position:absolute;
 	z-index: 100;
 	top:0;
@@ -128,10 +154,30 @@
 	margin: 0 auto 0 auto;
 	width:100%;
 	height:100%;
+	cursor:default;
 }
 
-.card.lightbox>.card_wrapper{
+.card_wrapper.lightbox{
 	border:unset;
+	max-width: 1400px;
+	width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_landscape_inner.lightbox {
+	padding-top:unset;
+}
+
+.card_image.lightbox{
+	width:100%;
+	height:300px;
+	object-fit: contain;
+	position:relative;
+}
+
+.card_image.lightbox>img{
+	object-fit: contain!important;
 }
 
 
@@ -164,7 +210,7 @@
     width: var(--card-width);
     display: flex;
     position: relative;
-    flex-flow:unset;
+    cursor:pointer;
 }
 
 .card_wrapper {

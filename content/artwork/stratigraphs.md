@@ -1,4 +1,5 @@
 ---
+isDraft: false
 title: Stratigraphs
 year: 2019
 featured_image: ../images/artwork/Stratigraps_dyptych_oil.jpg
