@@ -60,6 +60,10 @@ a, button {
     display: block!important;
 }
 
+.no_pointer_events {
+    pointer-events: none;
+}
+
 /*LOCK SCROLL POSITION*/
 .locked{
     overflow:hidden;

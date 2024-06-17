@@ -59,8 +59,9 @@
 }
 
 .toggle_inner{
-    postion:relative;
+    position:relative;
     width:30px;
+    height:20px;
 }
 
 .toggle{
