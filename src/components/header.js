@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "@reach/router";
 
+import {Script, withPrefix} from "gatsby"
+
 import {motion} from "framer-motion"
 
 import MenuToggle from "./partials/menu-toggle"
@@ -44,6 +46,8 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 		<>	
 			<div className={`${headerStyles.header} ${isToggled() ? headerStyles.active : ''}`}>
 				<div className={`${headerStyles.header_wrapper} ${containerStyles.flex_row} ${containerStyles.align_center} ${containerStyles.justify_center}`}>
+					<canvas id="gradient_bg" className={headerStyles.granim_canvas}>
+					</canvas>
 					<div className={`${headerStyles.header_inner} ${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
 						<Link target="_blank" onClick={ () => { toggleMenu(false) } } className={`${headerStyles.menu_item} ${generalStyles.last}`} to='/'><h3 className={generalStyles._0_margin}>Peter Eberle</h3></Link> 
 						<MenuToggle isToggled={isToggled} toggleMenu={toggleMenu} initialState={true} visibility={false}/>
@@ -52,7 +56,10 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 			</div>
 
 			<Menu/>
-			
+			<Script src={withPrefix('/js/granim.min.js')}>
+			</Script>
+			<Script src={withPrefix('/js/gradient-bg.js')}>
+			</Script>
 		</>
 	)
 

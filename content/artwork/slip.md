@@ -1,11 +1,11 @@
 ---
 isDraft: false
+slug: slip
 title: Slip
 year: 2019
+materials: oil on canvas
 featured_image: ../images/artwork/Slip_oil.jpg
-artwork_images: 
+images: 
 ---
 
 Environmental abstractions, impasto series
-
-**Materials:** Oil on canvas

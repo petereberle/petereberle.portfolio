@@ -3,11 +3,11 @@
 
 				if (initial) {
 
-					return hash === 'next_project' ? translateValue : hash === 'previous_project' ? -translateValue : translateValue
+					return hash === 'nextpost' ? translateValue : hash === 'previouspost' ? -translateValue : translateValue
 
 				} else if (exit) {
 
-			 		return hash === 'next_project' ? -translateValue : hash === 'previous_project' ? translateValue : -translateValue
+			 		return hash === 'nextpost' ? -translateValue : hash === 'previouspost' ? translateValue : -translateValue
 
 			 	}
 

@@ -244,12 +244,12 @@ button, .tag{
 /* CHILDREN STYLING */
 
 .margin{
-    margin: 15px;
+    margin: var(--item-padding);
 }
 
 .margin_negative {
 
-    margin:-15px;
+    margin: var(--item-padding);
 
 }
 

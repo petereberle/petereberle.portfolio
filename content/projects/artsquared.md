@@ -5,7 +5,7 @@ title: ArtSquared
 year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/artsquaredwallawalla.com_fin.jpg
-project_images: 
+images: 
   - {source: ../images/projects/artsquaredwallawalla.com_square_mobile_gallery.jpg, 
     caption: Randomized gallery reimagined the traditional event experience}
 tags:

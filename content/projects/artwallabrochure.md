@@ -5,7 +5,7 @@ title: ArtWalla Brochure
 year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/ArtWalla_Brochure_render_2.jpg
-project_images: 
+images: 
   - {source: ../images/projects/ArtWalla_Brochure_1.jpg,
     caption: front and cover}
   - {source: ../images/projects/ArtWalla_Brochure_2.jpg,

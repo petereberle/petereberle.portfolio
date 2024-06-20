@@ -5,7 +5,7 @@ title: Arts in Health
 year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/aih_fin.jpg
-project_images: 
+images: 
   - {source: ../images/projects/artwalla.com_artshealth_mobile.jpg, 
     caption: Responsive mobile experience}
 tags:

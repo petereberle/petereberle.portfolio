@@ -6,7 +6,7 @@ import ContentRouterAnimation from "../partials/content-router-animation"
 
 import * as containerStyles from "../styles/containers.module.css"
 
-import ArtworkIndex from "./artwork-index"
+import IndexCards from "../partials/index-card"
 
 const Artwork = ({urlParam}) => {
 
@@ -21,8 +21,10 @@ const Artwork = ({urlParam}) => {
 			      id
 			      html
 			      frontmatter {
+			      	slug
 			        title
 			        year
+			        materials
 			        featured_image {
 			        	extension
 			        	publicURL
@@ -34,6 +36,9 @@ const Artwork = ({urlParam}) => {
                   )
                 }
               }
+			      }
+			      fields {
+			      	slug
 			      }
 			    } 
 			  }
@@ -47,7 +52,7 @@ const Artwork = ({urlParam}) => {
 
 	    	<div className={`${containerStyles.index}`}>
 
-	    		<ArtworkIndex artwork={allMarkdownRemark.edges} />
+	    		<IndexCards className={containerStyles.index} urlParam={urlParam} article = {allMarkdownRemark.edges} year_var="year" />
 
 	    	</div>
 

@@ -1,11 +1,11 @@
 import * as React from "react"
 
-const Video = ({source, title, classes}) => (
+const Video = ({source, title, classes}) => {
 	
-	<video className={classes} loop autoPlay muted>
+	return <video className={classes} loop autoPlay muted webkit-playsinline="webkit-playsinline" playsInline>
 		<source src={source} type="video/mp4" />
 	</video>
 
-)
+}
 
 export default Video

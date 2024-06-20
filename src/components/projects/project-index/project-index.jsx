@@ -7,7 +7,7 @@ import useMobileWindow from "../../partials/mobile-window"
 import * as generalStyles from "../../styles/general.module.css"
 import * as containerStyles from "../../styles/containers.module.css"
 
-import IndexCards from "./index-card"
+import IndexCards from "../../partials/index-card"
 import FilterMenu from "./index-filter"
 
 const ProjectIndex = ({ data, urlParam }) => {
@@ -74,7 +74,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 			<div className={`${containerStyles.index}`}>
 
-	         	<IndexCards className={containerStyles.index} project = {project} />
+	         	<IndexCards className={containerStyles.index} urlParam={urlParam} article = {project} year_var="year_end" />
 
 	        </div>
 

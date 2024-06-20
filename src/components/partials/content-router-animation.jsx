@@ -8,16 +8,18 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 
 	const 	pathName = urlParam.pathname,
 			hash = urlParam.hash ? urlParam.hash.substring(1) : null,
+			hashValues = {next: "nextpost", prev: "previouspost"},
+			exceptions = pathName.includes('/artwork/') || pathName.includes('/projects/'),
 			translateValue = 500,
 			animationDirection = ({pathName, hash, initial, exit}) => { 
 
 				if (initial) {
 
-					return hash === 'next_project' ? translateValue : hash === 'previous_project' ? -translateValue : -translateValue
+					return hash === hashValues.next ? translateValue : hash === hashValues.prev ? -translateValue : -translateValue
 
 				} else if (exit) {
 
-			 		return (pathName.includes('/projects/') && pathName.length > 10) || hash === 'next_project' || hash === 'previous_project' ? 0 : translateValue
+			 		return (exceptions && pathName.length > 10) || hash === hashValues.next || hash === hashValues.prev ? 0 : translateValue
 
 			 	}
 
@@ -35,7 +37,7 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 	        duration: 0.3,
 	      }}
     >
-	    <div className={pathName !== '/projects/' ? containerStyles.content_section : ''}>
+	    <div className={!exceptions ? containerStyles.content_section : ''}>
 	     	{children}
 	    </div>
     </motion.div>

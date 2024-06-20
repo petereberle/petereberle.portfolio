@@ -5,7 +5,7 @@ title: Writers at Harriman
 year_start: 2016
 year_end: 2016
 featured_image: ../images/projects/Writers_at_Harriman_system.jpg
-project_images: 
+images: 
   - {source: ../images/projects/Writers_at_Harriman_envelope.jpg,
     caption: Envelope system}
 tags:

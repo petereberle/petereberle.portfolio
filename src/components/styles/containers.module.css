@@ -125,14 +125,15 @@
 	left:0;
 	right:0;
 	bottom:0;
-	background-color: #ffffffd6;
+	background-color: #ffffff;
+/*	background-color: #ffffffd6;*/
 	opacity:0;
 	width:100%;
 	height:100%;
 }
 
 .lightbox_background.lightbox{
-	opacity: 1;
+	opacity: .95;
 	visibility: visible;
 }
 
@@ -160,7 +161,6 @@
 .card_wrapper.lightbox{
 	border:unset;
 	max-width: 1400px;
-	width:100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -185,10 +185,14 @@
     z-index: 150;
     width: fit-content;
     height: fit-content;
-    padding:50px;
+    padding:25px 15px 25px 25px;
     top: 0;
     right: 0;
     bottom: 0;
+}
+
+.reel.lightbox{
+	pointer-events: none;
 }
 
 /* CARD GALLERY */
@@ -214,6 +218,7 @@
 
 .card_wrapper {
     flex: 1 0 auto;
+    width: calc(100% - var(--item-padding)*4);
     padding: var(--item-padding);
     border: var(--border-solid);
 }

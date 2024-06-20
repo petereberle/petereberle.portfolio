@@ -10,7 +10,7 @@ import ContentRouterAnimation from "../components/partials/content-router-animat
 
 import PostTemplate from "../components/partials/post-template"
 
-const ProjectTemplate = ({ data, pageContext, location}) => {
+const ArtworkTemplate = ({ data, pageContext, location}) => {
 
 	const {markdownRemark} = data;
 
@@ -18,7 +18,7 @@ const ProjectTemplate = ({ data, pageContext, location}) => {
 		<Layout path={location}>
 
 			<ContentRouterAnimation urlParam={location}>
-				<PostTemplate postData={markdownRemark} urlParam={location} pageContext={pageContext}/>
+				<PostTemplate postData={markdownRemark} urlParam={location} pageContext={pageContext} /> 
 			</ContentRouterAnimation>
 
 		</Layout>
@@ -36,9 +36,8 @@ export const pageQuery = graphql`
 			frontmatter{
 				slug
 				title
-				year_start
-				year_end
-				tags
+				year
+				materials
 				featured_image {
 					extension
 					publicURL
@@ -50,19 +49,21 @@ export const pageQuery = graphql`
 	                  )
 	                }
               	}
-              	images {
-              		source {
-              			 childImageSharp {
+            	images {
+	              	source {
+	              		extension
+					        	publicURL
+		                childImageSharp {
 		                  gatsbyImageData(
 		                  width: 800
 		                  placeholder: BLURRED
 		                  formats: AUTO
 		                  )
 		                }
-              		}
-              		caption
-              	}
-
+	              	}
+	              	iframe
+	              	caption
+             	}
 			}
 			fields {
 				slug
@@ -72,4 +73,4 @@ export const pageQuery = graphql`
 
 `
 
-export default ProjectTemplate
+export default ArtworkTemplate

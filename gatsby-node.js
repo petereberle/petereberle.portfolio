@@ -15,7 +15,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const projectTemplate = require.resolve('./src/templates/project-template.jsx')
 
-  const {data} = await graphql(`
+  const artworkTemplate = require.resolve('./src/templates/artwork-template.jsx')
+
+  const projectsData = await graphql(`
     {
         projectsRemark: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/(projects)/" } }
@@ -37,17 +39,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (data.errors) {
+  const artworkData = await graphql(`
+    {
+        artworkRemark: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/(artwork)/" } }
+          sort: { frontmatter: {year: DESC} } 
+        ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+              title
+            }
+            fields {
+              slug
+            }
+          } 
+        }
+      }  
+    }
+  `)
+
+  if (projectsData.data.errors || artworkData.data.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  const projects = data.projectsRemark.edges,
+  const projects = projectsData.data.projectsRemark.edges,
+        artwork = artworkData.data.artworkRemark.edges,
+        tagsArr = ['all'],
         getTags = () => {
 
-          const tagsArr = ['all'];
-
-          data.projectsRemark.edges.map((project) => ( 
+          projects.map((project) => ( 
 
               project.node.frontmatter.tags.map(
 
@@ -75,23 +98,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+
+  artwork.forEach(({node}, pageIndex) => {
+    const slug = node.fields.slug
+    actions.createPage({
+      path: `/artwork${node.fields.slug}`,
+      component: artworkTemplate,
+      context: { 
+        slug: node.frontmatter.slug,
+        title: node.frontmatter.title,
+        tags: ['all'],
+        next: pageIndex === artwork.length - 1 ? null : artwork[pageIndex + 1].node,
+        prev: pageIndex === 0 ? null : artwork[pageIndex - 1].node
+      },
+    })
+  })
+
 }
 
+
+
 // exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions
+//   const { createTypes } = actions;
+//   const field = `File` || `String`;
 //   const typeDefs = `
 //     type MarkdownRemark implements Node {
 //       frontmatter: Frontmatter
 //     }
 //     type Frontmatter {
-//       featured_image: File! 
+//       artwork_images: ${field}
 //     }
 
-//     type File {
-//       extension: String!
-//       publicURL: String!
-//       childImageSharp: ImageSharp
-//     }
 //   `
 //   createTypes(typeDefs)
 // }

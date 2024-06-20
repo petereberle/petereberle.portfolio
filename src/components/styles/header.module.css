@@ -25,7 +25,13 @@
     box-sizing: border-box;
     border:var(--border-solid);
     padding:var(--item-padding);
-    background-color:var(--background-color);
+}
+
+.header_wrapper>.granim_canvas{
+    position:absolute;
+    z-index: -1;
+    width:calc( 100% - var(--item-padding)*2 ) ;
+    height:calc( 100% - var(--item-padding)*2 );
 }
 
 .menu_wrapper{

@@ -5,7 +5,7 @@ title: BAMP
 year_start: 2016
 year_end: 2016
 featured_image: ../images/projects/bamp_main.jpg
-project_images: 
+images: 
 tags:
   - design
 ---
