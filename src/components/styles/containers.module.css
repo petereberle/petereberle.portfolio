@@ -238,8 +238,10 @@
     width: 100%;
     height: 100%;
     display: block;
-    position: absolute;
     inset: 0;
+}
+.card_landscape_inner>.card_image{
+	position:absolute;
 }
 
 .card_image>div>img{

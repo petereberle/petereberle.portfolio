@@ -2,8 +2,6 @@ import React from "react";
 
 import { Link } from "@reach/router";
 
-import {Script, withPrefix} from "gatsby"
-
 import {motion} from "framer-motion"
 
 import MenuToggle from "./partials/menu-toggle"
@@ -54,12 +52,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 					</div>
 				</div>
 			</div>
-
 			<Menu/>
-			<Script src={withPrefix('/js/granim.min.js')}>
-			</Script>
-			<Script src={withPrefix('/js/gradient-bg.js')}>
-			</Script>
 		</>
 	)
 

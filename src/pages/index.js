@@ -1,7 +1,11 @@
-import React from "react";
+import React, {Suspense} from "react";
 
 import CustomRouter from "../components/router";
 import { Link } from "@reach/router";
+
+// import SuspenseHelper from "../components/partials/suspense-helper"
+
+import useClientState from "../components/partials/use-client"
 
 import Layout from "../components/layout";
 
@@ -16,11 +20,14 @@ const Projects = React.lazy(() => import("../components/projects/projects"));
 const Artwork = React.lazy(() => import("../components/artwork/artwork"));
 const Contact = React.lazy(() => import("../components/contact"));
 
-const LazyComponent = ({ Component, ...props }) => (
-  <React.Suspense fallback={null}>
-    <Component {...props} />
-  </React.Suspense>
-)
+const LazyComponent = ({ Component, ...props }) => {
+
+	if ( useClientState() === false ) {  return }
+
+  return 	<Suspense fallback={<pre>{Component}</pre>}>
+						<Component {...props} />
+					</Suspense>
+}
 
 
 const MainPage = ({location}) => {

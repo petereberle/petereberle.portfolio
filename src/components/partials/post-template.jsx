@@ -86,8 +86,6 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 			}
 
-	console.log(materials)
-
 	return (
 		<div className={`${containerStyles.grid} ${containerStyles._50_50}`}>
 			<div className={containerStyles.sidebar}>
