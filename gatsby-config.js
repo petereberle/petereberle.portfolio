@@ -43,6 +43,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `social-markdown`,
+        path: `${__dirname}/content/social`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `about-markdown`,
         path: `${__dirname}/content/about`,
       },

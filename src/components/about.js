@@ -13,7 +13,7 @@ const About = ({urlParam}) => {
 
   const {markdownRemark} = useStaticQuery(graphql`
         query {
-            markdownRemark(frontmatter: { title: { eq: "About" } }) {
+            markdownRemark(frontmatter: { type: { eq: "about" } }) {
               html
               frontmatter {
                 title

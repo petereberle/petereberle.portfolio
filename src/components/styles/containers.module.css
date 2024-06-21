@@ -87,6 +87,11 @@
 	justify-content: flex-start;
 }
 
+.flex_row.full_width, .flex_column.full_width{
+	width:100%;
+	flex-wrap: nowrap;
+}
+
 .flex_1_0_auto{
 	flex:1 0 auto;
 }
@@ -97,6 +102,10 @@
 
 .justify_center{
 	justify-content: center;
+}
+
+.align_start{
+	align-items:flex-start;
 }
 
 .align_end{

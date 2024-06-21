@@ -15,7 +15,7 @@ const useWindowWidth = () => {
 		const handleResize = () => {
 
 			const 	getWidth = window.innerWidth,
-					getHeight = window.innderHeight;
+					getHeight = window.innerHeight;
 
 			setWindowWidth({width:getWidth, height: getHeight})
 

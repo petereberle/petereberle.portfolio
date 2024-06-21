@@ -1,4 +1,5 @@
 ---
+type: "about"
 title: "About"
 profile: ../images/resources/PE_port.jpg
 ---

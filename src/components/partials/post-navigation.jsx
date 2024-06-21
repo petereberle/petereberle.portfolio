@@ -7,19 +7,16 @@ import useMobileWindow from "../partials/mobile-window"
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 
-const PostNavigation = ({urlParam, tags, pageContext}) => {
+const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 
 	const	upperDirectoryPath = '/' + urlParam.pathname.split('/')[1],
-			mobileWindow = useMobileWindow(),
 			allTags = pageContext.tags ? pageContext.tags : undefined,
-			Tags = ({tags}) => (tags.map(
-					(t) => (
+			Tags = () => (allTags.map(
+					(t) => {
 
-						
-							<Link className={`${generalStyles.tag} ${tags.includes(t) ? generalStyles.active : ''}`} key={t} to={upperDirectoryPath + '/#' + t}><button>{t.toUpperCase()}</button></Link>
-				
+						return <Link className={`${generalStyles.tag} ${currentTags?.includes(t) ? generalStyles.active : ''}`} key={t} to={upperDirectoryPath + '/#' + t}><button>{t.toUpperCase()}</button></Link>
 
-					)
+					}
 				) 
 			),
 			Navigation = () => {
@@ -30,10 +27,10 @@ const PostNavigation = ({urlParam, tags, pageContext}) => {
 				return (
 					<>
 
-					{ prevPost && <Link className={generalStyles.tag} to={`${prevPost.url}#previouspost`}>
+					{ prevPost && <Link className={`${generalStyles.tag} ${generalStyles.navigation_tag}`}  to={`${prevPost.url}#previouspost`}>
 							<button className={`${generalStyles.navigation} ${generalStyles.prev}`}>{prevPost.title}</button>
 						</Link>}
-					{ nextPost && <Link className={generalStyles.tag} to={`${nextPost.url}#nextpost`}>
+					{ nextPost && <Link className={`${generalStyles.tag} ${generalStyles.navigation_tag}`} to={`${nextPost.url}#nextpost`}>
 						<button className={`${generalStyles.navigation} ${generalStyles.next}`}>{nextPost.title} </button>
 						</Link> }
 				
@@ -47,11 +44,11 @@ const PostNavigation = ({urlParam, tags, pageContext}) => {
 
 		<div className={containerStyles.flex_row}>
 
-			{ allTags && <Tags tags={allTags} /> }
+			{ allTags && <Tags/> }
 
 		</div>
 
-		<div className={`${containerStyles.flex_row} ${mobileWindow ? containerStyles.flex_1_0_auto : ''}`}>
+		<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${useMobileWindow() ? containerStyles.flex_1_0_auto : ''}`}>
 
 			<Navigation/>
 

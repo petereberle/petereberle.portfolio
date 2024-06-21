@@ -18,6 +18,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 	const 	{html, frontmatter, fields} = postData,
 			featuredImage = frontmatter.featured_image,
 			postImageData = frontmatter.images,
+			tags = frontmatter.tags ? frontmatter.tags : null, 
 			{title, year, year_start, year_end, materials} = frontmatter,
 			postYear = year ? year : year_end && year_start !== year_end ? year_start + ' - ' + year_end : year_start,
 			mobileWindow = useMobileWindow();
@@ -102,7 +103,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 						{materials && <p>{materials}</p>}
 						<div  dangerouslySetInnerHTML={{ __html: html }} />
 						<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
-							<PostNavigation urlParam={urlParam} tags={null} pageContext={pageContext} />
+							<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
 						</div>
 					</div>
 				</div>

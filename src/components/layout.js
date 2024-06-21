@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import useMobileWindow from "./partials/mobile-window"
+import useScrolled from "./partials/use-scrolled"
 
 import "normalize.css"
 import "./styles/general.module.css"
@@ -22,7 +23,10 @@ const Layout = ({ children, path}) => {
 				!isToggled ? setToggle(toggleState) : setToggle(false);
 			},
 			mobileWindow = useMobileWindow(),
+			scrollY = useScrolled().value,
 			checkToggleState = () => { return isToggled && mobileWindow ? true : false };
+
+
 
 	const checkChildren = () => {
 
@@ -39,7 +43,7 @@ const Layout = ({ children, path}) => {
 
 	) : (
 
-		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative} ${checkToggleState() ? generalStyles.locked : ''}`}>
+		<div style={{top: unset}} className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative} ${checkToggleState() ? generalStyles.locked : ''}`}>
 
 			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState} setToggle={setToggle} toggleMenu={toggleMenu}/>
 
