@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React, {lazy, Suspense} from "react";
 
 import CustomRouter from "../components/router";
 import { Link } from "@reach/router";
@@ -16,9 +16,9 @@ import * as containerStyles from "../components/styles/containers.module.css";
 
 import About from "../components/about"
 
-const Projects = React.lazy(() => import("../components/projects/projects"));
-const Artwork = React.lazy(() => import("../components/artwork/artwork"));
-const Contact = React.lazy(() => import("../components/contact"));
+const Projects = lazy(() => import("../components/projects/projects"));
+const Artwork = lazy(() => import("../components/artwork/artwork"));
+const Contact = lazy(() => import("../components/contact"));
 
 const LazyComponent = ({ Component, ...props }) => {
 

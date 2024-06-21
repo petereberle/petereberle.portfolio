@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { Link } from "@reach/router";
 
 import {motion} from "framer-motion"
 
 import MenuToggle from "./partials/menu-toggle"
+
+import useScrolled from "./partials/use-scrolled"
+import useMobileWindow from "./partials/mobile-window"
+
+import GradientBackground from "./partials/gradient-background"
 
 import * as generalStyles from "./styles/general.module.css"
 import * as headerStyles from "./styles/header.module.css"
@@ -13,8 +18,13 @@ import * as typographyStyles from "./styles/typography.module.css"
 
 const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 
-	const	currentPage = layout,
-			Menu = () => (
+	const 	currentPage = layout,
+			isMobile = useMobileWindow(),
+			scrollValue = useScrolled().value,
+			isInitialScroll = !isToggled() && isMobile && scrollValue > 65,
+			isScrollThreshold = !isToggled() && isMobile && scrollValue > 200;
+
+	const	Menu = () => (
 				<div className={`${headerStyles.menu_wrapper} ${containerStyles.sidebar} ${generalStyles.position_sticky} ${isToggled() ? headerStyles.active : ''}`}>
 					<div className={`${containerStyles.sidebar_inner} ${generalStyles.position_sticky}`}>
 						<ul className={`${headerStyles.menu} ${containerStyles.flex_column} ${generalStyles.full_height}`}>
@@ -40,12 +50,12 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 						})
 			);
 
+
 	return (
 		<>	
-			<div className={`${headerStyles.header} ${isToggled() ? headerStyles.active : ''}`}>
+			<div className={`${headerStyles.header} ${ isInitialScroll ? headerStyles.scrolled : '' } ${ isScrollThreshold ? headerStyles.threshold : '' } ${isToggled() ? headerStyles.active : ''}`}>
 				<div className={`${headerStyles.header_wrapper} ${containerStyles.flex_row} ${containerStyles.align_center} ${containerStyles.justify_center}`}>
-					<canvas id="gradient_bg" className={headerStyles.granim_canvas}>
-					</canvas>
+					<GradientBackground />
 					<div className={`${headerStyles.header_inner} ${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
 						<Link target="_blank" onClick={ () => { toggleMenu(false) } } className={`${headerStyles.menu_item} ${generalStyles.last}`} to='/'><h3 className={generalStyles._0_margin}>Peter Eberle</h3></Link> 
 						<MenuToggle isToggled={isToggled} toggleMenu={toggleMenu} initialState={true} visibility={false}/>

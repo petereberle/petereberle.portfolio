@@ -1,19 +1,23 @@
 import {useState, useEffect} from "react"
 
+import useClientState from "./use-client"
+
 const useWindowWidth = () => {
 
-	const 	[windowWidth, setWindowWidth] = useState({value:undefined}),
-			windowGlobal = typeof window !== 'undefined';
+	const 	[windowWidth, setWindowWidth] = useState({width:undefined, height: undefined}),
+			client = useClientState();
 
 	useEffect( () => {
+		
 
-		if (!windowGlobal) { return }
+		if (!client) { return }
 
 		const handleResize = () => {
 
-			const getWidth = window.innerWidth;
+			const 	getWidth = window.innerWidth,
+					getHeight = window.innderHeight;
 
-			setWindowWidth({value:getWidth})
+			setWindowWidth({width:getWidth, height: getHeight})
 
 		}
 
@@ -23,7 +27,7 @@ const useWindowWidth = () => {
 
 		return () => window.removeEventListener("resize", handleResize);
 
-	 },[]);
+	 },[client]);
 
 	return windowWidth;
 }

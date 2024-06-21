@@ -26,6 +26,8 @@ const ArtworkTemplate = ({ data, pageContext, location}) => {
 
 }
 
+
+
 export const pageQuery = graphql`
 
 	query($slug: String!) {

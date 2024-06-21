@@ -4,7 +4,7 @@
 
 .header{
     position: absolute;
-    z-index:51;
+    z-index:100;
     top:0;
     height:calc(var(--head-space));
 }
@@ -12,6 +12,16 @@
 .header.active{
     position:fixed;
 }
+
+.header.scrolled{
+    position:fixed;
+    margin-top:calc(-1 * var(--head-space));
+}
+
+.header.scrolled.threshold{
+    transition: margin-top .3s ease;
+    margin-top:0;
+}  
 
 .header_wrapper{
     overflow:hidden;
@@ -27,11 +37,16 @@
     padding:var(--item-padding);
 }
 
-.header_wrapper>.granim_canvas{
+.granim_wrapper{
     position:absolute;
     z-index: -1;
-    width:calc( 100% - var(--item-padding)*2 ) ;
+    width:calc( 100% - var(--item-padding)*2 );
     height:calc( 100% - var(--item-padding)*2 );
+}
+
+.granim_canvas{
+    width:100%;
+    height:100%;
 }
 
 .menu_wrapper{

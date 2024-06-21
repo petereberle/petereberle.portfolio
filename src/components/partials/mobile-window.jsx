@@ -2,7 +2,7 @@ import useWindowWidth from "./window-width"
 
 const useMobileWindow = () => {
 	
-	const windowWidth = useWindowWidth().value;
+	const windowWidth = useWindowWidth().width;
 
 	return windowWidth < 1150 ? true : false;
 
