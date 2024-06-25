@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import useMobileWindow from "./partials/mobile-window"
-import useScrolled from "./partials/use-scrolled"
+import useClientState from "./partials/use-client"
 
 import "normalize.css"
 import "./styles/general.module.css"
@@ -22,11 +22,30 @@ const Layout = ({ children, path}) => {
 			toggleMenu = (toggleState) => {
 				!isToggled ? setToggle(toggleState) : setToggle(false);
 			},
+			client = useClientState(),
 			mobileWindow = useMobileWindow(),
-			scrollY = useScrolled().value,
-			checkToggleState = () => { return isToggled && mobileWindow ? true : false };
+			checkToggleState = () => { 
 
+				const toggleState = {state: isToggled && mobileWindow ? true : false};
 
+				return toggleState
+			};
+
+	useEffect( () => {
+
+		if (!client) return;
+
+		if( isToggled ) {
+
+			document.body.classList.add(generalStyles.locked)
+
+		} else if (!isToggled) {
+
+			document.body.classList.remove(generalStyles.locked)
+
+		}
+
+	}, [isToggled] )
 
 	const checkChildren = () => {
 
@@ -43,9 +62,9 @@ const Layout = ({ children, path}) => {
 
 	) : (
 
-		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative} ${checkToggleState() ? generalStyles.locked : ''}`}>
+		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
 
-			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState} setToggle={setToggle} toggleMenu={toggleMenu}/>
+			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState().state} setToggle={setToggle} toggleMenu={toggleMenu}/>
 
 			<main className={`${containerStyles.inner}`}>{checkChildren()}</main> 
 

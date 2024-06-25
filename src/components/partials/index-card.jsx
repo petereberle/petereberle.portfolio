@@ -4,19 +4,23 @@ import {Link} from "gatsby"
 
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
+import {AnimatePresence, motion} from "framer-motion"
+
 import Video from "../partials/video"
 
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 import * as mediaStyles from "../styles/media.module.css"
 
+const	MotionLink = motion(Link);
+
 const IndexCards = ({urlParam, article, year_var}) => {
 
-	const path = urlParam.pathname.replace(/\//g, '');
+	const 	path = urlParam.pathname.replace(/\//g, '');
 
 	return (
 
-		<>
+		<AnimatePresence>
 
 			{ article.map( (data, i) => {
 
@@ -44,17 +48,29 @@ const IndexCards = ({urlParam, article, year_var}) => {
 		  						};
 		  				
 		  				return (
-		  					<Link key={i} to={`/${path + slug}`} className={containerStyles.card}>
-		  						<div className={`${containerStyles.card_wrapper} ${generalStyles.margin}`}>
-		  							<div className={containerStyles.card_landscape_inner}>
-			  							<FeaturedMedia />
-		  							</div>
-		  							<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between} ${containerStyles.align_center}`} >
-			  							<h4>{title}</h4>
-			  							<span>{year}</span>
-			  						</div>
-			  					</div>
-		  					</Link>
+
+			  					<MotionLink 
+			  						layout
+							        initial={{ transform: "scale(0)" }}
+							        animate={{ transform: "scale(1)" }}
+							        exit={{ transform: "scale(0)" }}
+							        transition={{
+								        type: "spring",
+								        mass: 0.35,
+								        stiffness: 75,
+								        duration: 0.3,
+							      	}}
+									key={i} to={`/${path + slug}`} className={containerStyles.card}>
+			  						<div className={`${containerStyles.card_wrapper} ${generalStyles.margin}`}>
+			  							<div className={containerStyles.card_landscape_inner}>
+				  							<FeaturedMedia/>
+			  							</div>
+			  							<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between} ${containerStyles.align_center}`} >
+				  							<h4>{title}</h4>
+				  							<span>{year}</span>
+				  						</div>
+				  					</div>
+			  					</MotionLink>
 
 		  				)
 
@@ -62,7 +78,7 @@ const IndexCards = ({urlParam, article, year_var}) => {
 		  		) 
 			}
 
-		</>
+		</AnimatePresence>
 
 	)
 

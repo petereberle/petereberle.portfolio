@@ -15,7 +15,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     color: #3b3b43;
     margin: 0.47em 0;
 }

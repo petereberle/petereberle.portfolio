@@ -2,8 +2,6 @@ import React from "react"
 
 import {graphql} from "gatsby"
 
-import {GatsbyImage, getImage} from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 
 import ContentRouterAnimation from "../components/partials/content-router-animation"
@@ -54,7 +52,7 @@ export const pageQuery = graphql`
             	images {
 	              	source {
 	              		extension
-					        	publicURL
+					    publicURL
 		                childImageSharp {
 		                  gatsbyImageData(
 		                  width: 800

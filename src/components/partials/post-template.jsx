@@ -97,11 +97,11 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 			</div>
 			<div className={`${containerStyles.grid} ${mobileWindow ? containerStyles.reverse : ''}`}>
 				<div className={`${generalStyles.position_sticky} ${containerStyles.sidebar}`}>
-					<div className={containerStyles.sidebar_inner}>
+					<div className={`${containerStyles.sidebar_inner}`}>
 						<h1>{title}</h1>
 						<p>{postYear}</p>
 						{materials && <p>{materials}</p>}
-						<div  dangerouslySetInnerHTML={{ __html: html }} />
+						<div className={generalStyles.post_html} dangerouslySetInnerHTML={{ __html: html }} />
 						<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
 							<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
 						</div>
