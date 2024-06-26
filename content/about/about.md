@@ -1,6 +1,6 @@
 ---
 type: "about"
-title: "About"
+title: "Hi, I'm Peter Eberle"
 profile: ../images/resources/PE_port.jpg
 ---
 

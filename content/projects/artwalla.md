@@ -11,9 +11,9 @@ images:
   - {source: ../images/projects/artwalla_old_fin.jpg, 
     caption: Version 1 iteration of artwalla.com}
 tags:
-  - web
-  - marketing
-  - non-profit
+  - Web
+  - Marketing
+  - Non-profit
 ---
 
 

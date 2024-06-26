@@ -7,7 +7,7 @@ year_end: 2020
 featured_image: ../images/projects/art-tour_fin.jpg
 images: 
 tags:
-  - web
+  - Web
 ---
 
 ArtWalla's [First Friday Art Tour](https://artwalla.com/art-tour) is a monthly event from April through October. One of the tour's highlights is an ArtWalla member PopUp show that features their recent work. However, due to COVID-19 guidelines, ArtWalla had to transition to a virtual event.

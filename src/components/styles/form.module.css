@@ -1,0 +1,43 @@
+.form_container{
+
+}
+
+.form_container > label{
+    display: none;
+}
+
+.form_input {
+    width: calc(100% - 10px) !important;
+    background: unset !important;
+    margin-top: 10px !important;
+    border: var(--border-solid)!important;
+    font-size: .85rem;
+    letter-spacing: .1rem;
+    color: #3b3b43;
+}
+
+.form_text_area{
+    width: calc(100%) !important;
+    height:100px;
+}
+
+.form_redirect{
+    display: none;
+}
+
+input[type="submit" i] {
+    appearance: unset;
+    user-select: none;
+    white-space: pre;
+    align-items: unset;
+    text-align: center;
+    cursor: default;
+    color: unset;
+    background-color: unset;
+    box-sizing: unset;
+    padding: unset;
+    border-width: unset;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+}
