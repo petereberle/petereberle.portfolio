@@ -58,7 +58,6 @@
 .grid._50_50{
 	display:grid;
 	grid-template-columns: 50% 50%;
-	gap: var(--item-padding);
 }
 
 
@@ -69,10 +68,6 @@
 
 .grid.reverse{
 	order:-1;
-}
-
-.grid_item{
-/*	outline:var(--border-solid);*/
 }
 
 /*FLEXBOX LAYOUT*/

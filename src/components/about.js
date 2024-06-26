@@ -1,10 +1,7 @@
 import React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
-
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-
-import useMobileWindow from "./partials/mobile-window"
 
 import ContentRouterAnimation from "./partials/content-router-animation"
 
@@ -40,14 +37,9 @@ const About = ({urlParam}) => {
     return (
 
       <ContentRouterAnimation urlParam={urlParam}>
-
-        <div className={`${containerStyles.flex_column} ${containerStyles.align_center}`}>
-          <div className={`${generalStyles.profile_wrapper} ${containerStyles.grid_item}`}>
-            <GatsbyImage style={{position: "relative"}} className={`${generalStyles.profile} ${generalStyles.ellipse_clip}`} image={profileImage} alt={title} />
-          </div>
-          <h1 className={`${containerStyles.grid_item}`} >{title}</h1>
+        <div className={generalStyles.profile_wrapper}>
+          <GatsbyImage style={{position: "relative"}} className={`${generalStyles.profile} ${generalStyles.ellipse_clip}`} image={profileImage} alt={title} />
         </div>
-
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </ContentRouterAnimation>
     )

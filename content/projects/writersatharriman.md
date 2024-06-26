@@ -9,7 +9,7 @@ images:
   - {source: ../images/projects/Writers_at_Harriman_envelope.jpg,
     caption: Envelope system}
 tags:
-  - Design
+  - design
 ---
 
 Branding system for Writers at Harriman, an educational program for young writers. Writers at Harriman approached [One Stone](https://onestone.org/two-birds) looking for a clever approach to their business card, envelope and letterhead graphics. The design intern team iterated through several mockups, and my proposal was accepted. The new business cards also function as bookmarks. 

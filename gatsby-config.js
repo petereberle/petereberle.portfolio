@@ -16,22 +16,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-        resolve: `gatsby-transformer-remark`,
-        options: {
-          plugins: [
-          {
-            resolve: "gatsby-remark-external-links",
-            options: {
-              target: "_blank",
-              rel: "noreferrer"
-            }
-          }
-          ]
-        }
-      },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

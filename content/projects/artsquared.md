@@ -9,9 +9,9 @@ images:
   - {source: ../images/projects/artsquaredwallawalla.com_square_mobile_gallery.jpg, 
     caption: Randomized gallery reimagined the traditional event experience}
 tags:
-  - Web
-  - Marketing
-  - Non-profit
+  - web
+  - marketing
+  - non-profit
 ---
 
 ArtSquared is an annual community art show and sale that serves as [ArtWalla's](https://artwalla.com/) primary fundraiser. Due to COVID-19 guidelines, ArtWalla decided not to host a physical event, so I was asked to create a standalone online store to showcase 130 participating artists. I worked closely with the ArtSquared committee to translate the hallmarks of the annual event into a virtual experience.

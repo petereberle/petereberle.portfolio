@@ -42,7 +42,7 @@ const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 
 		<>
 
-		<div className={`${containerStyles.flex_row} ${generalStyles.margin_negative}`}>
+		<div className={containerStyles.flex_row}>
 
 			{ allTags && <Tags/> }
 

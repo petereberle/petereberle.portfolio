@@ -2,11 +2,12 @@ import React, {useEffect} from "react"
 
 import Granim from "granim"
 
-import {motion} from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion"
 
 import useClientState from "./use-client"
 
 import * as headerStyles from "../styles/header.module.css"
+import * as generalStyles from "../styles/general.module.css"
 
 const GradientBackground = ({currentPage}) => {
 	
@@ -40,9 +41,9 @@ const GradientBackground = ({currentPage}) => {
 			        },
 			        "after-post-load-state": {
 			            gradients: [
-			                ['#BBD0E5', '#CDE1DC'],
-			                ['#EEF5FC', '#81C7CF'],
-			                ['#8ED8F8', '#E5F1F3']
+			                ['#FF9D84', '#CCE1DC'],
+			                ['#F4E192', '#F8D399'],
+			                ['#ABD7B4', '#F0B8D2']
 			            ],
 			            transitionSpeed: 2000
 			        }
