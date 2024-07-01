@@ -1,18 +1,19 @@
 /*STYLING VARIABLES*/
 
 :root{
-    --border-color: #000;
+    --border-color: var(--theme-border-color);
     --border-width: 2px;
     --border-solid: var(--border-width) solid var(--border-color);
-    --theme-background-primary: #F26726;
-    --theme-background-secondary: #8ED8F8;
     --background-color: #fff;
+
     --item-padding: 10px;
+    --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
+
     --head-space:65px;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
-    --screen-height: 100vh;
+    --screen-height: calc( 100vh - var(--head-space) );
 
     /*PAGE MARGIN */
     --page-margin: 0;
@@ -21,7 +22,19 @@
     --h1-size: 3rem;
 
     /*CARD WIDTH*/
-    --card-width:33%;
+    --card-width:3;
+
+    /******GRID VARIABLES******/
+
+    /*6 COL AUTO ROWS*/
+    --6col-template-columns: 5;
+    --6col-large-area: calc( var(--6col-template-columns)/2.5 );
+    --6col-small-area: calc( var(--6col-template-columns)/var(--6col-template-columns) );
+
+    /*CARD WIDTH*/
+    --card-width:3;
+
+    /**************************/
 
     /*VISIBILITY*/
     --mobile-visibility: none;
@@ -52,6 +65,8 @@ a, button {
     text-decoration: none;
     appearance: unset;
     -webkit-appearance: unset;
+    padding-inline:0;
+    padding-block:0;
     border:unset;
     background: unset;
     transition: opacity .25s ease-in-out;
@@ -97,6 +112,11 @@ a, button {
 }
 
 /*GRID STYLING*/
+
+.border_item{
+    border:var(--border-solid);
+    width:calc( 100% - var(--item-padding)*2 - var(--border-width)*2)
+}
 
 .item{
     display: flex;
@@ -156,6 +176,24 @@ a, button {
     height:100%;
 }
 
+.menu_animation{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: calc(100% - var(--item-padding)* 2);
+    height: calc(100% - var(--item-padding) * 2);
+    margin-top: var(--item-padding);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile_card{
+    padding: var(--item-padding);
+    border: var(--border-solid);
+}
+
 .profile_wrapper{
     position:relative;
     width:fit-content;
@@ -164,23 +202,23 @@ a, button {
 .profile_wrapper:after{
     content: '';
     position: absolute;
-    left: 2px;
-    top: 11.5px;
-    width: 250px;
-    height: 250px;
-    background: #FBAD18;
-    border-radius: 300px;
+    right: 7px;
+    top: 7.5px;
+    width: 200px;
+    height: 200px;
+    background: var(--theme-background-primary);
+    border-radius: 200px;
 }
 
 .profile {
-    width: 250px;
+    width: 200px;
     height: auto;
     z-index: 1;
     position: relative;
 }
 
 .ellipse_clip {
-    clip-path: circle(120px at center);
+    clip-path: circle(100px at center);
 }
 
 .tag{
@@ -286,7 +324,7 @@ button, .tag{
 
 .margin_negative {
 
-    margin: calc(-1 * var(--item-padding) * var(--border-width) )
+    margin-inline: var(--negative-padding); 
 
 }
 

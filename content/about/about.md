@@ -2,7 +2,13 @@
 type: "about"
 title: "Hi, I'm Peter Eberle"
 profile: ../images/resources/PE_port.jpg
+interests:
+  - Gardening
+  - Sourdough baking
+  - "*Amateur* wood working"
+  - New tech
+  - Tropical Orchids
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consectetur, risus et ornare semper, ex est aliquet velit, ut aliquam neque ante sit amet leo. Nam id commodo massa, id sagittis velit. Sed blandit ex et sodales egestas. Suspendisse ac ipsum lorem. Quisque arcu tortor, aliquam eget lacinia id, luctus at mi.
+I'm an artist, designer, and web developer with a focus on community-led organizations and organizations centered around the arts.
 

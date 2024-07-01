@@ -1,9 +1,27 @@
 import * as React from "react"
 
+import themeColorSets from "./src/theme/theme-colorset"
+
 export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
   setHtmlAttributes({ lang: `en` })
 
   setHeadComponents([
+    <style type="text/css"
+      key="style"
+      dangerouslySetInnerHTML={{
+      __html:
+     
+      `:root { 
+
+        --theme-background-primary: ${themeColorSets.primary};
+        --theme-background-secondary: ${themeColorSets.secondary};
+        --theme-border-color: ${themeColorSets.border_color};
+        --theme-text-color: ${themeColorSets.text_color};
+
+      }`
+
+     }}
+    />,
     <link
       rel="preload"
       href="/fonts/Proxima_Nova.ttf"

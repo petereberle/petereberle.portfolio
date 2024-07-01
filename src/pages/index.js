@@ -1,9 +1,9 @@
-import React, {lazy, Suspense} from "react";
+import * as React from "react";
+
+import {lazy, Suspense} from "react";
 
 import CustomRouter from "../components/router";
 import { Link } from "@reach/router";
-
-// import SuspenseHelper from "../components/partials/suspense-helper"
 
 import useClientState from "../components/partials/use-client"
 

@@ -26,6 +26,9 @@
 	padding: var(--item-padding);
 }
 
+.footer{
+	min-height: 25vh;
+}
 
 /* GRID LAYOUT */
 
@@ -41,6 +44,38 @@
 .sidebar_inner{
 	padding:var(--item-padding);
 }
+
+.grid.index{
+	display:grid;
+	padding:var(--item-padding);
+	grid-template-columns: repeat(var(--card-width), 1fr);
+	grid-gap:var(--item-padding);
+	grid-auto-rows: min-content;
+	grid-auto-flow: dense;
+}
+
+.grid._6_col_auto_row{
+	display:grid;
+	grid-gap:var(--item-padding);
+	grid-auto-flow: dense;
+ 	grid-template-columns: repeat(var(--6col-template-columns), 1fr);
+}
+
+._6_col_auto_row>.grid_item:nth-child(7n+1){
+	grid-area: span 2/span var(--6col-large-area);
+	top:var(--item-padding);
+}
+
+/*._6_col_auto_row>.grid_item:nth-child(7n+2), 
+._6_col_auto_row>.grid_item:nth-child(7n+3),
+._6_col_auto_row>.grid_item:nth-child(7n+4),
+._6_col_auto_row>.grid_item:nth-child(7n+5),
+._6_col_auto_row>.grid_item:nth-child(7n+6),*/
+._6_col_auto_row>.grid_item
+{
+	grid-area: span 1/span var(--6col-small-area);
+}
+
 
 .grid._25_50_25{
 	display:grid;
@@ -211,20 +246,10 @@
 
 /* CARD GALLERY */
 
-.index{
-	
-	display: flex;
-	flex-wrap: wrap;
-    height: -moz-fit-content;
-    height: fit-content;
-
-}
-
 .card{
 	box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
-    width: var(--card-width);
     display: flex;
     position: relative;
     cursor:pointer;
@@ -232,7 +257,8 @@
 
 .card_wrapper {
     flex: 1 0 auto;
-    width: calc(100% - var(--item-padding)*4 - var(--border-width)*2);
+    display:inline-grid;
+    align-items: center;
     padding: var(--item-padding);
     border: var(--border-solid);
 }

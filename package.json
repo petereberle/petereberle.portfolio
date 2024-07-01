@@ -5,6 +5,7 @@
   "version": "1.0",
   "author": "",
   "dependencies": {
+    "@p5-wrapper/react": "^4.4.2",
     "framer-motion": "^11.2.10",
     "gatsby": "^5.13.2",
     "gatsby-plugin-image": "^3.13.1",
@@ -15,7 +16,9 @@
     "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "granim": "^2.0.0",
+    "moment": "^2.30.1",
     "normalize.css": "^8.0.1",
+    "p5": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

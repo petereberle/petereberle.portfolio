@@ -3,7 +3,7 @@ body {
     font-weight:100;
     font-size: 1rem;
     letter-spacing: .1rem;
-    color: #3b3b43;
+    color: var(--theme-text-color);
     line-height: 1.4;
 }
 
@@ -68,7 +68,7 @@ button{
 /*HIGHLIGHT SELECTION*/
 
 ::selection {
-    background: #FBAD18;
+    background: var(--theme-background-primary);
 }
 
 /*TEXT RENDERING*/

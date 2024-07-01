@@ -4,7 +4,7 @@ slug: wallawallafoundry
 title: Walla Walla Foundry
 year_start: 2020
 year_end: 2024
-featured_image: ../images/projects/wwf_website_featuredpreview.mp4
+featured_image: ../images/projects/wwf_website_featuredpreview_2.mp4
 images: 
   # - {source: ../images/projects/WWF_About_Preview.jpg, 
   #   caption: About Page}

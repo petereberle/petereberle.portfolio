@@ -67,7 +67,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const projects = projectsData.data.projectsRemark.edges,
         artwork = artworkData.data.artworkRemark.edges,
-        tagsArr = ['all'],
+        tagsArr = ['All'],
         getTags = () => {
 
           projects.map((project) => ( 
@@ -107,7 +107,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: { 
         slug: node.frontmatter.slug,
         title: node.frontmatter.title,
-        tags: ['all'],
+        tags: ['All'],
         next: pageIndex === artwork.length - 1 ? null : artwork[pageIndex + 1].node,
         prev: pageIndex === 0 ? null : artwork[pageIndex - 1].node
       },

@@ -33,7 +33,7 @@ const SocialMedia = ({currentPage}) => {
 
   					return <a key={i} className={`${generalStyles.margin} ${generalStyles.tag} ${generalStyles.theme_background} ${ isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary } ${containerStyles.flex_column} ${containerStyles.align_center}`} href={s.link} rel="noreferrer" target="_blank">
 
-  						<img className={mediaStyles.icon} src={s.icon.publicURL} alt={s.name}/>
+  						<small>{s.name}</small>
 
   					</a>
 
@@ -43,8 +43,8 @@ const SocialMedia = ({currentPage}) => {
 
   return (
 
-  	<div className={`${containerStyles.flex_column} ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.position_fixed} ${generalStyles.margin}`}>
-  		<small>{markdownRemark.frontmatter.title}</small>
+  	<div className={` ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
+  		{/*<small>{markdownRemark.frontmatter.title}</small>*/}
   		<div className={`${containerStyles.flex_row} ${generalStyles.margin_negative}`}>
   			<SocialLinks />
   		</div>

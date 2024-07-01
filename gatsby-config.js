@@ -14,6 +14,9 @@ module.exports = {
     author: `Peter Eberle`,
     siteUrl: `localhost:8000`,
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,

@@ -1,8 +1,10 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useRef} from "react"
 
 import Granim from "granim"
 
 import {motion} from "framer-motion"
+
+import themeColorSets from "../../theme/theme-colorset"
 
 import useClientState from "./use-client"
 
@@ -10,14 +12,14 @@ import * as headerStyles from "../styles/header.module.css"
 
 const GradientBackground = ({currentPage}) => {
 	
-	const 	client = useClientState(),
-			gradientDomId = 'gradient_bg',
-			clientGradient = client ? document.getElementById(gradientDomId) : false ;
+	const 	renderRef = useRef(),
+			client = useClientState(),
+			gradientDomId = 'gradient_bg';
 
 	useEffect( () => {
 
-		var	granimInstance = clientGradient ? new Granim({
-			    element: clientGradient,
+		var	granimInstance = client ? new Granim({
+			    element: renderRef.current,
 			    direction: 'diagonal',
 			    isPausedWhenNotInView: true,
 			    stateTransitionSpeed: 500,
@@ -31,19 +33,11 @@ const GradientBackground = ({currentPage}) => {
 			    		transitionSpeed: 2000
 			    	},
 			        "after-load-state": {
-			            gradients: [
-			                ['#FBAD18', '#f4642a'],
-			                ['#F79A85', '#f46626'],
-			                ['#EA9B1C', '#FBAD18']
-			            ],
+			            gradients: themeColorSets.pages_gradients,
 			            transitionSpeed: 2000
 			        },
 			        "after-post-load-state": {
-			            gradients: [
-			                ['#BBD0E5', '#CDE1DC'],
-			                ['#EEF5FC', '#81C7CF'],
-			                ['#8ED8F8', '#E5F1F3']
-			            ],
+			            gradients: themeColorSets.posts_gradients,
 			            transitionSpeed: 2000
 			        }
 			    }
@@ -60,7 +54,7 @@ const GradientBackground = ({currentPage}) => {
 
 		}
 
-	},[clientGradient])
+	},[client])
 
 	return (
 
@@ -77,6 +71,7 @@ const GradientBackground = ({currentPage}) => {
 			        duration: 0.3,
 			      }}
 			     id={gradientDomId}
+			     ref={renderRef}
 			     className={headerStyles.granim_canvas}
 		    >
 

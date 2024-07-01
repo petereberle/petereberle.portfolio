@@ -13,7 +13,7 @@ tags:
   - Non-profit
 ---
 
-[Arts in Health: First Aid Art Kits](https://artwalla.com/artshealth) is a local initiative founded by [Augusta Sparks Farnum](http://augustasparks.com), an artist in Walla Walla, Washington. In partnership with Providence St. Mary Medical Center, Augusta recruited other local artists to make art kits and prompts for COVID-19 patients in hospital and home quarantine. She approached ArtWalla to create an online component to house the video portion of the art kits.
+Arts in Health: First Aid Art Kits is a local initiative founded by [Augusta Sparks Farnum](http://augustasparks.com), an artist in Walla Walla, Washington. In partnership with Providence St. Mary Medical Center, Augusta recruited other local artists to make art kits and prompts for COVID-19 patients in hospital and home quarantine. She approached ArtWalla to create an online component to house the video portion of the art kits.
 
 I built a static page and UI on artwalla.com to serve as the organization's website, tutorial archive and donation portal.
 

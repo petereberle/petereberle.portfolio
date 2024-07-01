@@ -13,7 +13,8 @@ import * as headerStyles from "./styles/header.module.css"
 
 import "./styles/media.queries.module.css"
 
-import Header from "./header";
+import Header from "./header"
+import Footer from "./footer"
 import menuLinks from "./menu-links"
 
 const Layout = ({ children, path}) => {
@@ -35,17 +36,17 @@ const Layout = ({ children, path}) => {
 
 		if (!client) return;
 
-		if( isToggled ) {
+		if( isToggled && mobileWindow) {
 
 			document.body.classList.add(generalStyles.locked)
 
-		} else if (!isToggled) {
+		} else if (!isToggled || !mobileWindow) {
 
 			document.body.classList.remove(generalStyles.locked)
 
 		}
 
-	}, [isToggled] )
+	}, [isToggled, mobileWindow] )
 
 	const checkChildren = () => {
 
@@ -66,7 +67,13 @@ const Layout = ({ children, path}) => {
 
 			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState().state} setToggle={setToggle} toggleMenu={toggleMenu}/>
 
-			<main className={`${containerStyles.inner}`}>{checkChildren()}</main> 
+			<main className={`${containerStyles.inner}`}>
+
+				{checkChildren()}
+
+				<Footer urlParam={path.pathname}/>
+
+			</main> 
 
 		</div>
 

@@ -17,12 +17,15 @@ export const wrapPageElement = ({ element }) => {
 
 	return ( 
 
-	<AnimatePresence mode="wait">
+	<>
 
-			{element}
+		<AnimatePresence mode="wait">
 
-	</AnimatePresence>
+				{element}
 
+		</AnimatePresence>
+
+	</>
 
 	)
 
