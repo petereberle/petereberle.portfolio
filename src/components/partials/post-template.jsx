@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
@@ -46,7 +46,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 				return postImageData ? postImageData.map( (data, i) => {
 
 					const 	Vignette = ({children}) => (
-								<div className={`${containerStyles.vignette} ${containerStyles.flex_column}`}>
+								<div className={containerStyles.vignette}>
 									{children}
 								</div>
 							),

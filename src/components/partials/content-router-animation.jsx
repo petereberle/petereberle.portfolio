@@ -1,8 +1,6 @@
-import * as React from "react"
+import React from "react"
 
 import {motion} from "framer-motion"
-
-import Footer from "../footer"
 
 import * as containerStyles from "../styles/containers.module.css"
 
@@ -42,10 +40,6 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 	    <div className={!exceptions ? containerStyles.content_section : ''}>
 	     	{children}
 	    </div>
-
-	    <Footer urlParam={pathName}/>
-
-
     </motion.div>
     )
 

@@ -20,17 +20,8 @@
 		/* MAX SCREEN VARIABLES*/
 		 --screen-height: unset;
 
-	   /******GRID VARIABLES******/
-
-	    /*6 COL AUTO ROWS*/
-	    --6col-template-columns: 6;
-	    --6col-large-area: calc( var(--6col-template-columns) );
-	    --6col-small-area: calc( var(--6col-template-columns)/var(--card-width) );
-
-	    /*CARD WIDTH*/
-	    --card-width:2;
-
-	    /**************************/
+		/*CARD WIDTH*/
+    	--card-width:50%;
 
     	/* VISIBILITY*/
     	--mobile-visibility: block;

@@ -5,7 +5,6 @@ import useMobileWindow from "../../partials/mobile-window"
 import * as generalStyles from "../../styles/general.module.css"
 import * as containerStyles from "../../styles/containers.module.css"
 
-import IndexGrid from "../../partials/index-grid"
 import IndexCards from "../../partials/index-card"
 import FilterMenu from "./index-filter"
 
@@ -71,11 +70,11 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 			</div>
 
-			<IndexGrid>
+			<div className={`${containerStyles.index}`}>
 
-	         	<IndexCards className={containerStyles.index} urlParam={urlParam} article = {project} path={null} indexConstraint={project.length} />
+	         	<IndexCards className={containerStyles.index} urlParam={urlParam} article = {project} year_var="year_end" />
 
-	        </IndexGrid>
+	        </div>
 
 		</div>
 
