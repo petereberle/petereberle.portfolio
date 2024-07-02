@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 
 import {Link} from "gatsby"
 
@@ -48,7 +48,7 @@ const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 
 		</div>
 
-		<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${useMobileWindow() ? containerStyles.flex_1_0_auto : ''}`}>
+		<div className={`${generalStyles.margin_negative} ${containerStyles.flex_row} ${containerStyles.full_width} ${useMobileWindow() ? containerStyles.flex_1_0_auto : ''}`}>
 
 			<Navigation/>
 
