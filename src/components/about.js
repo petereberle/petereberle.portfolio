@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -113,8 +113,6 @@ const About = ({urlParam}) => {
     title = about.frontmatter.title,
     body = about.html;
 
-    console.log(featuredProjects)
-
     return (
 
       <ContentRouterAnimation urlParam={urlParam}>
@@ -146,7 +144,7 @@ const About = ({urlParam}) => {
               </div>
             </Card>
 
-      </div>
+        </div>
 
       </ContentRouterAnimation>
     )
