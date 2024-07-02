@@ -1,6 +1,8 @@
 ---
 title: "Contact"
-message: Get in touch with me.
-email: peteeberle@gmail.com
+type: contact
+message: "Contact"
+email: "peteeberle@gmail.com"
+phone: "509.520.6548"
 ---
 

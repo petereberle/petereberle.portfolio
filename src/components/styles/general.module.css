@@ -115,7 +115,8 @@ a, button {
 
 .border_item{
     border:var(--border-solid);
-    width:calc( 100% - var(--item-padding)*2 - var(--border-width)*2)
+    padding: var(--item-padding);
+    width:calc( 100% - var(--item-padding)*4 - var(--border-width)*2)
 }
 
 .item{
@@ -174,19 +175,6 @@ a, button {
 
 .full_height{
     height:100%;
-}
-
-.menu_animation{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: calc(100% - var(--item-padding)* 2);
-    height: calc(100% - var(--item-padding) * 2);
-    margin-top: var(--item-padding);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .profile_card{
@@ -283,7 +271,7 @@ button, .tag{
 
 /*POST CONTENT */
 
-.post_html > * a, .post_html > * > * a{
+.post_html > * a, .post_html > * > * a, .post_html > p > a{
     text-decoration: underline;
 }
 

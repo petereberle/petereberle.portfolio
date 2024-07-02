@@ -15,7 +15,7 @@ export default function Sketch({p5, renderRef, resize}) {
 
     var   yoff = 0.0,
           cappedFirst = parent.height*.5,
-          cappedSecond = parent.height*.75;
+          cappedSecond = parent.height*.85;
 
     new p5(p => {
 
@@ -39,7 +39,7 @@ export default function Sketch({p5, renderRef, resize}) {
 
           // p.start();
           p.clear();
-          p.fill(themeColorsSets.primary);
+          p.fill('#ffffff');
           p.beginShape(); 
           p.stroke(themeColorsSets.border_color);
           p.strokeWeight(themeColorsSets.border_width);
@@ -63,9 +63,9 @@ export default function Sketch({p5, renderRef, resize}) {
 
           yoff += 0.01;
 
-          p.vertex(parent.width+themeColorsSets.border_width, parent.height+themeColorsSets.border_width);
+          p.vertex(parent.width+themeColorsSets.border_width, 0-themeColorsSets.border_width);
 
-          p.vertex(-themeColorsSets.border_width, parent.height+themeColorsSets.border_width);
+          p.vertex(-themeColorsSets.border_width, 0-themeColorsSets.border_width);
 
           p.endShape();
 

@@ -4,7 +4,7 @@ import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 import * as mediaStyles from "../styles/media.module.css"
 
-import {useStaticQuery, graphql} from "gatsby"
+import {useStaticQuery, graphql, Link} from "gatsby"
 
 const SocialMedia = ({currentPage}) => {
 	
@@ -31,11 +31,15 @@ const SocialMedia = ({currentPage}) => {
 
   				social.map( (s, i) => {
 
-  					return <a key={i} className={`${generalStyles.margin} ${generalStyles.tag} ${generalStyles.theme_background} ${ isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary } ${containerStyles.flex_column} ${containerStyles.align_center}`} href={s.link} rel="noreferrer" target="_blank">
+  					return (
 
-  						<small>{s.name}</small>
+  					 <a key={i} className={`${containerStyles.grid_item} ${containerStyles.flex_column} ${containerStyles.align_center}`} href={s.link} rel="noreferrer" target="_blank">
+
+  						{s.name}
 
   					</a>
+
+  					)
 
   				} )
 
@@ -43,13 +47,7 @@ const SocialMedia = ({currentPage}) => {
 
   return (
 
-  	<div className={` ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
-  		{/*<small>{markdownRemark.frontmatter.title}</small>*/}
-  		<div className={`${containerStyles.flex_row} ${generalStyles.margin_negative}`}>
-  			<SocialLinks />
-  		</div>
-  	</div>
-
+	  	<SocialLinks />
   	)
 
 }

@@ -1,5 +1,7 @@
 .form_container{
-
+    display: flex;
+    flex-direction: column;
+    width:100%;
 }
 
 .form_container > label{
@@ -7,18 +9,19 @@
 }
 
 .form_input {
-    width: calc(100% - 10px) !important;
     background: unset !important;
-    margin-top: 10px !important;
-    border: var(--border-solid)!important;
-    font-size: .85rem;
+    border:unset;
+    border-bottom: var(--border-solid)!important;
     letter-spacing: .1rem;
-    color: #3b3b43;
+    margin-bottom:var(--item-padding);
 }
 
 .form_text_area{
-    width: calc(100%) !important;
-    height:100px;
+    border:unset;
+    border-bottom: var(--border-solid)!important;
+    min-width:100%;
+    max-width: 100%;
+    min-height:150px;
 }
 
 .form_redirect{

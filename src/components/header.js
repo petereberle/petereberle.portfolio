@@ -74,12 +74,12 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 					</div>
 				</div>
 				<div className={`${headerStyles.menu_wrapper} ${containerStyles.sidebar} ${generalStyles.position_sticky} ${isToggled ? headerStyles.active : ''}`}>
-					<div className={`${containerStyles.sidebar_inner} ${generalStyles.position_sticky}`}>
+					<div className={`${containerStyles.sidebar_inner} ${headerStyles.menu_inner} ${generalStyles.position_sticky}`}>
 						<ul className={`${headerStyles.menu} ${containerStyles.flex_column} ${generalStyles.full_height}`}>
 							<MenuLinks linkStyle={(l)=>(<span>{l}</span>)} />
 						</ul>
+						{/*<P5 sketch={Sketch} className={`${headerStyles.menu_animation}`}/>*/}
 					</div>
-					{/*<P5 sketch={Sketch} className={`${generalStyles.menu_animation}`}/>*/}
 				</div>
 		</>
 	)

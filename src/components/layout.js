@@ -71,8 +71,6 @@ const Layout = ({ children, path}) => {
 
 				{checkChildren()}
 
-				<Footer urlParam={path.pathname}/>
-
 			</main> 
 
 		</div>

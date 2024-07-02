@@ -16,26 +16,22 @@ h1, h2, h3, h4 {
 
 h1 {
     font-size: var(--h1-size);
-    color: #3b3b43;
     margin: 0.47em 0;
 }
 
 h2 {
 
     font-size: 2rem;
-    color: #3b3b43;
     margin: 0.47em 0;
 }
 
 h3{
     font-size: 1rem;
-    color: #3b3b43;
 }
 
 h4{
     font-weight:500;
     font-size: 1rem;
-    color: #3b3b43;
 }
 
 button{
@@ -43,7 +39,6 @@ button{
     font-weight:100;
     font-size: 1rem;
     letter-spacing: .1rem;
-    color: #3b3b43;
     line-height: 1.4;
 }
 
