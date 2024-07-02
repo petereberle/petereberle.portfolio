@@ -6,6 +6,7 @@ import ContentRouterAnimation from "../partials/content-router-animation"
 
 import * as containerStyles from "../styles/containers.module.css"
 
+import IndexGrid from "../partials/index-grid"
 import IndexCards from "../partials/index-card"
 
 const Artwork = ({urlParam}) => {
@@ -50,11 +51,11 @@ const Artwork = ({urlParam}) => {
 
     	<ContentRouterAnimation urlParam={urlParam}>
 
-	    	<div className={`${containerStyles.index}`}>
+	    	<IndexGrid>
 
-	    		<IndexCards className={containerStyles.index} urlParam={urlParam} article = {allMarkdownRemark.edges} year_var="year" />
+	    		<IndexCards className={containerStyles.index} urlParam={urlParam} article = {allMarkdownRemark.edges} path={null} indexConstraint={allMarkdownRemark.edges.length}/>
 
-	    	</div>
+	    	</IndexGrid>
 
     	</ContentRouterAnimation>
     )

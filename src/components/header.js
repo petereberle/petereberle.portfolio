@@ -6,6 +6,9 @@ import {motion} from "framer-motion"
 
 import {useStaticQuery, graphql} from "gatsby"
 
+import P5 from "../components/partials/p5/p5"
+import Sketch from '../components/partials/p5/sketch';
+
 import MenuToggle from "./partials/menu-toggle"
 
 import useScrolled from "./partials/use-scrolled"
