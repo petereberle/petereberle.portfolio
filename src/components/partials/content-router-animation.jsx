@@ -1,18 +1,26 @@
 import * as React from "react"
 
-import {motion} from "framer-motion"
+import {motion, useIsPresent} from "framer-motion"
 
 import Footer from "../footer"
 
+import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 
 const ContentRouterAnimation = ({children, urlParam}) => {
 
+	const isPresent = useIsPresent();
+
 	const 	pathName = urlParam.pathname,
+			isPost = pathName.split('/').length - 1 <= 2,
 			hash = urlParam.hash ? urlParam.hash.substring(1) : null,
 			hashValues = {next: "nextpost", prev: "previouspost"},
 			exceptions = pathName.includes('/artwork/') || pathName.includes('/projects/'),
-			translateValue = 500,
+			animationTransition = { type: "spring",
+	        mass: 0.5,
+	        stiffness: 50,
+	        duration: 0.3, },
+			translateValue = typeof window !== undefined ? window.innerWidth : null,
 			animationDirection = ({pathName, hash, initial, exit}) => { 
 
 				if (initial) {
@@ -28,16 +36,14 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 			}
 	
 	return (
+
+	<>
+
 	  <motion.div
 	      initial={{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:true, exit:false }) }}
 	      animate={{ opacity: 1, x: 0 }}
 	      exit = {{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:false, exit:true }) }}
-	      transition={{
-	        type: "spring",
-	        mass: 0.35,
-	        stiffness: 75,
-	        duration: 0.3,
-	      }}
+	      transition={animationTransition}
     >
 	    <div className={!exceptions ? containerStyles.content_section : ''}>
 	     	{children}
@@ -45,8 +51,33 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 
 	    <Footer urlParam={pathName}/>
 
-
     </motion.div>
+
+     <motion.div
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0, transition: animationTransition }}
+        exit={{ scaleX: 1, transition: animationTransition }}
+        style={{ originX: isPresent && animationDirection({ pathName: pathName, hash: hash, initial:true, exit:false }) > 0
+
+         ? 0 : isPresent && animationDirection({ pathName: pathName, hash: hash, initial:true, exit:false }) < 0 
+
+         ? 1  
+
+         : 0 
+
+     	}}
+        className={`${generalStyles.privacy_screen} ${isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary}`}>
+
+        <ul className={`${generalStyles.privacy_loader} ${isPresent ? '' : generalStyles.active }`}>
+        	<li/>
+        	<li/>
+        	<li/>
+        </ul>
+
+     </motion.div>
+
+     </>
+
     )
 
 }

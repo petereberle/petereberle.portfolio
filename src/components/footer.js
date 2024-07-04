@@ -39,7 +39,7 @@ const Footer = ({urlParam}) => {
 	return (
 
 
-		<div className={`${containerStyles.footer} ${containerStyles.grid} ${containerStyles._6_col_auto_row} ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
+		<div className={`${containerStyles.footer} ${!isPost ? headerStyles.head_space : ''} ${containerStyles.grid} ${containerStyles._6_col_auto_row} ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
 
 			<Link className={`${containerStyles.grid_item} ${isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary } ${containerStyles.align_center}`} to={isContact ? '/' : '/contact/'}>
   				{isContact ? 'Go Home (:' : 'Contact'}
