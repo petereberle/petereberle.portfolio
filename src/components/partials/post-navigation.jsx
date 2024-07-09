@@ -49,7 +49,7 @@ const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 		</div>
 
 		<div className={`${generalStyles.margin_negative} ${containerStyles.flex_row} ${containerStyles.full_width} ${useMobileWindow() ? containerStyles.flex_1_0_auto : ''}`}>
-
+		
 			<Navigation/>
 
 		</div>

@@ -4,7 +4,7 @@
     --border-color: var(--theme-border-color);
     --border-width: 2px;
     --border-solid: var(--border-width) solid var(--border-color);
-    --background-color: #fff;
+    --whitespace-background: #fff;
 
     --item-padding: 10px;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
@@ -162,8 +162,8 @@ a, button {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 51;
-  transition: background-color 1.5s ease-in-out;
+  z-index: 49;
+  background-color: var(--whitespace-background);
 }
 
 .privacy_screen>.privacy_loader{
@@ -187,6 +187,7 @@ a, button {
     height:20px;
     border:var(--border-solid);
     margin:var(--item-padding);
+    transition: background-color 1.5s ease-in-out;
     display:inline-block;
 }
 

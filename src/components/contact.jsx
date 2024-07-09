@@ -15,8 +15,9 @@ const Contact = ({urlParam}) => {
   const {markdownRemark} = useStaticQuery(graphql`
         query {
             markdownRemark(frontmatter: { type: { eq: "contact" } }) {
+              html
               frontmatter {
-                message
+                title
                 email
                 phone
               }
@@ -33,9 +34,9 @@ const Contact = ({urlParam}) => {
 
             <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
 
-              <h2 class="footer_item">{markdownRemark.frontmatter.message}</h2>
+              <h2 class="footer_item">{markdownRemark.frontmatter.title}</h2>
 
-              <p>Email: {markdownRemark.frontmatter.email} </p>
+              <div dangerouslySetInnerHTML={{__html: markdownRemark.html}}/>
 
             </div>
 

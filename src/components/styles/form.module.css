@@ -9,7 +9,16 @@
 .form_container{
     display: flex;
     flex-direction: column;
+    height:100%;
     width:100%;
+    opacity: 1;
+    transition: opacity, height .3s ease;
+}
+
+.form_container.collapse{
+    opacity:0;
+    height:0%;
+    z-index:-1;
 }
 
 .form_container > label{
@@ -27,6 +36,12 @@
     min-width:100%;
     max-width: 100%;
     min-height:150px;
+}
+
+.form_message{
+    border:var(--border-solid);
+    background-color: var(--theme-background-primary);
+    padding:var(--item-padding);
 }
 
 .form_redirect{

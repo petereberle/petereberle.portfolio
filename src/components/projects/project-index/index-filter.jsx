@@ -32,7 +32,7 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
         })}
 
         <button className={`${buttonStyles} ${generalStyles.last} ${filter === 'all' ? generalStyles.active : ''}`} onClick={() => { filterProject('all'); resetPath() }} >
-          <span>all</span>
+          <span>All</span>
         </button>
 
       </div>
