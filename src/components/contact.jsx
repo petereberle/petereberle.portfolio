@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 
+import SEO from "./seo"
+
 import ContentRouterAnimation from "./partials/content-router-animation"
 
 import ContactForm from "./partials/contact-form"
@@ -28,27 +30,33 @@ const Contact = ({urlParam}) => {
 
     return (
 
+      <>
+
+      <SEO pageTitle="Contact"/>
+
       <ContentRouterAnimation urlParam={urlParam}>
 
         <div className={`${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.width_subtract_padding}`}>
 
+              <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
+
+                <h2 class="footer_item">{markdownRemark.frontmatter.title}</h2>
+
+                <div dangerouslySetInnerHTML={{__html: markdownRemark.html}}/>
+
+              </div>
+
             <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
-
-              <h2 class="footer_item">{markdownRemark.frontmatter.title}</h2>
-
-              <div dangerouslySetInnerHTML={{__html: markdownRemark.html}}/>
-
+      
+              <ContactForm/>
+          
             </div>
 
-          <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
-    
-            <ContactForm/>
-        
-          </div>
+        </div>
 
-      </div>
+      </ContentRouterAnimation>
 
-        </ContentRouterAnimation>
+      </>
 
     )
 

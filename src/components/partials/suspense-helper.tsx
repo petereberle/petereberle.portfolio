@@ -1,6 +1,6 @@
 import { ReactNode, Suspense } from 'react';
 
-import useClientState from "./use-client"
+import useClientState from "../hooks/use-client"
 
 type Props = {
     fallback?: ReactNode,

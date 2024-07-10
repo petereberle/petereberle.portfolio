@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
-import useMobileWindow from "./partials/mobile-window"
-import useClientState from "./partials/use-client"
+import useMobileWindow from "./hooks/use-mobile-window"
+import useClientState from "./hooks/use-client"
 
 import "normalize.css"
 import "./styles/general.module.css"

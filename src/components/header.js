@@ -6,20 +6,19 @@ import {motion} from "framer-motion"
 
 import {useStaticQuery, graphql} from "gatsby"
 
-import P5 from "../components/partials/p5/p5"
-import Sketch from '../components/partials/p5/sketch';
+// import P5 from "../components/partials/p5/p5"
+// import Sketch from '../components/partials/p5/sketch';
 
 import MenuToggle from "./partials/menu-toggle"
 
-import useScrolled from "./partials/use-scrolled"
-import useMobileWindow from "./partials/mobile-window"
+import useScrolled from "./hooks/use-scrolled"
+import useMobileWindow from "./hooks/use-mobile-window"
 
 import GradientBackground from "./partials/gradient-background"
 
 import * as generalStyles from "./styles/general.module.css"
 import * as headerStyles from "./styles/header.module.css"
 import * as containerStyles from "./styles/containers.module.css"
-import * as typographyStyles from "./styles/typography.module.css"
 
 const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 
@@ -75,7 +74,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 				</div>
 				<div className={`${headerStyles.menu_wrapper} ${containerStyles.sidebar} ${generalStyles.position_sticky} ${isToggled ? headerStyles.active : ''}`}>
 					<div className={`${containerStyles.sidebar_inner} ${headerStyles.menu_inner} ${generalStyles.position_sticky}`}>
-						<ul className={`${headerStyles.menu} ${containerStyles.flex_column} ${generalStyles.full_height}`}>
+						<ul className={`${containerStyles.flex_column} ${generalStyles.full_height}`}>
 							<MenuLinks linkStyle={(l)=>(<span>{l}</span>)} />
 						</ul>
 						{/*<P5 sketch={Sketch} className={`${headerStyles.menu_animation}`}/>*/}

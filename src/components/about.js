@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
-import useMobileWindow from "./partials/mobile-window"
+import SEO from "./seo"
 
 import ContentRouterAnimation from "./partials/content-router-animation"
 
@@ -14,13 +14,19 @@ import Card from "./partials/card-elem"
 import * as generalStyles from "./styles/general.module.css"
 import * as typographyStyles from "./styles/typography.module.css"
 import * as containerStyles from "./styles/containers.module.css"
-import * as mediaStyles from "./styles/media.module.css"
 
 const About = ({urlParam}) => {
 
-  const {about, featuredProjects, featuredArtwork} = useStaticQuery(graphql`
+  const {SiteQuery, about, featuredProjects, featuredArtwork} = useStaticQuery(graphql`
        
         query { 
+
+          SiteQuery :
+             site {
+              siteMetadata {
+                description
+              }
+            }
 
           about:
             markdownRemark(frontmatter: { type: { eq: "about" } }) {
@@ -109,11 +115,15 @@ const About = ({urlParam}) => {
         }`
 
     ),
+    siteDescription = SiteQuery.siteMetadata.description,
     profileImage = getImage(about.frontmatter.profile),
-    title = about.frontmatter.title,
-    body = about.html;
+    title = about.frontmatter.title
 
     return (
+
+      <>
+
+      <SEO/>
 
       <ContentRouterAnimation urlParam={urlParam}>
 
@@ -125,7 +135,7 @@ const About = ({urlParam}) => {
               </div>
               <h1 className={`${containerStyles.grid_item} ${typographyStyles.text_center}`} >{title}</h1>
 
-            <div dangerouslySetInnerHTML={{ __html: body }} />
+            <p>{siteDescription}</p>
           </div>
 
             <IndexCards urlParam={urlParam} article={featuredProjects.edges} path={"projects"} indexConstraint={2} />
@@ -147,6 +157,8 @@ const About = ({urlParam}) => {
         </div>
 
       </ContentRouterAnimation>
+
+      </>
     )
 
 

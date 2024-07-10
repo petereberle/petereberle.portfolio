@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 
+import SEO from "../seo"
+
 import ContentRouterAnimation from "../partials/content-router-animation"
 
 import * as containerStyles from "../styles/containers.module.css"
@@ -49,6 +51,10 @@ const Artwork = ({urlParam}) => {
 
     return (
 
+    	<>
+
+    	<SEO pageTitle="Artwork"/>
+
     	<ContentRouterAnimation urlParam={urlParam}>
 
 	    	<IndexGrid>
@@ -58,6 +64,8 @@ const Artwork = ({urlParam}) => {
 	    	</IndexGrid>
 
     	</ContentRouterAnimation>
+
+    	</>
     )
 
 }

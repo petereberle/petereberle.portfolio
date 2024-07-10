@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 
 import themeColorSets from "../../theme/theme-colorset"
 
-import useClientState from "./use-client"
+import useClientState from "../hooks/use-client"
 
 import * as headerStyles from "../styles/header.module.css"
 

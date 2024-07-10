@@ -11,9 +11,8 @@ import * as containerStyles from "./styles/containers.module.css"
 const Footer = ({urlParam}) => {
 
 	const 	isPost = urlParam.split('/').length - 1 <= 2,
-			isHome = urlParam === '/',
 			isContact = urlParam.includes('contact'),
-			{websiteStatement, contact} = useStaticQuery(graphql`
+			{websiteStatement} = useStaticQuery(graphql`
 
 		    query {
 		      websiteStatement:
@@ -23,17 +22,8 @@ const Footer = ({urlParam}) => {
 	              	title
 	              }
 	            }
-	          contact:
-	            markdownRemark(frontmatter: { type: { eq: "contact" } }) {
-	              frontmatter {
-	              	title
-	              	email
-	              	phone
-	              }
-	            }
 	        }
            `),
-			contactInfo = contact.frontmatter,
 			statement = websiteStatement.frontmatter;
 
 	return (
@@ -42,12 +32,12 @@ const Footer = ({urlParam}) => {
 		<div className={`${containerStyles.footer} ${!isPost ? headerStyles.head_space : ''} ${containerStyles.grid} ${containerStyles._6_col_auto_row} ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
 
 			<Link className={`${containerStyles.grid_item} ${isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary } ${containerStyles.align_center}`} to={isContact ? '/' : '/contact/'}>
-  				<button>{isContact ? 'Go Home (:' : 'Contact'}</button>
+  				{isContact ? 'Go Home (:' : 'Contact'}
   			</Link>
 
 			<SocialMedia currentPage={urlParam} />
 
-  			<div className={`${containerStyles.flex_column} ${containerStyles.grid_item} ${containerStyles.statement}`}>
+  			<div className={`${containerStyles.flex_column} ${containerStyles.grid_item}`}>
 				<h3>
 					{statement.title}
 				</h3>

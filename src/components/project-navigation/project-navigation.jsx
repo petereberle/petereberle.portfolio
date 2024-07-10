@@ -2,7 +2,7 @@ import * as React from "react"
 
 import {Link} from "gatsby"
 
-import useMobileWindow from "../partials/mobile-window"
+import useMobileWindow from "../hooks/use-mobile-window"
 
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"

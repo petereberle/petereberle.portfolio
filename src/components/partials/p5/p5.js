@@ -2,7 +2,7 @@ import * as React from "react"
 
 import {useRef, useEffect} from "react"
 
-import useClientState from "../use-client.jsx"
+import useClientState from "../../hooks/use-client.jsx"
 
 const P5 = ({sketch, className}) => {
 

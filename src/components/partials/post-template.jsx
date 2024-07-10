@@ -2,9 +2,12 @@ import * as React from "react"
 
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
+import SEO from "../seo"
+
 import ContentRouterAnimation from "./content-router-animation"
 
-import useMobileWindow from "./mobile-window"
+import useMobileWindow from "../hooks/use-mobile-window"
+
 import PostNavigation from "./post-navigation"
 import Video from "./video"
 
@@ -88,6 +91,10 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 			}
 
 	return (
+		<>
+
+		<SEO pageTitle={title}/>
+
 		<div className={`${containerStyles.grid} ${containerStyles._50_50}`}>
 			<div className={containerStyles.sidebar}>
 				<div className={containerStyles.sidebar_inner}>
@@ -109,6 +116,8 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 				</div>
 			</div>
 		</div>
+
+		</>
 	)
 
 }

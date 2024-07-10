@@ -1,4 +1,4 @@
-import useWindowWidth from "./window-width"
+import useWindowWidth from "./use-window-width"
 
 const useMobileWindow = () => {
 	

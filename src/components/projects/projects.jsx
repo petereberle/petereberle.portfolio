@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 
+import SEO from "../seo"
+
 import ContentRouterAnimation from "../partials/content-router-animation"
 
 import ProjectIndex from "./project-index/project-index"
@@ -47,11 +49,17 @@ const Projects = ({urlParam}) => {
 
     return (
 
+    	<>
+
+    	<SEO pageTitle="Projects"/>
+
     	<ContentRouterAnimation urlParam={urlParam}>
 
     		<ProjectIndex data = {allMarkdownRemark.edges} urlParam={urlParam}/>
 
     	</ContentRouterAnimation>
+
+    	</>
     )
 
 }
