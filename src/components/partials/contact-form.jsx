@@ -35,10 +35,6 @@ const ContactForm = () => {
 
 				} else {
 
-
-					setName('')
-					setEmail('')
-					setMessage('')
 					setSubmitted(true)
 					setErrored(false)
 				}
@@ -46,6 +42,9 @@ const ContactForm = () => {
 			},
 			handleReset = () => {
 
+				setName('')
+				setEmail('')
+				setMessage('')
 				setSubmitted(false)
 				setErrored(false)
 
@@ -72,7 +71,7 @@ const ContactForm = () => {
 						Submit
 					</button>
 
-					<button type="reset" id="reset" className={`${generalStyles.tag}`}>
+					<button type="reset" id="reset" className={`${generalStyles.tag}`} onClick={ handleReset }>
 						Reset
 					</button>
 
