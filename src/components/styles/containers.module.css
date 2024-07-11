@@ -27,7 +27,7 @@
 }
 
 .width_subtract_padding{
-   width: calc(100% - var(--item-padding));
+   width: calc(100% - var(--item-padding)*4);
 }
 
 .footer._6_col_auto_row{
@@ -107,34 +107,34 @@
 
 .grid._25_50_25{
 	display:grid;
-	grid-template-columns: 25% 50% 25%;
+	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows:100%;
 	gap: var(--item-padding);
 }
 
 .grid._50_25_25{
 	display:grid;
-	grid-template-columns: 50% 25% 25% ;
+	grid-template-columns: 2fr 1fr 1fr ;
 	grid-template-rows:100%;
 	gap: calc( var(--item-padding) );
 }
 
 .grid._25_75{
 	display:grid;
-	grid-template-columns: 25% 75%;
+	grid-template-columns: 1fr 3fr;
 	gap: var(--item-padding);
 }
 
 
 .grid._75_25{
 	display:grid;
-	grid-template-columns: 75% 25%;
+	grid-template-columns: 3fr 1fr;
 	grid-template-rows:100%;
 }
 
 .grid._50_50{
 	display:grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 1fr 1fr;
 	gap: var(--item-padding);
 }
 
@@ -343,11 +343,11 @@
 @media screen and (max-width: 1150px) {
 
 	.grid._75_25, .grid._25_75, .grid._15_85, .grid._25_50_25, .grid._50_50{
-		grid-template-columns: 100%;
+		grid-template-columns: 1fr;
 	}
 
 	.width_subtract_padding{
-		width:100%;
+		width:calc(100% - var(--item-padding)*2);
 	}
 
 }

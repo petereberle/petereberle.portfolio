@@ -4,7 +4,7 @@
     --border-color: var(--theme-border-color);
     --border-width: 2px;
     --border-solid: var(--border-width) solid var(--border-color);
-    --whitespace-background: #fff;
+    --whitespace-background: #ffffff;
 
     --item-padding: 10px;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));

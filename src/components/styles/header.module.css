@@ -11,7 +11,7 @@
 
 .header.active{
     position:fixed;
-    background-color: var(--background-color);
+    background-color: var(--whitespace-background);
 }
 
 .header.scrolled{
