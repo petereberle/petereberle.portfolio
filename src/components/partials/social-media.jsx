@@ -16,10 +16,6 @@ const SocialMedia = ({currentPage}) => {
 		                social_media {
 		                	name
 		                	link
-		                	icon {
-		                		publicURL
-		                		extension
-		                	}
 		                }
 		              }
 		            }
