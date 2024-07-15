@@ -21,8 +21,10 @@ tags:
   - Marketing
 ---
 
+[Walla Walla Foundry](https://wallawallafoundry.com) is a leading contemporary art fabricator and casting facility known for its monumental sculpture capacity and cutting-edge techniques. The Foundry serves world-renowned artists, such as KAWS, Takashi Murakami, and Hank Willis Thomas.
 
+Shortly after joining the project management team at Walla Walla Foundry, ownership took notice of my previous experience as a web developer for art-centered organizations in the Walla Walla Valley and asked me to design layout proposals for a new website. We decided on a minimal UI that showcases the Foundry's project portfolio through in-house photography and video.
 
-[Walla Walla Foundry](https://wallawallafoundry.com) 
+Given the small footprint of the selected design, I opted for a headless CMS and a static site generator. I selected Hugo as the SSG for its quick development turnaround and ability to render from markdown content. Decap CMS paired well as a markdown generator due to its customizability and simple client interface.
 
-**Technologies:** Hugo SSG, Parcel Compiler, Git, NPM, Netlify, Decap CMS, React, Javascript
+**Technologies**: Hugo SSG, Parcel, Git, NPM, Netlify, Decap CMS, React, HTML/CSS/JS
