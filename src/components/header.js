@@ -13,6 +13,7 @@ import MenuToggle from "./partials/menu-toggle"
 
 import useScrolled from "./hooks/use-scrolled"
 import useMobileWindow from "./hooks/use-mobile-window"
+import useResumeFile from "./hooks/use-resume-file"
 
 import GradientBackground from "./partials/gradient-background"
 
@@ -33,6 +34,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 				}
 
 			`),
+			resumeFiles = useResumeFile().edges,
 			siteTitle = site.siteMetadata.title;
 
 	const 	currentPage = layout,
@@ -49,7 +51,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 
 							return (
 
-									<Link target="_blank" key={i} className={`${currentPage.includes(urlParam) ? generalStyles.active : ''} ${headerStyles.menu_item} ${generalStyles.item} ${i === paths.length-1 ? generalStyles.last : ''}`} path={l} to={`${urlParam}`} onClick={ () => { toggleMenu(false) } }>
+									<Link target="_blank" key={i} className={`${currentPage.includes(urlParam) ? generalStyles.active : ''} ${headerStyles.menu_item} ${generalStyles.item}`} path={l} to={`${urlParam}`} onClick={ () => { toggleMenu(false) } }>
 										<button>
 											{linkStyle(l)}
 										</button> 
@@ -60,6 +62,24 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 						})
 			);
 
+	const ResumeLinks = () => (
+
+		resumeFiles.map((file, i) => {
+
+			const filePath = file.node.publicURL;
+
+			return (
+				<a target="_blank" rel="noopener" key={i} className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={filePath}>
+					<button>
+						<span>Resume</span>
+					</button> 
+				</a> 
+
+			)
+
+		} )
+
+	)
 
 	return (
 		<>	
@@ -76,6 +96,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 					<div className={`${containerStyles.sidebar_inner} ${headerStyles.menu_inner} ${generalStyles.position_sticky}`}>
 						<ul className={`${containerStyles.flex_column} ${generalStyles.full_height}`}>
 							<MenuLinks linkStyle={(l)=>(<span>{l}</span>)} />
+							<ResumeLinks />
 						</ul>
 						{/*<P5 sketch={Sketch} className={`${headerStyles.menu_animation}`}/>*/}
 					</div>
