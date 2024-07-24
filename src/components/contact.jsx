@@ -36,7 +36,7 @@ const Contact = ({urlParam}) => {
 
       <ContentRouterAnimation urlParam={urlParam}>
 
-        <div className={`${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.width_subtract_padding}`}>
+        <div className={`${containerStyles.grid} ${containerStyles._25_75}`}>
 
               <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
 
