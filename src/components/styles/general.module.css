@@ -127,7 +127,6 @@ a, button {
     width:100%;
     padding: var(--item-padding);
     text-align: left;
-    border-bottom: var(--border-solid);
 }
 
 .item:first-child{
@@ -371,6 +370,8 @@ button, .tag{
     margin-inline: var(--negative-padding); 
 
 }
+
+
 
 ._0_margin {
     margin:0;
