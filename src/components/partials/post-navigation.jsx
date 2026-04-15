@@ -28,10 +28,10 @@ const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 					<>
 
 					{ prevPost && <Link className={`${generalStyles.tag} ${generalStyles.navigation_tag}`}  to={`${prevPost.url}#previouspost`}>
-							<button className={`${generalStyles.navigation} ${generalStyles.prev}`}>{prevPost.title}</button>
+							<button className={`${generalStyles.navigation} ${generalStyles.prev}`}>Previous</button>
 						</Link>}
 					{ nextPost && <Link className={`${generalStyles.tag} ${generalStyles.navigation_tag}`} to={`${nextPost.url}#nextpost`}>
-						<button className={`${generalStyles.navigation} ${generalStyles.next}`}>{nextPost.title} </button>
+						<button className={`${generalStyles.navigation} ${generalStyles.next}`}>Next</button>
 						</Link> }
 				
 					</>

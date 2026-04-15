@@ -1,7 +1,7 @@
 body {
 	font-family: 'LFT Etica Mono', sans-serif;
     font-weight:100;
-    font-size: 1rem;
+    font-size: var(--font-basis);
     letter-spacing: .1rem;
     color: var(--theme-text-color);
     line-height: 1.4;
@@ -15,23 +15,23 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: var(--h1-size);
+    font-size: calc(var(--font-basis) *3);
     margin: 0.47em 0;
 }
 
 h2 {
 
-    font-size: 2rem;
+    font-size: calc(var(--font-basis) *2);
     margin: 0.47em 0;
 }
 
 h3{
-    font-size: 1rem;
+    font-size: calc(var(--font-basis) * 1.25);
 }
 
 h4{
     font-weight:500;
-    font-size: 1rem;
+    font-size: calc(var(--font-basis) * 1);
 }
 
 button{

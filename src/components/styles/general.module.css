@@ -1,25 +1,26 @@
 /*STYLING VARIABLES*/
 
 :root{
-    --border-color: var(--theme-border-color);
+    --border-color: var(--theme-text-color);
     --border-width: 2px;
     --border-solid: var(--border-width) solid var(--border-color);
-    --whitespace-background: #ffffff;
+    --whitespace-background: var(--theme-whitespace-background);
 
-    --item-padding: 10px;
+    --item-padding: 15px;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:65px;
+    --head-space:100px;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
+    --screen-margin: auto;
     --screen-height: calc( 100vh - var(--head-space) );
 
-    /*PAGE MARGIN */
-    --page-margin: 0;
+    /*MAX PAGE VARIABLES */
+    --page-width: 1200px;
 
     /*FONT SCALING*/
-    --h1-size: 3rem;
+    --font-basis:.75rem;
 
     /*CARD WIDTH*/
     --card-width:3;
@@ -103,7 +104,6 @@ a, button {
 .position_sticky{
     position:sticky;
     top:0;
-    z-index:49;
 }
 
 .position_fixed{
@@ -141,16 +141,15 @@ a, button {
     
 }
 
-.item:after{
+/*.item:after{
     content:'';
     transition: width .3s ease;
     width:0px;
-}
+}*/
 
-.item.active:after{
-    content:url('/icons/selector_arrow.svg');
-    width:30px;
-    margin-left:5px;
+.item.active > button > h4{
+    border-bottom: var(--border-solid);
+
 }
 
 /*UI Elements*/
@@ -234,7 +233,6 @@ a, button {
 
 .profile_card{
     padding: var(--item-padding);
-    border: var(--border-solid);
 }
 
 .profile_wrapper{
@@ -269,20 +267,19 @@ a, button {
     outline: var(--border-solid);
     padding: var(--item-padding);
     margin: var(--item-padding);
-    background-color: #fff;
 }
 
 .tag.navigation_tag{
-    width: calc(50% - var(--item-padding)*2 - var(--border-width)*6);
+/*    width: calc(50% - var(--item-padding)*2 - var(--border-width)*6);*/
 }
 
 .tag.active{
     background-color: var(--border-color);
-    color:#fff;
+    color: var(--whitespace-background);
 }
 
 .tag.active>button{
-    color:#fff;
+    color: var(--whitespace-background);
 }
 
 /*.tag:first-child{
@@ -326,6 +323,9 @@ button, .tag{
 
 /*POST CONTENT */
 
+.post_html{
+
+}
 .post_html > * a, .post_html > * > * a, .post_html > p > a{
     text-decoration: underline;
 }
@@ -336,13 +336,13 @@ button, .tag{
     position: relative;
 }
 
-.navigation:before{
+/*.navigation:before{
     content:url('/icons/selector_arrow.svg');
     width:30px;
     position:absolute;
-}
+}*/
 
-.navigation.prev{
+/*.navigation.prev{
     padding-left:40px;
 }
 
@@ -352,12 +352,12 @@ button, .tag{
 
 .navigation.next:before{
     right:5px;
-}
+}*/
 
-.navigation.prev:before{
+/*.navigation.prev:before{
     left:5px;
     transform:rotate(180deg);
-}
+}*/
 
 /* CHILDREN STYLING */
 
@@ -386,3 +386,21 @@ button, .tag{
 
 
 }
+
+/*HOMEPAGE STYLING*/
+
+.home{
+    background:var(--whitespace-background);
+}
+
+/*.home:after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(6, 6, 6, .5), transparent 3px);
+}*/

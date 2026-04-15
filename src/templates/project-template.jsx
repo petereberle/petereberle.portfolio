@@ -34,6 +34,8 @@ export const pageQuery = graphql`
 			frontmatter{
 				slug
 				title
+				client
+				tagline
 				year_start
 				year_end
 				tags

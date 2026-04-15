@@ -13,9 +13,9 @@ const Card = ({children, className, link}) => {
 	
 return	<MotionLink 
 		layout
-	    initial={{ transform: "scale(0)" }}
-	    animate={{ transform: "scale(1)" }}
-	    exit={{ transform: "scale(0)" }}
+	    initial={{ filter: "blur(10px)", opacity: 0, transform: "scale(0.5)" }}
+	    animate={{ filter: "blur(0)", opacity: 1, transform: "scale(1)" }}
+	    exit={{ filter: "blur(10px)", opacity: 0, transform: "scale(0.5)" }}
 	    transition={{
 	        type: "spring",
 	        mass: 0.35,

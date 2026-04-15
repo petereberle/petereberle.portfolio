@@ -13,6 +13,7 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
      
       `:root { 
 
+        --theme-whitespace-background: ${themeColorSets.whitespace};
         --theme-background-primary: ${themeColorSets.primary};
         --theme-background-secondary: ${themeColorSets.secondary};
         --theme-border-color: ${themeColorSets.border_color};

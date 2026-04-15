@@ -2,8 +2,8 @@
 
 	position:relative;
 	min-height:var(--screen-height);
-	margin-right:var(--page-margin);
-	margin-left:var(--page-margin);
+	margin-right:var(--screen-margin);
+	margin-left:var(--screen-margin);
 	max-width: var(--screen-width);
 }
 
@@ -15,6 +15,9 @@
 	display: block;
     width:100%;
     height:100%;
+    max-width: var(--page-width);
+    margin-right:var(--screen-margin);
+    margin-left:var(--screen-margin);
     min-height:var(--screen-height);
     padding: 0;
 }
@@ -35,7 +38,6 @@
 }
 
 .footer>.grid_item{
-	border:var(--border-solid);
 	padding:var(--item-padding);
 	display:flex;
 	justify-content: center;
@@ -61,12 +63,12 @@
 }
 
 .sidebar{
-	background-color:#ffffff;
+/*	background-color:#ffffff;*/
 
 }
 
 .sidebar_inner{
-	padding:var(--item-padding);
+	
 }
 
 .grid.index{
@@ -306,7 +308,6 @@
     display:inline-grid;
     align-items: center;
     padding: var(--item-padding);
-    border: var(--border-solid);
 }
 
 .card_landscape_inner {

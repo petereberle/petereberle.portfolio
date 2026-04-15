@@ -22,7 +22,9 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 		        stiffness: 50,
 		        duration: 0.3
 	    	},
-			animationDirection = ({pathName, hash, initial, exit}) => { 
+			animationDirection = ({pathName, hash, initial, exit}) => {
+
+				return 0 
 
 				if (initial) {
 
@@ -54,7 +56,7 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 
     </motion.div>
 
-     <motion.div
+{/*     <motion.div
         initial={{ scaleX: 1 }}
         animate={{ scaleX: 0, transition: animationTransition }}
         exit={{ scaleX: 1, transition: animationTransition }}
@@ -76,7 +78,7 @@ const ContentRouterAnimation = ({children, urlParam}) => {
         	<li className={isPost ? generalStyles.theme_background_primary : generalStyles.theme_background_secondary}/>
         </ul>
 
-     </motion.div>
+     </motion.div>*/}
 
      </>
 

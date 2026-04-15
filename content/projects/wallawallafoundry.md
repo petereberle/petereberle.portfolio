@@ -2,6 +2,8 @@
 isDraft: false
 slug: wallawallafoundry
 title: Walla Walla Foundry
+client: Walla Walla Foundry
+tagline: Website for Walla Walla Foundry
 year_start: 2020
 year_end: 2024
 featured_image: ../images/projects/wwf_website_featuredpreview_2.mp4

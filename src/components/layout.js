@@ -46,7 +46,7 @@ const Layout = ({ children, path}) => {
 
 		}
 
-	}, [isToggled, mobileWindow] )
+	}, [isToggled, mobileWindow] );
 
 	const checkChildren = () => {
 
@@ -63,7 +63,7 @@ const Layout = ({ children, path}) => {
 
 	) : (
 
-		<div className={`${containerStyles.page} ${containerStyles.grid} ${containerStyles._15_85} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
+		<div className={`${containerStyles.page} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
 
 			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState().state} setToggle={setToggle} toggleMenu={toggleMenu}/>
 

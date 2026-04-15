@@ -22,7 +22,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 			featuredImage = frontmatter.featured_image,
 			postImageData = frontmatter.images,
 			tags = frontmatter.tags ? frontmatter.tags : null, 
-			{title, year, year_start, year_end, materials} = frontmatter,
+			{title, client, tagline, year, year_start, year_end, materials} = frontmatter,
 			postYear = year ? year : year_end && year_start !== year_end ? year_start + ' - ' + year_end : year_start,
 			mobileWindow = useMobileWindow();
 
@@ -95,26 +95,24 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 		<SEO pageTitle={title}/>
 
-		<div className={`${containerStyles.grid} ${containerStyles._50_50}`}>
-			<div className={containerStyles.sidebar}>
-				<div className={containerStyles.sidebar_inner}>
-					<FeaturedPostMedia/>
-					<PostMedia />
-				</div>
-			</div>
-			<div className={`${containerStyles.grid} ${mobileWindow ? containerStyles.reverse : ''}`}>
-				<div className={`${generalStyles.position_sticky} ${containerStyles.sidebar}`}>
+		<div className={`${containerStyles.content_section}`}>
+			<div className={`${containerStyles.grid} ${containerStyles._25_75} ${mobileWindow ? containerStyles.reverse : ''}`}>
+				<div className={`${containerStyles.flex_column} ${containerStyles.justify_center}`}>
 					<div className={`${containerStyles.sidebar_inner} ${containerStyles.width_subtract_padding}`}>
-						<h2 style={{marginTop : 0}}>{title}</h2>
-						<p>{postYear}</p>
-						{materials && <p>{materials}</p>}
-						<div className={generalStyles.post_html} dangerouslySetInnerHTML={{ __html: html }} />
-						<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
-							<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
-						</div>
+						{/*<h2 style={{marginTop : 0}}>{title}</h2>*/}
+						{tagline ? <h2>{tagline}</h2>  : <h2>{title}</h2>} 
+						{client && <h4>Client: {client}</h4>}
+						{postYear && <h4>Year: {postYear}</h4>}
+						{materials && <h4>Materials: {materials}</h4>}
 					</div>
 				</div>
+				<FeaturedPostMedia/>
 			</div>
+			<div className={generalStyles.post_html} dangerouslySetInnerHTML={{ __html: html }} />
+			<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
+				<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
+			</div>
+			<PostMedia />
 		</div>
 
 		</>

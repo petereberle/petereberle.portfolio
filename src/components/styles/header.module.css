@@ -1,10 +1,13 @@
+
+
 .head_space{
-	padding-top:var(--head-space);
+	padding-top: calc(var(--head-space) + var(--item-padding));
 }
 
 .header{
     position: absolute;
     z-index:100;
+    width:100%;
     top:0;
     height:calc(var(--head-space));
 }
@@ -32,9 +35,7 @@
 
 .header_inner{
     height:100%;
-    width:calc(var(--screen-width) - var(--item-padding) * 2);
     box-sizing: border-box;
-    border:var(--border-solid);
     padding:var(--item-padding);
 }
 
@@ -52,13 +53,14 @@
 
 .menu_wrapper{
     display:var(--desktop-visibility);
-    z-index:51;
 }
 
 .menu_wrapper.active{
     display:var(--mobile-visibility);
     position:fixed;
     top:var(--head-space);
+    left: 0;
+    right: 0;
     width:100vw;
     height:100vh;
 }
@@ -122,6 +124,17 @@
 
 .toggle_inner.active>#toggle_2{
     transform: rotate(-45deg);
+}
+
+/*NAIVATION GLYPH*/
+.nav_glyph{
+    position: relative;
+    width:75px;
+}
+
+.nav_glyph:after{
+    content:url('/icons/aloe-vera.svg');
+    width:100%;
 }
 
 /*HOMEPAGE MENU*/

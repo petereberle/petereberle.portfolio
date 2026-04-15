@@ -9,7 +9,7 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
 
   const mobileWindow = useMobileWindow();
 
-  const buttonStyles = `${generalStyles.filter_button} ${mobileWindow ? generalStyles.tag : generalStyles.item} ${containerStyles.align_self_start}`,
+  const buttonStyles = `${generalStyles.filter_button} ${generalStyles.tag} ${containerStyles.align_self_start}`,
         activeStyle = (tag) => ( tag === filter ? generalStyles.active : '' ),
         resetPath = () => {
 
@@ -22,7 +22,7 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
 
   return (
     <>
-      <div className={`${ mobileWindow ? containerStyles.flex_row : containerStyles.flex_column} ${containerStyles.sidebar_inner} ${generalStyles.position_relative} ${ mobileWindow ? '' : generalStyles.position_sticky}`}>
+      <div className={`${containerStyles.flex_row} ${containerStyles.sidebar_inner} ${generalStyles.position_relative}`}>
         {menuItems.map((tag, id) => {
           return (
             <button className={ `${buttonStyles} ${activeStyle(tag)}` } onClick={() => { filterProject(tag); resetPath() } }  key={id} >

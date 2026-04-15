@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import * as generalStyles from "./components/styles/general.module.css"
+
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -13,7 +15,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} className={generalStyles.home}>
         {props.preBodyComponents}
         <div
           key={`body`}
