@@ -6,6 +6,7 @@
   "author": "",
   "dependencies": {
     "@p5-wrapper/react": "^4.4.2",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.2.10",
     "gatsby": "^5.13.2",
     "gatsby-plugin-gtag": "^1.0.13",
@@ -23,7 +24,8 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "prettier": "^2.8.8"

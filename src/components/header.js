@@ -51,7 +51,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 
 							return (
 
-									<Link target="_blank" key={i} className={`${currentPage.includes(urlParam) ? generalStyles.active : ''} ${headerStyles.menu_item} ${generalStyles.item}`} path={l} to={`${urlParam}`} onClick={ () => { toggleMenu(false) } }>
+									<Link key={i} className={`${currentPage.includes(urlParam) ? generalStyles.active : ''} ${headerStyles.menu_item} ${generalStyles.item}`} path={l} to={`${urlParam}`} onClick={ () => { toggleMenu(false) } }>
 										<button>
 											{linkStyle(l)}
 										</button> 
@@ -71,7 +71,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 			return (
 				<a target="_blank" rel="noopener" key={i} className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={filePath}>
 					<button>
-						<h4>Resume</h4>
+						<h4>CV</h4>
 					</button> 
 				</a> 
 
@@ -84,25 +84,25 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 	return (
 		<div className={`${headerStyles.header} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between} ${ isInitialScroll ? headerStyles.scrolled : '' } ${ isScrollThreshold ? headerStyles.threshold : '' } ${isToggled ? headerStyles.active : ''}`}>	
 				
-				<div className={`${headerStyles.header_wrapper} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.align_center}`}>
+				<div className={`${headerStyles.header_wrapper} ${containerStyles.flex_row} ${containerStyles.justify_space_between} ${containerStyles.full_width} ${containerStyles.align_center}`}>
 					{/*<GradientBackground currentPage={currentPage}/>*/}
-					<div className={`${headerStyles.header_inner} ${containerStyles.flex_row}`}>
-						<Link target="_blank" onClick={ () => { toggleMenu(false) } } className={`${headerStyles.menu_item} ${generalStyles.last}`} to='/'><h4 className={generalStyles._0_margin}>{siteTitle}</h4></Link> 
+					<div className={`${headerStyles.header_inner} ${containerStyles.flex_row} ${isToggled ? headerStyles.active : ''}`}>
+						<Link onClick={ () => { toggleMenu(false) } } className={`${headerStyles.menu_item} ${generalStyles.last}`} to='/'><h4 className={`${generalStyles._0_margin}`}>{siteTitle}</h4></Link> 
 					</div>
 				
 					<div className={`${headerStyles.menu_wrapper} ${isToggled ? headerStyles.active : ''}`}>
 						<div className={`${headerStyles.menu_inner}`}>
-							<ul className={`${containerStyles.flex_row} ${containerStyles.full_width}`}>
+							<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${headerStyles.menu_list}`}>
 								<MenuLinks linkStyle={(l)=>(<h4>{l}</h4>)} />
 								<ResumeLinks />
-							</ul>
+							</div>
 							{/*<P5 sketch={Sketch} className={`${headerStyles.menu_animation}`}/>*/}
 						</div>
 					</div>
 
 				</div>
 
-				<div className={`${headerStyles.nav_glyph} ${containerStyles.flex_column} ${containerStyles.justify_center} ${generalStyles.item}`}/>
+				{/*<div className={`${headerStyles.nav_glyph} ${containerStyles.flex_column} ${containerStyles.justify_center} ${generalStyles.item}`}/>*/}
 
 				<MenuToggle isToggled={isToggled} toggleMenu={toggleMenu} initialState={true} visibility={false}/>
 		</div>

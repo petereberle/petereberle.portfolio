@@ -1,3 +1,3 @@
-const menuLinks = ['Projects', 'Artwork', 'Contact'];
+const menuLinks = ['Projects', 'Contact'];
 
 export default menuLinks

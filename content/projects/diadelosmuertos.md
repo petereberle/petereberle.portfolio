@@ -10,8 +10,6 @@ images:
     caption: Responsive mobile experience}
 tags:
   - Web
-  - Marketing
-  - Non-profit
 ---
 
 The Dia de Los Muertos Festival is annual event in downtown Walla Walla, Washington, that celebrates the Latin American tradition of its namesake. I worked with the festival coordinator, Katy Rizzuti, to research a site builder that would allow her to easily update content every year the festival was held. Katy asked that I use Squarespace because of its simple admin interface.

@@ -16,7 +16,9 @@ const ContactForm = () => {
 			[message, setMessage] = useState(''),
 			[isSubmitted, setSubmitted] = useState(false),
 			[isErrored, setErrored] = useState(false),
-			handleSubmit = () => {
+			handleSubmit = (event) => {
+
+				event.preventDefault();
 
 				const 	formValue = {
 							name : formReference.name.current.value,

@@ -29,7 +29,7 @@ const SocialMedia = ({currentPage}) => {
 
   					return (
 
-  					 <a key={i} className={`${containerStyles.grid_item} ${containerStyles.flex_column} ${containerStyles.align_center}`} href={s.link} rel="noreferrer" target="_blank">
+  					 <a key={i} className={`${containerStyles.grid_item} ${generalStyles.border_item} ${containerStyles.flex_column} ${containerStyles.align_center}`} href={s.link} rel="noreferrer" target="_blank">
 
   						{s.name}
 

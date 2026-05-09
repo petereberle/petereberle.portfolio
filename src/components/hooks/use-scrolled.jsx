@@ -23,7 +23,7 @@ const useScrolled = () => {
 
 		window.addEventListener("scroll", handleScroll);
 
-		return () => window.removeEventListener("resize", handleScroll)
+		return () => window.removeEventListener("scroll", handleScroll)
 
 	},[client])
 

@@ -1,12 +1,12 @@
 var primary =  '#f4642a',
 	secondary = '#8ED8F8',
-	whitespace = '#000000',
+	whitespace = '#E8E8E8',
 	themeColorSets = {
 		primary,
 		secondary,
 		whitespace,
-		text_color: '#ffffff',
-		border_color: '#ffffff',
+		text_color: '#231F20',
+		border_color: '#231F20',
 		border_width: 2,
 		pages_gradients: [
 		    [primary, '#f4642a'],

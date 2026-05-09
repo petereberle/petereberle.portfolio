@@ -2,14 +2,14 @@
 
 :root{
     --border-color: var(--theme-text-color);
-    --border-width: 2px;
+    --border-width: .085rem;
     --border-solid: var(--border-width) solid var(--border-color);
     --whitespace-background: var(--theme-whitespace-background);
 
-    --item-padding: 15px;
+    --item-padding: 0.875rem;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:100px;
+    --head-space:150px;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -17,7 +17,7 @@
     --screen-height: calc( 100vh - var(--head-space) );
 
     /*MAX PAGE VARIABLES */
-    --page-width: 1200px;
+    --page-width: 100vw;
 
     /*FONT SCALING*/
     --font-basis:.75rem;
@@ -63,6 +63,7 @@ li::marker {
 a, button { 
     cursor: pointer;
     color: inherit;
+    box-sizing: border-box;
     text-decoration: none;
     appearance: unset;
     -webkit-appearance: unset;
@@ -116,7 +117,7 @@ a, button {
 .border_item{
     border:var(--border-solid);
     padding: var(--item-padding);
-    width:calc( 100% - var(--item-padding)*4 - var(--border-width)*2)
+/*    width:calc( 100% - var(--item-padding)*4 - var(--border-width)*2)*/
 }
 
 .item{
@@ -148,8 +149,7 @@ a, button {
 }*/
 
 .item.active > button > h4{
-    border-bottom: var(--border-solid);
-
+    color: var(--theme-background-primary);
 }
 
 /*UI Elements*/
@@ -232,7 +232,7 @@ a, button {
 }
 
 .profile_card{
-    padding: var(--item-padding);
+    
 }
 
 .profile_wrapper{
@@ -265,7 +265,7 @@ a, button {
 .tag{
     width:fit-content;
     outline: var(--border-solid);
-    padding: var(--item-padding);
+    padding: calc(var(--item-padding) / 2) var(--item-padding);
     margin: var(--item-padding);
 }
 
@@ -284,11 +284,11 @@ a, button {
 
 /*.tag:first-child{
     margin-left:var(--border-width);
-}
+}*/
 
 .tag:last-child{
-    margin-right:unset;
-}*/
+    margin-right:var(--border-width);
+}
 
 button, .tag{
 /*    -webkit-filter: invert(0); 

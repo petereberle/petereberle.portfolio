@@ -40,7 +40,7 @@ const Contact = ({urlParam}) => {
 
               <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
 
-                <h2 class="footer_item">{markdownRemark.frontmatter.title}</h2>
+                <h2 className="footer_item">{markdownRemark.frontmatter.title}</h2>
 
                 <div dangerouslySetInnerHTML={{__html: markdownRemark.html}}/>
 

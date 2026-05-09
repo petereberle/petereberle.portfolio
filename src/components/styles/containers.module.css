@@ -33,15 +33,11 @@
    width: calc(100% - var(--item-padding)*4);
 }
 
-.footer._6_col_auto_row{
-	margin-top:0;
-}
-
 .footer>.grid_item{
 	padding:var(--item-padding);
 	display:flex;
 	justify-content: center;
-    height: calc(100% - var(--item-padding)* 2);
+    height: 100%;
 }
 
 
@@ -68,6 +64,8 @@
 }
 
 .sidebar_inner{
+
+	padding-top: var(--item-padding);
 	
 }
 

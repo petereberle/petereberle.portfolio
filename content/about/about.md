@@ -1,6 +1,6 @@
 ---
 type: "about"
-title: "Hi, I'm Peter Eberle"
+title: "Hi, I'm Peter"
 profile: ../images/resources/PE_port.jpg
 interests:
   - Vegetable Gardening
@@ -13,4 +13,10 @@ website_statement: {title: What's up with this website?, statement: This portfol
 ---
 
 I'm an artist, designer, and web developer with a focus on community-led organizations and organizations centered around the arts.
+
+### Current:
+  Marketing Specialist @ Design And Direct Source
+
+### Past: 
+  Project Manager @ Walla Walla Foundry
 

@@ -5,11 +5,11 @@
 }
 
 .header{
-    position: absolute;
+    position: fixed;
     z-index:100;
     width:100%;
     top:0;
-    height:calc(var(--head-space));
+/*    mix-blend-mode: exclusion !important;*/
 }
 
 .header.active{
@@ -30,13 +30,22 @@
 .header_wrapper{
     overflow:hidden;
     box-sizing:border-box;
-    margin:var(--item-padding);
+    margin: 0  0  0 var(--item-padding);
 }
 
 .header_inner{
     height:100%;
     box-sizing: border-box;
-    padding:var(--item-padding);
+}
+
+.header_inner.active{
+    top: 0;
+    left: 0;
+    align-self: start;
+    height: auto;
+    margin: var(--item-padding) 0;
+    box-sizing: border-box;
+    z-index: 121;
 }
 
 .granim_wrapper{
@@ -62,19 +71,25 @@
     left: 0;
     right: 0;
     width:100vw;
-    height:100vh;
+    height:calc(100dvh - var(--head-space));
+    background-color: var(--whitespace-background);
+    padding: var(--item-padding);
+    box-sizing: border-box;
+    z-index: 120;
 }
 
 .menu_inner{
     padding-bottom: 0;
+    width:100%;
+    height:100%;
 }
 
 .menu_item {
-
+ padding: 0 var(--item-padding) 0 0;
 }
 
 .menu_item>.last{
-
+ padding: 0;
 }
 
 .menu_animation{
@@ -85,8 +100,16 @@
     margin-right: auto;
 }
 
+.menu_list{
+    align-items:center;
+}
+
 .toggle_wrapper{
     display:var(--mobile-visibility);
+    position:relative;
+    z-index:130;
+    align-self: start;
+    margin: var(--item-padding) 0 0 0;
 }
 
 .toggle_inner{
@@ -103,14 +126,18 @@
     bottom:0;
     display:block;
     width:20px;
-    height:2px;
+    height:var(--border-width);
     background-color: var(--border-color);
     transition: all .35s ease;
     margin:auto;
 }
 
+#toggle_1{
+    transform: translateY(-5px);
+}
+
 #toggle_2{
-/*    margin:5px 0;*/
+    transform: translateY(5px);
 }
 
 
@@ -128,14 +155,30 @@
 
 /*NAIVATION GLYPH*/
 .nav_glyph{
+/*    width: 20px;
+    height: 20px;*/
     position: relative;
-    width:75px;
+/*    background-color: white;
+    border-radius: 40px;*/
+}
+
+/*.nav_glyph:before, .nav_glyph:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: calc(var(--border-width) * 2.95);
+    background: white;
+    transform: skew(-29deg);
+}
+
+.nav_glyph:before{
+    margin-bottom:4px;
 }
 
 .nav_glyph:after{
-    content:url('/icons/aloe-vera.svg');
-    width:100%;
-}
+    width: calc(100% - 14px);
+    margin-right: 14px;
+}*/
 
 /*HOMEPAGE MENU*/
 
@@ -157,4 +200,66 @@
 
 }
 
+@media screen and (max-width: 1150px) {
+    .header{
+        height:auto;
+        min-height:calc(var(--item-padding)*3);
+    }
+
+    .header.active{
+        min-height:100dvh;
+    }
+
+    .header_wrapper{
+        align-items:flex-start;
+    }
+
+    .menu_wrapper.active .menu_inner{
+        display:flex;
+        align-items:flex-start;
+        justify-content:flex-start;
+    }
+
+    .menu_wrapper.active .menu_list{
+        flex-direction:column;
+        flex-wrap:nowrap;
+        align-items:stretch;
+        justify-content:flex-start;
+        gap:0;
+        width:100%;
+        padding:0;
+    }
+
+    .menu_wrapper.active .menu_item{
+        width:100%;
+        box-sizing:border-box;
+        padding: 0;
+    }
+
+    .menu_wrapper.active .menu_item:last-child{
+    }
+
+    .menu_wrapper.active .menu_item > button,
+    .menu_wrapper.active .menu_item > h4,
+    .menu_wrapper.active .menu_item > a,
+    .menu_wrapper.active .menu_item h4{
+        width:100%;
+        text-align:left;
+    }
+
+    .menu_wrapper.active .menu_item button{
+        display:block;
+        width:100%;
+        padding: 1.1rem 0;
+    }
+
+    .menu_wrapper.active .menu_item h4{
+        margin:0;
+        font-size: 1rem;
+    }
+
+    .nav_glyph{
+        display:none;
+    }
+}
 

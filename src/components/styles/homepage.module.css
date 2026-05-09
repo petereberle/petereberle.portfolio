@@ -1,0 +1,225 @@
+:root {
+  --showcase-section-height: calc(100vh - var(--head-space));
+}
+
+.homepageLayout {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 2fr);
+  gap: calc(var(--item-padding) * 2);
+  align-items: start;
+}
+
+.showcaseRail {
+  position: sticky;
+  top: var(--head-space);
+  padding: var(--item-padding);
+  min-height: var(--showcase-section-height);
+  align-items: flex-start;
+}
+
+.showcaseAnchor {
+  margin-right: var(--item-padding);
+  width: var(--border-width);
+  min-height: var(--showcase-section-height);
+/*  background-color: var(--border-color);*/
+  opacity: 0.55;
+}
+
+.showcaseBookmarks {
+  gap: 0.35rem;
+  padding-top: 32vh;
+}
+
+.showcaseBookmark {
+  position: relative;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.55;
+}
+
+.showcaseBookmark h4 {
+  margin: 0;
+}
+
+.showcaseBookmark:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.activeBookmark {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.activeBookmarkMarker {
+  position: absolute;
+  inset: 0;
+  border-left: var(--border-solid);
+/*  background: color-mix(in srgb, var(--theme-background-primary) 18%, transparent);*/
+  z-index: -1;
+}
+
+.showcaseColumn {
+  display: grid;
+  gap: calc(var(--item-padding) * 2);
+  min-width: 0;
+}
+
+.showcaseColumn aside,
+.showcaseColumn section {
+  min-height: var(--showcase-section-height);
+  scroll-margin-top: 132px;
+}
+
+.bioCard,
+.showcaseSection {
+  display: grid;
+  gap: var(--item-padding);
+  padding: var(--item-padding);
+  background: var(--whitespace-background);
+}
+
+.bioText > p {
+  margin: 0;
+  max-width: 34ch;
+}
+
+.bioText.grid._50_50{
+
+}
+
+.bioText > h3 {
+  grid-column: span 1;
+}
+
+.bioText > h3 + p {
+  grid-column: span 1;
+}
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--item-padding);
+  align-items: end;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+}
+
+.cardStack {
+  display: grid;
+  gap: calc(var(--item-padding) * 1.25);
+}
+
+.showcaseCard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+}
+
+.cardBody {
+  display: grid;
+  gap: var(--item-padding);
+  padding-top: var(--item-padding);
+  align-content: start;
+}
+
+.cardBody h3,
+.viewAllInner h3 {
+  margin: 0;
+}
+
+.cardBody p {
+  margin: 0;
+  max-width: 34ch;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.viewAllCard {
+}
+
+.viewAllInner {
+  display: grid;
+  padding-top: var(--item-padding);
+  align-content: end;
+}
+
+.cardArrow {
+  display: inline-flex;
+  width: fit-content;
+  padding-top: 0.35rem;
+  border-top: var(--border-solid);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1150px) {
+  .homepageLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .showcaseRail {
+    position: sticky;
+    top: var(--head-space);
+    min-height: auto;
+    padding-bottom: 0;
+    background: var(--whitespace-background);
+    z-index: 20;
+  }
+
+  .showcaseAnchor {
+    display: none;
+  }
+
+  .showcaseBookmarks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0;
+  }
+
+  .showcaseBookmark {
+    width: auto;
+    padding: 0.45rem 0.7rem;
+    border: var(--border-solid);
+    opacity: 1;
+    transform: none;
+  }
+
+  .activeBookmark {
+    transform: none;
+  }
+
+  .activeBookmarkMarker {
+    border-left: none;
+    inset: 0;
+  }
+
+  .showcaseColumn aside,
+  .showcaseColumn section {
+    min-height: auto;
+  }
+}
