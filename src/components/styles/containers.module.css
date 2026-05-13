@@ -319,13 +319,14 @@
 }
 
 .card_image {
-	border-radius: inherit;
     width: 100%;
     height: 100%;
     display: block;
     inset: 0;
+    border-radius: var(--container-radius);
+	box-shadow: 0 0 24px rgba(0, 0, 0, 0.06);
 }
-.card_landscape_inner>.card_image{
+.card_landscape_inner>.card_image, .card_portrait_inner>.card_image{
 	position:absolute;
 }
 

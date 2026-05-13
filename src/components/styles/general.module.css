@@ -4,12 +4,14 @@
     --border-color: var(--theme-text-color);
     --border-width: .085rem;
     --border-solid: var(--border-width) solid var(--border-color);
+    --container-radius: 1rem;
+    --container-shadow: 0 0 24px rgba(0, 0, 0, 0.06);;
     --whitespace-background: var(--theme-whitespace-background);
 
     --item-padding: 0.875rem;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:150px;
+    --head-space:120px;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -35,6 +37,11 @@
     /*CARD WIDTH*/
     --card-width:3;
 
+    /*TRANSITION*/
+    /*UI*/
+    --transition-ease: all .35s ease;
+
+
     /**************************/
 
     /*VISIBILITY*/
@@ -58,6 +65,10 @@ ul {
 
 li::marker {
    content:'';
+}
+
+::-webkit-scrollbar {
+    display:none;
 }
 
 a, button { 
@@ -263,10 +274,15 @@ a, button {
 }
 
 .tag{
-    width:fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: var(--container-radius);
     outline: var(--border-solid);
+    box-shadow: var(--container-shadow);
     padding: calc(var(--item-padding) / 2) var(--item-padding);
     margin: var(--item-padding);
+    text-align: left;
 }
 
 .tag.navigation_tag{
@@ -298,15 +314,15 @@ button, .tag{
 .button:hover{
 /*    -webkit-filter: invert(1); 
     filter: invert(1);*/
-    transform: skew(-5deg);
-    transition: all .35s ease;
+    background-color: var(--theme-background-primary);
+    transition: var(--transition-ease);
 }
 
 .tag:hover{
 /*    -webkit-filter: invert(1); 
     filter: invert(1);*/
-    transform: skew(-5deg);
-    transition: all .35s ease;
+    background-color: var(--theme-background-primary);
+    transition: var(--transition-ease);
 }
 
 .theme_background{
@@ -390,7 +406,18 @@ button, .tag{
 /*HOMEPAGE STYLING*/
 
 .home{
-    background:var(--whitespace-background);
+    height:100vh;
+    overflow: scroll;
+}
+
+.page_wrapper{
+    background: #E8E8E8;
+    background: linear-gradient(141deg,rgba(232, 232, 232, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    border-radius: var(--container-radius);
+    margin: var(--item-padding);
+    margin-top: calc( var(--item-padding) * 3);
+    height: calc(100vh - var(--item-padding) * 4);
+    overflow: scroll;
 }
 
 /*.home:after{

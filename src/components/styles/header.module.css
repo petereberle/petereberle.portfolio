@@ -7,7 +7,7 @@
 .header{
     position: fixed;
     z-index:100;
-    width:100%;
+    max-width: calc(100vw - var(--item-padding) * 2 );
     top:0;
 /*    mix-blend-mode: exclusion !important;*/
 }

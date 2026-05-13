@@ -66,24 +66,26 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
   return (
     <MotionLink
       to={`/${directory}${fields.slug}`}
-      className={`${homeStyles.showcaseCard} ${accentClass}`}
+      className={`${containerStyles.card_wrapper} ${accentClass}`}
       whileHover={{ y: -4 }}
       transition={showcaseTransition}
     >
-      <div className={homeStyles.cardMedia}>
-        {!isVideo ? (
-          <GatsbyImage
-            className={`${homeStyles.cardImage} ${mediaStyles.cover}`}
-            image={getImage(frontmatter.featured_image)}
-            alt={title}
-          />
-        ) : (
-          <Video
-            source={frontmatter.featured_image.publicURL}
-            title={title}
-            classes={`${homeStyles.cardImage} ${mediaStyles.cover} ${mediaStyles.reel}`}
-          />
-        )}
+      <div className={containerStyles.card}>
+        <div className={containerStyles.card_landscape_inner}>
+          {!isVideo ? (
+            <GatsbyImage
+              className={`${containerStyles.card_image} ${mediaStyles.cover}`}
+              image={getImage(frontmatter.featured_image)}
+              alt={title}
+            />
+          ) : (
+            <Video
+              source={frontmatter.featured_image.publicURL}
+              title={title}
+              classes={`${containerStyles.card_image} ${mediaStyles.cover} ${mediaStyles.reel}`}
+            />
+          )}
+        </div>
       </div>
 
       <div className={homeStyles.cardBody}>
@@ -318,7 +320,7 @@ const About = ({ urlParam }) => {
               </div>
               <h1 className={typographyStyles.text_left}>{title}</h1>
               <div
-                className={`${homeStyles.bioText} ${containerStyles.grid} ${containerStyles._50_50}`}
+                className={`${containerStyles.grid} ${containerStyles._50_50} ${homeStyles.bioText}`}
                 dangerouslySetInnerHTML={{ __html: about.html }}
               />
             </motion.aside>

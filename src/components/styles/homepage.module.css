@@ -78,24 +78,59 @@
   display: grid;
   gap: var(--item-padding);
   padding: var(--item-padding);
-  background: var(--whitespace-background);
+  align-items: start;
+  align-content: start;
 }
 
-.bioText > p {
+.bioCard > *,
+.showcaseSection > *{
+  align-items: start;
+}
+
+.bioCard > *{
+  margin:0;
+}
+
+.bioCard > .bioText {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--item-padding);
+  row-gap: calc(var(--item-padding)/2);
+  align-items: start;
+}
+
+/* Intro paragraph */
+.bioText > p:first-of-type {
+  grid-column: 1;
+  grid-row: 1 / span 6;
   margin: 0;
-  max-width: 34ch;
+  max-width: 50ch;
 }
 
-.bioText.grid._50_50{
+/* Everything after intro goes right */
+.bioText > h1,
+.bioText > h2,
+.bioText > h3,
+.bioText > h4,
+.bioText > h5,
+.bioText > h6,
+.bioText > p:not(:first-of-type),
+.bioText > ul,
+.bioText > ol {
+  grid-column: 2;
+}
 
+/* Tighten markdown rhythm */
+.bioText > * {
+  margin:0;
 }
 
 .bioText > h3 {
-  grid-column: span 1;
+  margin:0;
 }
 
 .bioText > h3 + p {
-  grid-column: span 1;
+  margin:0;
 }
 
 .sectionHeader {
