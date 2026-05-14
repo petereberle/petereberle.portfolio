@@ -73,6 +73,8 @@ const Layout = ({ children, path}) => {
 
 			</main> 
 
+			<Footer/>
+
 		</div>
 
 	)

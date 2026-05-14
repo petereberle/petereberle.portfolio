@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import SEO from "./seo";
 import ContentRouterAnimation from "./partials/content-router-animation";
 
+import useWrapperScrollTo from "./hooks/use-wrapper-scroll-to";
+
 import * as generalStyles from "./styles/general.module.css";
 import * as containerStyles from "./styles/containers.module.css";
 import * as typographyStyles from "./styles/typography.module.css";
@@ -26,7 +28,7 @@ const showcaseTransition = {
   duration: 0.35,
 };
 
-const bookmarkOffset = 132;
+const bookmarkOffset = 16;
 
 const getSectionId = (value) =>
   value
@@ -39,12 +41,12 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
     return (
       <MotionLink
         to={hash ? `/${directory}/#${hash}` : `/${directory}/`}
-        className={`${homeStyles.showcaseCard} ${homeStyles.viewAllCard}`}
+        className={`${homeStyles.viewAllCard} ${containerStyles.flex_row} ${containerStyles.justify_center} `}
         whileHover={{ y: -4 }}
         transition={showcaseTransition}
       >
-        <div className={homeStyles.viewAllInner}>
-          <h3 className={homeStyles.cardArrow}>View All {directory === "projects" ? "Projects" : "Artwork"}</h3>
+        <div className={generalStyles.tag}>
+          <h3 className={``}>All {directory === "projects" ? hash + " Projects" : "Artwork"}</h3>
         </div>
       </MotionLink>
     );
@@ -100,6 +102,7 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
 };
 
 const ShowcaseRail = ({ bookmarks, activeBookmark, onSelect }) => {
+
   return (
     <div className={`${homeStyles.showcaseRail} ${containerStyles.flex_row} ${containerStyles.justify_center}`}>
       <div className={homeStyles.showcaseAnchor} />
@@ -174,7 +177,7 @@ const ShowcaseTagSection = React.forwardRef(({ section }, ref) => {
 ShowcaseTagSection.displayName = "ShowcaseTagSection";
 
 const About = ({ urlParam }) => {
-  const { about, featuredProjects } = useStaticQuery(graphql`
+  const { about, featuredProjects, websiteStatement } = useStaticQuery(graphql`
     query {
       about: markdownRemark(frontmatter: { type: { eq: "about" } }) {
         html
@@ -215,11 +218,19 @@ const About = ({ urlParam }) => {
           }
         }
       }
+      websiteStatement:
+      markdownRemark(frontmatter: { type: { eq: "website statement" } }) {
+        html
+        frontmatter {
+          title
+        }
+      }
     }
   `);
 
   const profileImage = getImage(about.frontmatter.profile);
   const title = about.frontmatter.title;
+  const aboutWebsite = websiteStatement.html;
 
   const tagSections = React.useMemo(() => {
     const groups = new Map();
@@ -242,12 +253,13 @@ const About = ({ urlParam }) => {
   }, [featuredProjects.edges]);
 
   const bookmarks = React.useMemo(
-    () => [{ id: "bio", label: "Bio" }, ...tagSections.map(({ id, label }) => ({ id, label }))],
+    () => [{ id: "bio", label: "Bio" }, ...tagSections.map(({ id, label }) => ({ id, label })), { id: "about_website", label: "This Site" }],
     [tagSections]
   );
 
   const sectionRefs = React.useRef({});
   const [activeBookmark, setActiveBookmark] = React.useState("bio");
+  const wrapperScrollTo = useWrapperScrollTo(bookmarkOffset);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -273,18 +285,13 @@ const About = ({ urlParam }) => {
   }, [bookmarks]);
 
   const handleBookmarkSelect = (id) => {
+
     const target = sectionRefs.current[id];
 
-    if (!target || typeof window === "undefined") {
-      return;
-    }
+    if (!target) return;
 
-    const top = target.getBoundingClientRect().top + window.scrollY - bookmarkOffset;
+    wrapperScrollTo(target);
 
-    window.scrollTo({
-      top,
-      behavior: "smooth",
-    });
   };
 
   return (
@@ -334,6 +341,28 @@ const About = ({ urlParam }) => {
                 }}
               />
             ))}
+
+            <motion.aside
+              ref={(element) => {
+                sectionRefs.current.about_website = element;
+              }}
+              id="about_website"
+              className={`${containerStyles.align_center} ${generalStyles.profile_card}`}
+              initial={{ opacity: 0, x: -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={showcaseTransition}
+            >
+              <h3>
+                {websiteStatement.frontmatter.title}
+              </h3>
+
+              <div
+                className={``}
+                dangerouslySetInnerHTML={{ __html: websiteStatement.html }}
+              />
+            </motion.aside>
+
+
           </div>
         </div>
       </ContentRouterAnimation>

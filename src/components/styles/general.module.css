@@ -11,7 +11,7 @@
     --item-padding: 0.875rem;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:120px;
+    --head-space:5rem;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -407,17 +407,16 @@ button, .tag{
 
 .home{
     height:100vh;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .page_wrapper{
     background: #E8E8E8;
     background: linear-gradient(141deg,rgba(232, 232, 232, 1) 0%, rgba(227, 227, 227, 1) 100%);
     border-radius: var(--container-radius);
-    margin: var(--item-padding);
-    margin-top: calc( var(--item-padding) * 3);
-    height: calc(100vh - var(--item-padding) * 4);
-    overflow: scroll;
+    margin: calc( var(--item-padding) * 3) var(--item-padding);
+    height: calc(100vh - var(--item-padding) * 6);
+    overflow-y: auto;
 }
 
 /*.home:after{

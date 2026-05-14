@@ -2,12 +2,20 @@ import * as React from "react"
 
 import {motion, useIsPresent} from "framer-motion"
 
-import Footer from "../footer"
+import useWrapperScrollTo from "../hooks/use-wrapper-scroll-to"
 
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 
 const ContentRouterAnimation = ({children, urlParam}) => {
+
+	const wrapperScrollTo = useWrapperScrollTo();
+
+	React.useEffect(() => {
+
+	  wrapperScrollTo(0, 0, "auto");
+
+	}, [urlParam, wrapperScrollTo]);
 
 	const isPresent = useIsPresent();
 
@@ -42,17 +50,15 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 
 	<>
 
-	  <motion.div
-	      initial={{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:true, exit:false }) }}
-	      animate={{ opacity: 1, x: 0 }}
-	      exit = {{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:false, exit:true }) }}
-	      transition={animationTransition}
-    	>
-	    <div className={!exceptions ? containerStyles.content_section : ''}>
-	     	{children}
-	    </div>
-
-	    <Footer urlParam={pathName}/>
+  <motion.div
+      initial={{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:true, exit:false }) }}
+      animate={{ opacity: 1, x: 0 }}
+      exit = {{ opacity: 0, x: animationDirection({ pathName: pathName, hash: hash, initial:false, exit:true }) }}
+      transition={animationTransition}
+	>
+    <div className={!exceptions ? containerStyles.content_section : ''}>
+     	{children}
+    </div>
 
     </motion.div>
 

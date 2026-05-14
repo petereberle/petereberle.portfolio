@@ -146,7 +146,7 @@
 
 .cardStack {
   display: grid;
-  gap: calc(var(--item-padding) * 1.25);
+  gap: var(--item-padding);
 }
 
 .showcaseCard {

@@ -10,9 +10,7 @@ import * as containerStyles from "./styles/containers.module.css"
 
 const Footer = ({urlParam}) => {
 
-	const 	isPost = urlParam.split('/').length - 1 <= 2,
-			isContact = urlParam.includes('contact'),
-			{websiteStatement} = useStaticQuery(graphql`
+	const 	{websiteStatement} = useStaticQuery(graphql`
 
 		    query {
 		      websiteStatement:
@@ -29,20 +27,9 @@ const Footer = ({urlParam}) => {
 	return (
 
 
-		<div className={`${containerStyles.footer} ${containerStyles.grid} ${containerStyles._6_col_auto_row} ${containerStyles.align_start} ${containerStyles.justify_center} ${generalStyles.margin}`}>
-
-			<Link className={`${containerStyles.grid_item} ${generalStyles.border_item} ${containerStyles.align_center}`} to={isContact ? '/' : '/contact/'}>
-  				{isContact ? 'Go Home (:' : 'Contact'}
-  			</Link>
+		<div className={`${headerStyles.header} ${containerStyles.footer} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_end} ${headerStyles.menu_list}`}>
 
 			<SocialMedia currentPage={urlParam} />
-
-  			<div className={`${containerStyles.flex_column} ${containerStyles.grid_item}`}>
-				<h3>
-					{statement.title}
-				</h3>
-				<div className={generalStyles.post_html} dangerouslySetInnerHTML={{__html: websiteStatement.html }}/>
-			</div>
 
 		</div>
 

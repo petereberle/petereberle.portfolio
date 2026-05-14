@@ -34,11 +34,11 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 			return !videoExtension ? 
 
-				<GatsbyImage image={getImage(featuredImage)} alt={title}/>
+			<GatsbyImage image={getImage(featuredImage)} className={containerStyles.card_image} alt={title}/>
 
 			: videoExtension ? 
 
-			<Video source={publicUrl} title={title} classes={`${mediaStyles.reel}`}/>  
+			<Video source={publicUrl} title={title} classes={`${mediaStyles.reel} ${containerStyles.card_image}`}/>  
 
 			: null;
 

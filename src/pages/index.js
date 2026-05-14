@@ -16,13 +16,13 @@ const LazyComponent = ({ Component, ...props }) => {
 	if ( useClientState() === false ) {  return }
 
   return 	<React.Suspense fallback={<pre>{Component}</pre>}>
-						<Component {...props} />
+				<Component {...props} />
 			</React.Suspense>
 }
 
 
 const MainPage = ({location}) => {
-
+	
 	return (
 
 		<>
