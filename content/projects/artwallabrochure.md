@@ -12,7 +12,6 @@ images:
     caption: back and map}
 tags:
   - Design
-  - Print
 ---
 
 Asymmetrical tri-fold brochure created for [ArtWalla's](https://artwalla.com) First Friday Art Tour. Intended to introduce first time visitors to downtown public art works and ArtWalla's event programming. 

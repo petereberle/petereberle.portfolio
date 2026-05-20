@@ -180,6 +180,7 @@ const About = ({ urlParam }) => {
         html
         frontmatter {
           title
+          bio_statement
           profile {
             childImageSharp {
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: AUTO)
@@ -227,6 +228,7 @@ const About = ({ urlParam }) => {
 
   const profileImage = getImage(about.frontmatter.profile);
   const title = about.frontmatter.title;
+  const bio_statement = about.frontmatter.bio_statement;
   const aboutWebsite = websiteStatement.html;
 
   const tagSections = React.useMemo(() => {
@@ -320,6 +322,9 @@ const About = ({ urlParam }) => {
               animate={{ opacity: 1, x: 0 }}
               transition={showcaseTransition}
             >
+
+            <div className={`${containerStyles.flex_row}`}>
+
               <div className={generalStyles.profile_wrapper}>
                 <GatsbyImage
                   style={{ position: "relative" }}
@@ -328,7 +333,16 @@ const About = ({ urlParam }) => {
                   alt={title}
                 />
               </div>
-              <h1 className={typographyStyles.text_left}>{title}</h1>
+
+              <div className={`${containerStyles.flex_column}`}>
+              
+                <h1 className={typographyStyles.text_left}>{title}</h1>
+                <p>{bio_statement}</p>
+
+              </div>
+
+            </div>
+
               <div
                 className={`${containerStyles.grid} ${containerStyles._50_50} ${homeStyles.bioText}`}
                 dangerouslySetInnerHTML={{ __html: about.html }}

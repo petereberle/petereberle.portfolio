@@ -8,11 +8,12 @@ interests:
   - "*Amateur* wood working"
   - New tech
   - Tropical Orchids
+bio_statement: I'm an artist, designer, and web developer with a focus on community-led organizations and organizations centered around the arts.
 website_statement: {title: What's up with this website?, statement: This portfolio runs on Gatsby with the flavor of a single page React app. All content is rendered from markdown as a simple alternative to a traditional CMS. Check out the Github repo!
 }
 ---
 
-I'm an artist, designer, and web developer with a focus on community-led organizations and organizations centered around the arts.
+<div>
 
 #### Capabilities
 
@@ -24,14 +25,14 @@ I'm an artist, designer, and web developer with a focus on community-led organiz
 - Something
 - Something
 
----
+</div>
+
+<div>
 
 #### Education
 
 ### BA in Art, Whitman College
 2020
-
----
 
 #### Experiences
 
@@ -41,3 +42,4 @@ I'm an artist, designer, and web developer with a focus on community-led organiz
 ### Project Manager @ Walla Walla Foundry
 2021 - 2024
 
+</div>

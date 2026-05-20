@@ -92,44 +92,29 @@
 }
 
 .bioText {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--item-padding);
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(20rem, 34ch) 1fr;
+  column-gap: 4rem;
+  align-items: start;
 }
 
-/* Left column */
-.bioText > :has(~ hr) {
-  flex: 1 1 55%;
-  min-width: 0;
-}
-
-/* Right column */
-.bioText > hr ~ * {
-  flex: 1 1 calc(45% - var(--item-padding));
-  min-width: 280px;
-}
-
-/* Hide separator */
-.bioText hr {
-  display: none;
-  width: 100%;
-}
-
-/* Typography cleanup */
-.bioText > * {
+.bioText > div > * {
   margin: 0;
 }
 
-.bioText > h4:not(:first-of-type) {
+.bioText > div:first-child > h4 {
   margin: calc(var(--item-padding) / 2) 0;
 }
 
-.bioText > h4:first-of-type {
+.bioText > div:nth-child(2) > h4:not(:first-of-type) {
+  margin: calc(var(--item-padding) / 2) 0;
+}
+
+.bioText > div:nth-child(2) > h4:first-of-type {
   margin: 0 0 calc(var(--item-padding) / 2) 0;
 }
 
-.bioText > h3 + p {
+.bioText > div > h3 + p {
   margin:0;
 }
 

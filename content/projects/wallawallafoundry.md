@@ -20,7 +20,6 @@ images:
     caption: Customized version of Decap CMS allows for easy content creation}
 tags:
   - Web
-  - Design
 ---
 
 [Walla Walla Foundry](https://wallawallafoundry.com) is a leading contemporary art fabricator and casting facility known for its capacity to build monumental sculpture and cutting-edge techniques. The Foundry serves world-renowned artists, such as KAWS, Takashi Murakami, and Hank Willis Thomas.
