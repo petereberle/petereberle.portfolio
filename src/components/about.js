@@ -46,7 +46,7 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
         transition={showcaseTransition}
       >
         <div className={generalStyles.tag}>
-          <h3 className={``}>All {directory === "projects" ? hash + " Projects" : "Artwork"}</h3>
+          <h4 className={generalStyles._0_margin}>All {directory === "projects" ? hash + " Projects" : "Artwork"}</h4>
         </div>
       </MotionLink>
     );
@@ -63,7 +63,7 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
         ? frontmatter.year_end
         : `${frontmatter.year_start} - ${frontmatter.year_end}`
       : frontmatter.year_end || frontmatter.year_start);
-  const details = frontmatter.tagline || frontmatter.materials || frontmatter.tags?.[0];
+  const details = frontmatter.tagline || frontmatter.materials || frontmatter.tags?.join(', ');
 
   return (
     <MotionLink
@@ -91,11 +91,8 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
       </div>
 
       <div className={homeStyles.cardBody}>
-        <div className={homeStyles.cardMeta}>
-          {year && <span className={homeStyles.year}>{year}</span>}
-        </div>
         <h3>{title}</h3>
-        {details && <p>{details}</p>}
+        {details && <h3>{details}</h3>}
       </div>
     </MotionLink>
   );
@@ -237,11 +234,17 @@ const About = ({ urlParam }) => {
 
     featuredProjects.edges.forEach((item) => {
       const tags = item.node.frontmatter.tags || [];
-      tags.forEach((tag) => {
-        if (!groups.has(tag)) {
-          groups.set(tag, []);
+      tags.forEach((tag, i) => {
+
+        if ( i === 0) {
+
+          if (!groups.has(tag)) {
+            groups.set(tag, []);
+          }
+          groups.get(tag).push(item);
+
         }
-        groups.get(tag).push(item);
+
       });
     });
 

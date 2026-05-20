@@ -91,42 +91,42 @@
   margin:0;
 }
 
-.bioCard > .bioText {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: var(--item-padding);
-  row-gap: calc(var(--item-padding)/2);
-  align-items: start;
+.bioText {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--item-padding);
+  align-items: flex-start;
 }
 
-/* Intro paragraph */
-.bioText > p:first-of-type {
-  grid-column: 1;
-  grid-row: 1 / span 6;
-  margin: 0;
-  max-width: 50ch;
+/* Left column */
+.bioText > :has(~ hr) {
+  flex: 1 1 55%;
+  min-width: 0;
 }
 
-/* Everything after intro goes right */
-.bioText > h1,
-.bioText > h2,
-.bioText > h3,
-.bioText > h4,
-.bioText > h5,
-.bioText > h6,
-.bioText > p:not(:first-of-type),
-.bioText > ul,
-.bioText > ol {
-  grid-column: 2;
+/* Right column */
+.bioText > hr ~ * {
+  flex: 1 1 calc(45% - var(--item-padding));
+  min-width: 280px;
 }
 
-/* Tighten markdown rhythm */
+/* Hide separator */
+.bioText hr {
+  display: none;
+  width: 100%;
+}
+
+/* Typography cleanup */
 .bioText > * {
-  margin:0;
+  margin: 0;
 }
 
-.bioText > h3 {
-  margin:0;
+.bioText > h4:not(:first-of-type) {
+  margin: calc(var(--item-padding) / 2) 0;
+}
+
+.bioText > h4:first-of-type {
+  margin: 0 0 calc(var(--item-padding) / 2) 0;
 }
 
 .bioText > h3 + p {
@@ -168,7 +168,7 @@
 
 .cardBody {
   display: grid;
-  gap: var(--item-padding);
+  gap: calc( var(--item-padding) / 2);
   padding-top: var(--item-padding);
   align-content: start;
 }

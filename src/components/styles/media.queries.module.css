@@ -1,9 +1,10 @@
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1800px) {
 
 	:root{
 
 		/* MAX SCREEN VARIABLES*/
-		--screen-width: 2000px;
+		--screen-width: 1800px;
+		--screen-margin: auto;
 
 		--page-margin:auto;
 

@@ -5,10 +5,9 @@
 }
 
 .header{
-    position: fixed;
     z-index:100;
-    max-width: calc(100vw - var(--item-padding) * 2 );
-    top:0;
+    max-width: calc(var(--screen-width) - var(--item-padding) * 4 );
+    height: calc(var(--item-padding) * 3)
 /*    mix-blend-mode: exclusion !important;*/
 }
 
@@ -30,7 +29,6 @@
 .header_wrapper{
     overflow:hidden;
     box-sizing:border-box;
-    margin: 0  0  0 var(--item-padding);
 }
 
 .header_inner{
@@ -202,8 +200,7 @@
 
 @media screen and (max-width: 1150px) {
     .header{
-        height:auto;
-        min-height:calc(var(--item-padding)*3);
+
     }
 
     .header.active{

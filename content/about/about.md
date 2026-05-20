@@ -14,9 +14,30 @@ website_statement: {title: What's up with this website?, statement: This portfol
 
 I'm an artist, designer, and web developer with a focus on community-led organizations and organizations centered around the arts.
 
-### Current:
-  Marketing Specialist @ Design And Direct Source
+#### Capabilities
 
-### Past: 
-  Project Manager @ Walla Walla Foundry
+- Something
+- Something
+- Something
+- Something
+- Something
+- Something
+- Something
+
+---
+
+#### Education
+
+### BA in Art, Whitman College
+2020
+
+---
+
+#### Experiences
+
+### Marketing Specialist @ Design And Direct Source
+2024 - Present
+
+### Project Manager @ Walla Walla Foundry
+2021 - 2024
 

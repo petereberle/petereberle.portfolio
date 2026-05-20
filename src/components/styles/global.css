@@ -1,32 +1,4 @@
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url('/fonts/Proxima_Nova.ttf') format('truetype');
-  font-weight:200;
-  font-style:normal;
-}
-
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('/fonts/Proxima_Nova_Semibold.ttf') format('truetype');
-  font-weight:300;
-  font-style:normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat_Regular.woff') format('woff');
-  font-weight:200;
-  font-style:normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat_Thin.woff') format('woff');
-  font-weight:100;
-  font-style:normal;
-}
-
-@font-face {
     font-family: "LFT Etica Mono";
     src: url('/fonts/LFT_Etica_Mono.otf') format("opentype");
     font-weight:100;
@@ -47,3 +19,18 @@
     src: url('/fonts/LFT_Etica_Bold.otf') format("opentype");
     font-weight: bold;
 }
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/ApercuPro-Light.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu Pro Mono';
+  src: url('/fonts/ApercuMonoPro-Light.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+

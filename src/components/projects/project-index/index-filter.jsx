@@ -26,13 +26,13 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
         {menuItems.map((tag, id) => {
           return (
             <button className={ `${buttonStyles} ${activeStyle(tag)}` } onClick={() => { filterProject(tag); resetPath() } }  key={id} >
-              <span>{tag}</span>
+              <h4>{tag}</h4>
             </button>
           );
         })}
 
         <button className={`${buttonStyles} ${generalStyles.last} ${filter === 'all' ? generalStyles.active : ''}`} onClick={() => { filterProject('all'); resetPath() }} >
-          <span>All</span>
+          <h4>All</h4>
         </button>
 
       </div>

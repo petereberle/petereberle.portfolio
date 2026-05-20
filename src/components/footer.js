@@ -27,7 +27,7 @@ const Footer = ({urlParam}) => {
 	return (
 
 
-		<div className={`${headerStyles.header} ${containerStyles.footer} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_end} ${headerStyles.menu_list}`}>
+		<div className={`${headerStyles.header} ${containerStyles.footer} ${generalStyles.fixed_bottom_centered} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_end} ${headerStyles.menu_list}`}>
 
 			<SocialMedia currentPage={urlParam} />
 

@@ -15,14 +15,16 @@
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
-    --screen-margin: auto;
+    --screen-margin: var(--item-padding);
     --screen-height: calc( 100vh - var(--head-space) );
+
+    --wide-screen-max: 1200px;
 
     /*MAX PAGE VARIABLES */
     --page-width: 100vw;
 
     /*FONT SCALING*/
-    --font-basis:.75rem;
+    --font-basis: 1rem;
 
     /*CARD WIDTH*/
     --card-width:3;
@@ -53,6 +55,21 @@
 
 body {
     
+}
+
+.home{
+    height:100vh;
+    overflow: hidden;
+}
+
+.page_wrapper{
+    background: #E8E8E8;
+    background: linear-gradient(141deg,rgba(232, 232, 232, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    border-radius: var(--container-radius);
+    margin: calc( var(--item-padding) * 3) var(--screen-margin);
+    max-width: var(--screen-width);
+    height: calc(100vh - var(--item-padding) * 6);
+    overflow-y: auto;
 }
 
 ul { 
@@ -123,6 +140,20 @@ a, button {
     bottom:0;
 }
 
+.fixed_top_centered {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fixed_bottom_centered {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*GRID STYLING*/
 
 .border_item{
@@ -146,7 +177,7 @@ a, button {
 }
 
 .item.last{
-    
+    padding-right:0;
 }
 
 .item>span{
@@ -402,31 +433,3 @@ button, .tag{
 
 
 }
-
-/*HOMEPAGE STYLING*/
-
-.home{
-    height:100vh;
-    overflow: hidden;
-}
-
-.page_wrapper{
-    background: #E8E8E8;
-    background: linear-gradient(141deg,rgba(232, 232, 232, 1) 0%, rgba(227, 227, 227, 1) 100%);
-    border-radius: var(--container-radius);
-    margin: calc( var(--item-padding) * 3) var(--item-padding);
-    height: calc(100vh - var(--item-padding) * 6);
-    overflow-y: auto;
-}
-
-/*.home:after{
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(0deg, rgba(6, 6, 6, .5), transparent 3px);
-}*/

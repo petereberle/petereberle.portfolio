@@ -1,36 +1,35 @@
 body {
-	font-family: 'LFT Etica Mono', sans-serif;
-    font-weight:100;
-    font-size: var(--font-basis);
+	font-family: 'Apercu Pro', sans-serif;
+    font-weight: 100;
+    font-size: calc(var(--font-basis) * 1);
     letter-spacing: .1rem;
     color: var(--theme-text-color);
     line-height: 1.4;
 }
 
-h1, h2, h3, h4 {
-
-    font-family: 'LFT Ethica', sans-serif;
+h1, h2, h3 {
+    font-family: 'Apercu Pro', sans-serif;
     font-weight: 100;
-    letter-spacing: .2rem;
+    letter-spacing: .125rem;
 }
 
 h1 {
-    font-size: calc(var(--font-basis) *3);
+    font-size: calc(var(--font-basis) * 2.5);
     margin: 0.47em 0;
 }
 
 h2 {
 
-    font-size: calc(var(--font-basis) *2);
+    font-size: calc(var(--font-basis) *1.5);
     margin: 0.47em 0;
 }
 
 h3{
-    font-size: calc(var(--font-basis) * 1.25);
+    font-size: calc(var(--font-basis) * 1);
 }
 
 h4{
-    font-weight:500;
+    font-family: 'Apercu Pro Mono', sans-serif;
     font-size: calc(var(--font-basis) * 1);
     text-transform: uppercase;
 }
