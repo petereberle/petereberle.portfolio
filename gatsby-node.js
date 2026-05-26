@@ -17,6 +17,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const artworkTemplate = require.resolve('./src/templates/artwork-template.jsx')
 
+  const resumeTemplate = require.resolve('./src/templates/resume-template.jsx')
+
   const projectsData = await graphql(`
     {
         projectsRemark: allMarkdownRemark(
@@ -60,13 +62,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (projectsData.data.errors || artworkData.data.errors) {
+  const resumeData = await graphql(`
+    {
+      resumes: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "resume" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              active
+              slug
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (projectsData.errors || artworkData.errors || resumeData.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
   const projects = projectsData.data.projectsRemark.edges,
         artwork = artworkData.data.artworkRemark.edges,
+        resumes = resumeData.data.resumes.edges,
         tagsArr = ['All'],
         getTags = () => {
 
@@ -83,6 +104,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return [...new Set(tagsArr)] 
 
         }
+
+  const activeResumes = resumes.filter(({ node }) => node.frontmatter.active)
+
+  if (activeResumes.length > 1) {
+    reporter.panicOnBuild(`Only one resume can have active: true in content/resume.`)
+    return
+  }
 
   projects.forEach(({node}, pageIndex) => {
     const slug = node.fields.slug
@@ -114,24 +142,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  resumes.forEach(({ node }) => {
+    if (!node.frontmatter.slug) {
+      reporter.panicOnBuild(`Each resume Markdown file needs a frontmatter slug.`)
+      return
+    }
+
+    actions.createPage({
+      path: `/resume/${node.frontmatter.slug}/`,
+      component: resumeTemplate,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    })
+  })
+
 }
 
 
 
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   const field = `File` || `String`;
-//   const typeDefs = `
-//     type MarkdownRemark implements Node {
-//       frontmatter: Frontmatter
-//     }
-//     type Frontmatter {
-//       artwork_images: ${field}
-//     }
-
-//   `
-//   createTypes(typeDefs)
-// }
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type MarkdownRemarkFrontmatter {
+      type: String
+      slug: String
+      title: String
+      headline: String
+      email: String
+      phone: String
+      location: String
+      website: String
+      active: Boolean
+    }
+  `)
+}
 
 exports.createResolvers = ({ createResolvers }) => {
   createResolvers({

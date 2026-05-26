@@ -13,7 +13,6 @@ import MenuToggle from "./partials/menu-toggle"
 
 import useScrolled from "./hooks/use-scrolled"
 import useMobileWindow from "./hooks/use-mobile-window"
-import useResumeFile from "./hooks/use-resume-file"
 
 import GradientBackground from "./partials/gradient-background"
 
@@ -23,7 +22,7 @@ import * as containerStyles from "./styles/containers.module.css"
 
 const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 
-	const 	{site} = useStaticQuery(graphql`
+	const 	{site, activeResume, fallbackResume} = useStaticQuery(graphql`
 
 				query SiteQuery {
 					 site {
@@ -31,10 +30,23 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 							title
 						}
 					}
+					activeResume: markdownRemark(
+						frontmatter: { type: { eq: "resume" }, active: { eq: true } }
+					) {
+						frontmatter {
+							slug
+						}
+					}
+					fallbackResume: file(
+						sourceInstanceName: { eq: "resume-file" }
+						extension: { eq: "pdf" }
+						name: { eq: "Peter_Eberle_Resume_2024" }
+					) {
+						publicURL
+					}
 				}
 
 			`),
-			resumeFiles = useResumeFile().edges,
 			siteTitle = site.siteMetadata.title;
 
 	const 	currentPage = layout,
@@ -60,24 +72,17 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 						})
 			);
 
-	const ResumeLinks = () => (
+	const resumePath = activeResume
+		? `/resume/${activeResume.frontmatter.slug}/`
+		: fallbackResume?.publicURL;
 
-		resumeFiles.map((file, i) => {
-
-			const filePath = file.node.publicURL;
-
-			return (
-				<a target="_blank" rel="noopener" key={i} className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={filePath}>
-					<button>	
-						<h4 className={`${generalStyles._0_margin}`}>CV</h4>
-					</button>
-				</a> 
-
-			)
-
-		} )
-
-	)
+	const ResumeLink = () => resumePath ? (
+		<a target="_blank" rel="noopener" className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={resumePath}>
+			<button>
+				<h4 className={`${generalStyles._0_margin}`}>CV</h4>
+			</button>
+		</a>
+	) : null;
 
 	return (
 		<div className={`${headerStyles.header} ${generalStyles.fixed_top_centered} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between} ${ isInitialScroll ? headerStyles.scrolled : '' } ${ isScrollThreshold ? headerStyles.threshold : '' } ${isToggled ? headerStyles.active : ''}`}>	
@@ -92,7 +97,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 						<div className={`${headerStyles.menu_inner}`}>
 							<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${headerStyles.menu_list}`}>
 								<MenuLinks linkStyle={(l)=>( <button> <h4 className={`${generalStyles._0_margin}`} >{l}</h4> </button>)} />
-								<ResumeLinks />
+								<ResumeLink />
 							</div>
 							{/*<P5 sketch={Sketch} className={`${headerStyles.menu_animation}`}/>*/}
 						</div>

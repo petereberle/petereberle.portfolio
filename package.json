@@ -28,6 +28,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "playwright": "^1.60.0",
     "prettier": "^2.8.8"
   },
   "keywords": [
@@ -38,6 +39,7 @@
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "resume:pdf": "npm run build && node scripts/generate-resume-pdf.js",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

@@ -9,7 +9,6 @@
 		--page-margin:auto;
 
 
-
 	}
 
 }
@@ -17,6 +16,8 @@
 @media screen and (max-width: 1150px) {
 
 	:root{
+
+		--head-space: 0;
 
 		/* MAX SCREEN VARIABLES*/
 		 --screen-height: unset;

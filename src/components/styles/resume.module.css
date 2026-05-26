@@ -1,0 +1,167 @@
+@page {
+  size: letter;
+  margin: 0.7in 0.78in;
+}
+
+:global(body) {
+  background-color: #f3f3f1;
+}
+
+:global(body > div) {
+  height: calc(100vh - var(--item-padding) * 2) !important;
+  margin: var(--item-padding) var(--screen-margin) !important;
+  overflow-y: auto;
+}
+
+.document {
+  background-color: #fff;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 10.25pt;
+  letter-spacing: 0.008rem;
+  line-height: 1.42;
+  margin: 0 auto;
+  max-width: 8.5in;
+}
+
+.header {
+  border-bottom: 1px solid #dadada;
+  margin: 0 0 1.7rem;
+  padding: 0 0 1.15rem;
+}
+
+.name {
+  font-size: 20pt;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  line-height: 1.14;
+  margin: 0 0 0.5rem;
+  text-transform: none;
+}
+
+.headline {
+  font-size: 10.75pt;
+  margin: 0 0 0.42rem;
+}
+
+.contact {
+  color: #383838;
+  font-size: 9.4pt;
+  letter-spacing: 0.018rem;
+  margin: 0;
+}
+
+.content :global(.resume-section) {
+  margin: 0 0 1.5rem;
+}
+
+.content :global(.resume-section:last-child) {
+  margin-bottom: 0;
+}
+
+.content :global(h4) {
+  font-family: "Apercu Pro Mono", sans-serif;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.content :global(.section-title) {
+  border-bottom: 1px solid #dadada;
+  break-after: avoid;
+  font-size: 10pt;
+  letter-spacing: 0.105rem;
+  margin: 0 0 0.85rem;
+  padding: 0 0 0.38rem;
+  text-transform: uppercase;
+}
+
+.content :global(.resume-entry) {
+  break-inside: avoid;
+  margin: 0 0 1.05rem;
+}
+
+.content :global(.resume-entry:last-child) {
+  margin-bottom: 0;
+}
+
+.content :global(.entry-title) {
+  font-size: 10.5pt;
+  letter-spacing: 0.018rem;
+  margin: 0 0 0.12rem;
+  text-transform: none;
+}
+
+.content :global(.resume-meta) {
+  color: #4a4a4a;
+  font-size: 9.25pt;
+  margin: 0 0 0.45rem;
+}
+
+.content :global(p) {
+  margin: 0 0 0.55rem;
+}
+
+.content :global(ul) {
+  list-style: disc;
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.content :global(li) {
+  margin: 0 0 0.18rem;
+  padding-left: 0.15rem;
+}
+
+.content :global(strong) {
+  font-weight: 500;
+}
+
+.controls {
+  position: fixed;
+  right: var(--item-padding);
+  top: var(--item-padding);
+  z-index: 2;
+}
+
+@media screen {
+  .document {
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
+    min-height: 11in;
+    padding: 0.7in 0.78in;
+    width: 8.5in;
+  }
+}
+
+@media print {
+  :global(html),
+  :global(body) {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  :global(body > div) {
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .document {
+    margin: 0;
+    max-width: none;
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .content :global(h4) {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .content :global(.resume-entry) {
+    page-break-inside: avoid;
+  }
+}

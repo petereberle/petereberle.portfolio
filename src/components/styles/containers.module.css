@@ -16,8 +16,8 @@
     width:100%;
     height:100%;
     max-width: var(--page-width);
-    margin-right:var(--screen-margin);
-    margin-left:var(--screen-margin);
+/*    margin-right:var(--screen-margin);
+    margin-left:var(--screen-margin);*/
     min-height:var(--screen-height);
     padding: 0;
 }
@@ -26,7 +26,6 @@
 .content_section{
 	box-sizing: border-box;
 	width:100%;
-	padding: var(--item-padding);
 }
 
 .width_subtract_padding{
@@ -69,8 +68,6 @@
 }
 
 .sidebar_inner{
-
-	padding-top: var(--item-padding);
 	
 }
 
@@ -78,7 +75,7 @@
 	display:grid;
 	padding:var(--item-padding);
 	grid-template-columns: repeat(var(--card-width), 1fr);
-	grid-gap:var(--item-padding);
+	grid-gap: calc( var(--item-padding) * 2);
 	grid-auto-rows: min-content;
 	grid-auto-flow: dense;
 }
@@ -160,18 +157,20 @@
 /*FLEXBOX LAYOUT*/
 
 .flex_row {
-
 	display:flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-content: center;
-
 }
 
 .flex_column{
 	display:flex;
 	flex-direction:column;
 	justify-content: flex-start;
+}
+
+.full_width{
+	width: 100%;
 }
 
 .flex_row.full_width, .flex_column.full_width{
@@ -181,6 +180,22 @@
 
 .flex_1_0_auto{
 	flex:1 0 auto;
+}
+
+.flex_gap{
+	gap: var(--item-padding);
+}
+
+.flex_gap_2{
+	gap: calc( var(--item-padding) *2);
+}
+
+.flex_gap_4{
+	gap: calc( var(--item-padding) *4);
+}
+
+.justify_start{
+	justify-content: start;
 }
 
 .justify_space_between{
@@ -304,14 +319,13 @@
     justify-content: center;
     display: flex;
     position: relative;
-    cursor:pointer;
 }
 
 .card_wrapper {
     flex: 1 0 auto;
     display:inline-grid;
     align-items: center;
-    padding: var(--item-padding);
+/*    padding: var(--item-padding);*/
 }
 
 .card_landscape_inner {
@@ -331,6 +345,7 @@
     inset: 0;
     border-radius: var(--container-radius);
 	box-shadow: var(--container-shadow);
+	object-fit: cover;
 }
 .card_landscape_inner>.card_image, .card_portrait_inner>.card_image{
 	position:absolute;
@@ -343,12 +358,16 @@
 /*POST STYLING*/
 
 .vignette{
-	margin:40px;
+	margin: 0 calc(var(--item-padding) *5);
+}
+
+.vignette .card_landscape_inner {
+	padding-top: 63%;
 }
 
 @media screen and (max-width: 1150px) {
 
-	.grid._75_25, .grid._25_75, .grid._15_85, .grid._25_50_25, .grid._50_50{
+	.grid._75_25:not(.full_width), .grid._25_75:not(.full_width), .grid._15_85:not(.full_width), .grid._25_50_25:not(.full_width), .grid._50_50:not(.full_width){
 		grid-template-columns: 1fr;
 	}
 

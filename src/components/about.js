@@ -90,9 +90,9 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
         </div>
       </div>
 
-      <div className={homeStyles.cardBody}>
-        <h3>{title}</h3>
-        {details && <h3>{details}</h3>}
+      <div className={`${homeStyles.cardBody} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between}`}>
+        <h4>{title}</h4>
+        {details && <p>{details}</p>}
       </div>
     </MotionLink>
   );
@@ -317,36 +317,37 @@ const About = ({ urlParam }) => {
                 sectionRefs.current.bio = element;
               }}
               id="bio"
-              className={`${homeStyles.bioCard} ${generalStyles.profile_card}`}
+              className={`${homeStyles.bioCard} ${generalStyles.profile_card} ${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.align_center}`}
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={showcaseTransition}
             >
 
-            <div className={`${containerStyles.flex_row}`}>
+            <div className={generalStyles.profile_wrapper}>
+              <GatsbyImage
+                style={{ position: "relative" }}
+                className={`${generalStyles.profile} ${generalStyles.ellipse_clip}`}
+                image={profileImage}
+                alt={title}
+              />
+            </div>
 
-              <div className={generalStyles.profile_wrapper}>
-                <GatsbyImage
-                  style={{ position: "relative" }}
-                  className={`${generalStyles.profile} ${generalStyles.ellipse_clip}`}
-                  image={profileImage}
-                  alt={title}
-                />
-              </div>
+            <div className={`${containerStyles.flex_row} ${containerStyles.align_self_start} ${containerStyles.flex_gap_2} `}>
 
-              <div className={`${containerStyles.flex_column}`}>
+              <div className={`${containerStyles.flex_column} ${containerStyles.flex_gap} `}>
               
-                <h1 className={typographyStyles.text_left}>{title}</h1>
-                <p>{bio_statement}</p>
+                <h1 className={`${typographyStyles.text_left} ${generalStyles._0_margin}`}>{title}</h1>
+                <p className={`${generalStyles._0_margin}`}>{`${bio_statement}`}</p>
 
               </div>
+
+              <div
+                className={`${containerStyles.grid} ${containerStyles._50_50} ${containerStyles.full_width} ${homeStyles.bioText}`}
+                dangerouslySetInnerHTML={{ __html: about.html }}
+              />
 
             </div>
 
-              <div
-                className={`${containerStyles.grid} ${containerStyles._50_50} ${homeStyles.bioText}`}
-                dangerouslySetInnerHTML={{ __html: about.html }}
-              />
             </motion.aside>
 
             {tagSections.map((section) => (

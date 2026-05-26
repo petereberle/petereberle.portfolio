@@ -5,13 +5,13 @@
     --border-width: .085rem;
     --border-solid: var(--border-width) solid var(--border-color);
     --container-radius: 1rem;
-    --container-shadow: 0 0 24px rgba(0, 0, 0, 0.06);;
+    --container-shadow: 0 0 24px rgba(0, 0, 0, 0.09);;
     --whitespace-background: var(--theme-whitespace-background);
 
     --item-padding: 0.875rem;
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:3rem;
+    --head-space:4.5rem;
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -63,8 +63,7 @@ body {
 }
 
 .page_wrapper{
-    background: #E8E8E8;
-    background: linear-gradient(141deg,rgba(232, 232, 232, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    background-color: var(--whitespace-background);
     border-radius: var(--container-radius);
     margin: calc( var(--item-padding) * 3) var(--screen-margin);
     max-width: var(--screen-width);
@@ -314,6 +313,10 @@ a, button {
     padding: calc(var(--item-padding) / 2) var(--item-padding);
     margin: var(--item-padding);
     text-align: left;
+}
+
+.tag > *{
+    margin:0;
 }
 
 .tag.navigation_tag{

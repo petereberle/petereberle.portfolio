@@ -2,7 +2,7 @@ body {
 	font-family: 'Apercu Pro', sans-serif;
     font-weight: 100;
     font-size: calc(var(--font-basis) * 1);
-    letter-spacing: .1rem;
+    letter-spacing: .075rem;
     color: var(--theme-text-color);
     line-height: 1.4;
 }
@@ -26,12 +26,14 @@ h2 {
 
 h3{
     font-size: calc(var(--font-basis) * 1);
+    margin: 0.47em 0;
 }
 
 h4{
     font-family: 'Apercu Pro Mono', sans-serif;
     font-size: calc(var(--font-basis) * 1);
     text-transform: uppercase;
+    margin: 0.47em 0;
 }
 
 button{
@@ -40,6 +42,11 @@ button{
     font-size: var(--font-basis);
     letter-spacing: .1rem;
     line-height: 1.4;
+}
+
+hr{
+    border: unset;
+    margin: 0.47em 0;
 }
 
 /*TEXT COLOR*/

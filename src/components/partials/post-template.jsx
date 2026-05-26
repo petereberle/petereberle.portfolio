@@ -32,15 +32,27 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 					videoExtension = extension.includes('mp4') || extension.includes('move'),
 					publicUrl = featuredImage.publicURL;
 
-			return !videoExtension ? 
+			return (
 
-			<GatsbyImage image={getImage(featuredImage)} className={containerStyles.card_image} alt={title}/>
+			<div className={`${containerStyles.card}`}>
 
-			: videoExtension ? 
+				<div className={`${containerStyles.card_landscape_inner}`}>
 
-			<Video source={publicUrl} title={title} classes={`${mediaStyles.reel} ${containerStyles.card_image}`}/>  
+					{!videoExtension ? 
+					
+					<GatsbyImage image={getImage(featuredImage)} className={containerStyles.card_image} alt={title}/>
 
-			: null;
+					: videoExtension ? 
+
+					<Video source={publicUrl} title={title} classes={`${mediaStyles.reel} ${containerStyles.card_image}`}/>  
+
+					: null}
+
+				</div>
+
+			</div>
+
+			)
 
 	};
 
@@ -50,7 +62,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 					const 	Vignette = ({children}) => (
 								<div className={`${containerStyles.vignette} ${containerStyles.flex_column}`}>
-									{children}
+										{children}
 								</div>
 							),
 							source = data.source ? data.source : undefined,
@@ -65,26 +77,31 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 					const media = source && !videoExtension ? 
 						<>
-							<GatsbyImage image={getImage(source)} alt={title}/>
-							{caption}
+							<GatsbyImage className={`${containerStyles.card_image} ${mediaStyles.contain}`} image={getImage(source)} alt={title}/>
 						</>
 					: source && videoExtension ? 
 
 						<>
-							<Video source={publicUrl} title={title} classes={`${mediaStyles.reel}`}/>  
-							{caption}
+							<Video source={publicUrl} title={title} classes={`${mediaStyles.reel} ${containerStyles.card_image} ${mediaStyles.contain}`}/>  
 						</>
 
 					: iframe ? 
 
 						<>
-							<iframe src={iframe} className={`${mediaStyles.reel}`} frameBorder="0" allow="autoplay;"></iframe>
-							{caption}
+							<iframe src={iframe} className={`${mediaStyles.reel} ${containerStyles.card_image} ${mediaStyles.contain}`} frameBorder="0" allow="autoplay;"></iframe>
 						</>
 
 					: null;
 
-					return <Vignette key={i}> {media} </Vignette>
+					return (
+					  <Vignette key={i}>
+					    <div className={containerStyles.card_landscape_inner}>
+					        {media}
+					    </div>
+					    	{caption}
+					  </Vignette>
+					)
+
 
 				} ) : null;
 
@@ -97,22 +114,23 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 
 		<div className={`${containerStyles.content_section}`}>
 			<div className={`${containerStyles.grid} ${containerStyles._25_75} ${mobileWindow ? containerStyles.reverse : ''}`}>
-				<div className={`${containerStyles.flex_column} ${containerStyles.justify_center}`}>
-					<div className={`${containerStyles.sidebar_inner} ${containerStyles.width_subtract_padding}`}>
-						{/*<h2 style={{marginTop : 0}}>{title}</h2>*/}
-						{tagline ? <h2>{tagline}</h2>  : <h2>{title}</h2>} 
+				<div className={`${containerStyles.flex_column} ${containerStyles.justify_start}`}>
+					<div className={`${generalStyles.position_sticky}`}>
+						{tagline ? <h1 className={generalStyles._0_margin} >{tagline}</h1>  : <h1 className={generalStyles._0_margin} >{title}</h1>} 
 						{client && <h4>Client: {client}</h4>}
 						{postYear && <h4>Year: {postYear}</h4>}
 						{materials && <h4>Materials: {materials}</h4>}
 					</div>
 				</div>
-				<FeaturedPostMedia/>
+				<div className={`${containerStyles.flex_column} ${containerStyles.flex_gap_2}`}>
+					<FeaturedPostMedia/>
+					<div className={generalStyles.post_html} dangerouslySetInnerHTML={{ __html: html }} />
+					<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
+						<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
+					</div>
+					<PostMedia />
+				</div>
 			</div>
-			<div className={generalStyles.post_html} dangerouslySetInnerHTML={{ __html: html }} />
-			<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between}`}>
-				<PostNavigation urlParam={urlParam} currentTags={tags} pageContext={pageContext} />
-			</div>
-			<PostMedia />
 		</div>
 
 		</>

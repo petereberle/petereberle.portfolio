@@ -6,6 +6,10 @@
     inset:0;
 }
 
+.contain{
+	object-fit: contain;
+}
+
 .icon{
 	width:25px;
 	height: 25px;

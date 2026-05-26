@@ -1,0 +1,56 @@
+---
+type: resume
+slug: general
+title: Peter Eberle
+headline: Optional Professional Headline
+location: City, State
+phone: 555.555.5555
+email: email@example.com
+website: paeberle.com
+active: true
+---
+
+<section class="resume-section">
+<h4 class="section-title">Summary</h4>
+
+One or two sentences summarizing the experience and capabilities relevant to this resume variant.
+
+</section>
+
+<section class="resume-section">
+<h4 class="section-title">Experience</h4>
+
+<div class="resume-entry">
+<h4 class="entry-title">Position Title | Organization Name</h4>
+<p class="resume-meta">City, State | 2022 - Present</p>
+
+- Describe a specific contribution or responsibility.
+- Describe an outcome, result, or relevant capability.
+
+</div>
+
+<div class="resume-entry">
+<h4 class="entry-title">Earlier Position Title | Organization Name</h4>
+<p class="resume-meta">City, State | 2020 - 2022</p>
+
+- Describe relevant work for this resume variant.
+
+</div>
+</section>
+
+<section class="resume-section">
+<h4 class="section-title">Skills</h4>
+
+Project management, web development, graphic design, content strategy
+
+</section>
+
+<section class="resume-section">
+<h4 class="section-title">Education</h4>
+
+<div class="resume-entry">
+<h4 class="entry-title">Degree or Credential | Institution Name</h4>
+<p class="resume-meta">Year</p>
+</div>
+
+</section>
