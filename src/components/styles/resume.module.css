@@ -7,11 +7,11 @@
   background-color: #f3f3f1;
 }
 
-:global(body > div) {
+/*:global(body > div) {
   height: calc(100vh - var(--item-padding) * 2) !important;
   margin: var(--item-padding) var(--screen-margin) !important;
   overflow-y: auto;
-}
+}*/
 
 .document {
   background-color: #fff;
@@ -25,7 +25,6 @@
 }
 
 .header {
-  border-bottom: 1px solid #dadada;
   margin: 0 0 1.7rem;
   padding: 0 0 1.15rem;
 }
@@ -45,9 +44,9 @@
 }
 
 .contact {
-  color: #383838;
+/*  color: #383838;
   font-size: 9.4pt;
-  letter-spacing: 0.018rem;
+  letter-spacing: 0.018rem;*/
   margin: 0;
 }
 
@@ -66,7 +65,7 @@
 }
 
 .content :global(.section-title) {
-  border-bottom: 1px solid #dadada;
+  border-bottom: var(--border-width) solid var(--whitespace-background);
   break-after: avoid;
   font-size: 10pt;
   letter-spacing: 0.105rem;
@@ -91,12 +90,12 @@
   text-transform: none;
 }
 
-.content :global(.resume-meta) {
+/*.content :global(.resume-meta) {
   color: #4a4a4a;
   font-size: 9.25pt;
   margin: 0 0 0.45rem;
 }
-
+*/
 .content :global(p) {
   margin: 0 0 0.55rem;
 }
@@ -119,7 +118,8 @@
 .controls {
   position: fixed;
   right: var(--item-padding);
-  top: var(--item-padding);
+  top: calc(var(--item-padding) * 3);
+  background-color: var(--whitespace);
   z-index: 2;
 }
 

@@ -90,9 +90,9 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
         </div>
       </div>
 
-      <div className={`${homeStyles.cardBody} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between}`}>
+      <div className={`${homeStyles.cardBody} ${containerStyles.flex_column} ${containerStyles.full_width} ${containerStyles.justify_start}`}>
         <h4>{title}</h4>
-        {details && <p>{details}</p>}
+        {details && <p>( {details} )</p>}
       </div>
     </MotionLink>
   );
@@ -295,7 +295,7 @@ const About = ({ urlParam }) => {
 
     if (!target) return;
 
-    wrapperScrollTo(target);
+    wrapperScrollTo(id === "bio" ? 0 : target);
 
   };
 

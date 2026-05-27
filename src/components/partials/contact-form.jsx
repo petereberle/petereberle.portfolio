@@ -65,7 +65,7 @@ const ContactForm = () => {
 				<input type="text" placeholder="Email" name="entry.433919051" value={email} onChange={e => setEmail(e.target.value)} ref={formReference.email} className={`${formStyles.form} ${formStyles.form_input}`}/>
 
 				<label htmlFor="entry.242520132">Message</label>
-				<textarea className={formStyles.form_input} placeholder="Message" name="entry.242520132" value={message} onChange={e => setMessage(e.target.value)} ref={formReference.message} className={`${formStyles.form} ${formStyles.form_text_area}`}></textarea>
+				<textarea className={formStyles.form_input} placeholder="" name="entry.242520132" value={message} onChange={e => setMessage(e.target.value)} ref={formReference.message} className={`${formStyles.form} ${formStyles.form_text_area}`}></textarea>
 
 				<div className={`${generalStyles.margin_negative} ${containerStyles.flex_row} ${containerStyles.full_width}`}>
 

@@ -36,11 +36,11 @@ const Contact = ({urlParam}) => {
 
       <ContentRouterAnimation urlParam={urlParam}>
 
-        <div className={`${containerStyles.grid} ${containerStyles._25_75}`}>
+        <div className={`${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.align_start}`}>
 
               <div className={`${containerStyles.flex_column} ${generalStyles.profile_card}`}>
 
-                <h1 className="footer_item">{markdownRemark.frontmatter.title}</h1>
+                <h1 className={generalStyles._0_margin}>{markdownRemark.frontmatter.title}</h1>
 
                 <div dangerouslySetInnerHTML={{__html: markdownRemark.html}}/>
 

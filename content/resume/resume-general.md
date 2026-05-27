@@ -1,13 +1,13 @@
 ---
 type: resume
-slug: verification
+slug: general
 title: Peter Eberle
 headline: Resume Rendering Verification
 location: Portland, OR
 phone: 509.555.5555
 email: test@example.com
 website: paeberle.com
-active: false
+active: true
 ---
 
 <section class="resume-section">
@@ -21,7 +21,7 @@ Clean, single-column resume layout intended to preserve information order for hu
 <h4 class="section-title">Experience</h4>
 
 <div class="resume-entry">
-<h4 class="entry-title">Verification Entry | Resume Renderer</h4>
+<h3 class="entry-title">Verification Entry | Resume Renderer</h3>
 <p class="resume-meta">Portland, OR | 2024 - Present</p>
 
 - Confirms that Markdown resume variants render in a single reading order.
@@ -30,7 +30,7 @@ Clean, single-column resume layout intended to preserve information order for hu
 </div>
 
 <div class="resume-entry">
-<h4 class="entry-title">Earlier Verification Entry | Local Build</h4>
+<h3 class="entry-title">Earlier Verification Entry | Local Build</h3>
 <p class="resume-meta">Portland, OR | 2020 - 2024</p>
 
 - Exercises consistent spacing between experience entries and sections.
@@ -49,7 +49,7 @@ Project management, web development, graphic design, content strategy, cross-fun
 <h4 class="section-title">Education</h4>
 
 <div class="resume-entry">
-<h4 class="entry-title">Bachelor of Arts in Art | Whitman College</h4>
+<h3 class="entry-title">Bachelor of Arts in Art | Whitman College</h3>
 <p class="resume-meta">2020</p>
 </div>
 

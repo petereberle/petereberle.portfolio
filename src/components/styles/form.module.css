@@ -32,10 +32,12 @@
 }
 
 .form_text_area{
-    border-bottom: var(--border-solid)!important;
+    border: var(--border-solid)!important;
+    padding: var(--item-padding)!important;
     min-width:100%;
     max-width: 100%;
-    min-height:150px;
+    min-height:250px;
+    box-sizing: border-box;
 }
 
 .form_message{

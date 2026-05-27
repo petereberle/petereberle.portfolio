@@ -22,6 +22,7 @@
 
     /*MAX PAGE VARIABLES */
     --page-width: 100vw;
+    --page-margin: var(--item-padding);
 
     /*FONT SCALING*/
     --font-basis: 1rem;
@@ -66,7 +67,7 @@ body {
     background-color: var(--whitespace-background);
     border-radius: var(--container-radius);
     margin: calc( var(--item-padding) * 3) var(--screen-margin);
-    max-width: var(--screen-width);
+    max-width: calc(var(--screen-width) - var(--item-padding) * 2);
     height: calc(100vh - var(--item-padding) * 6);
     overflow-y: auto;
 }

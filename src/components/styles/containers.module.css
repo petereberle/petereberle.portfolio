@@ -2,8 +2,8 @@
 
 	position:relative;
 	min-height:var(--screen-height);
-	margin-right:var(--screen-margin);
-	margin-left:var(--screen-margin);
+	margin-right:var(--page-margin);
+	margin-left:var(--page-margin);
 	max-width: var(--screen-width);
 }
 
@@ -211,7 +211,8 @@
 }
 
 .align_start{
-	align-items:flex-start;
+	align-items:start;
+	align-content:start;
 }
 
 .align_end{
@@ -325,7 +326,7 @@
     flex: 1 0 auto;
     display:inline-grid;
     align-items: center;
-/*    padding: var(--item-padding);*/
+	margin-bottom: var(--item-padding);
 }
 
 .card_landscape_inner {
