@@ -3,10 +3,6 @@
   margin: 0.7in 0.78in;
 }
 
-:global(body) {
-  background-color: #f3f3f1;
-}
-
 /*:global(body > div) {
   height: calc(100vh - var(--item-padding) * 2) !important;
   margin: var(--item-padding) var(--screen-margin) !important;

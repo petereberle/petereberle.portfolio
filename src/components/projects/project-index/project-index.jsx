@@ -63,7 +63,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 	return ( 
 
-		<div className={`${containerStyles.grid} ${containerStyles._15_85} ${containerStyles.inner}`}>
+		<div className={`${containerStyles.grid} ${containerStyles._15_85}`}>
 
 			<div className={`${containerStyles.flex_column} ${mobileWindow ? '' : generalStyles.full_height}`}>
 
