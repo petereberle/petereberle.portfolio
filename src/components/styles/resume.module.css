@@ -114,6 +114,7 @@
 .controls {
   position: sticky;
   top:var(--item-padding);
+  float: right;
   background-color: var(--whitespace-background);
   z-index: 2;
 }

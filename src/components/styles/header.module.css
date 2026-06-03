@@ -7,7 +7,8 @@
 .header{
     z-index:100;
     max-width: calc(var(--screen-width) - var(--item-padding) * 4 );
-    height: calc(var(--item-padding) * 3)
+    height: calc(var(--item-padding) * 3);
+    display: var(--print-visibility);
 /*    mix-blend-mode: exclusion !important;*/
 }
 

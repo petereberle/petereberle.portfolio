@@ -57,11 +57,7 @@ const Layout = ({ children, path}) => {
 		} ) : children;
 	};
 
-	return path.pathname === "test" ? (
-
-			<main className={`${containerStyles.homepage} ${containerStyles.flex_column} ${containerStyles.justify_center} ${containerStyles.inner}`} >{children}</main> 
-
-	) : (
+	return (
 
 		<div className={`${containerStyles.page} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
 

@@ -77,7 +77,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 		: fallbackResume?.publicURL;
 
 	const ResumeLink = () => resumePath ? (
-		<a target="_blank" rel="noopener" className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={resumePath}>
+		<a className={`${headerStyles.menu_item} ${generalStyles.item} ${generalStyles.last}`} href={resumePath}>
 			<button>
 				<h4 className={`${generalStyles._0_margin}`}>CV</h4>
 			</button>

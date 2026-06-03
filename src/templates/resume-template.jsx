@@ -1,13 +1,18 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+
+import Layout from "../components/layout"
+
+import ContentRouterAnimation from "../components/partials/content-router-animation"
 
 import "normalize.css"
 import * as generalStyles from "../components/styles/general.module.css"
 import "../components/styles/typography.module.css"
 import * as styles from "../components/styles/resume.module.css"
 
-const ResumeTemplate = ({ data }) => {
+const ResumeTemplate = ({ data, pageContext, location}) => {
+
   const { html, frontmatter } = data.markdownRemark
   const contactDetails = [
     frontmatter.location,
@@ -16,28 +21,81 @@ const ResumeTemplate = ({ data }) => {
     frontmatter.website,
   ].filter(Boolean)
 
+  const [printMode, setPrintMode] = useState(false);
+
+  const printPage = () => {
+
+    setPrintMode(true);
+
+    setTimeout( () => {
+
+        window.print();
+        setPrintMode(false);
+
+      }, 500);
+
+  };
+
   return (
-    <>
-      <Helmet title={`${frontmatter.title} | Resume`} />
-      <aside className={`${generalStyles.tag} ${styles.controls}`}>
-        <button type="button" onClick={() => window.print()}>
-          Print / Save
-        </button>
-      </aside>
-      <main className={styles.document}>
-        <header className={styles.header}>
-          <h1 className={styles.name}>{frontmatter.title}</h1>
-          {frontmatter.headline && <p className={styles.headline}>{frontmatter.headline}</p>}
-          {contactDetails.length > 0 && (
-            <p className={styles.contact}>{contactDetails.join(" | ")}</p>
-          )}
-        </header>
-        <article
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </main>
-    </>
+    <Layout path={location}>
+
+      <ContentRouterAnimation urlParam={location}>
+
+        <Helmet> 
+
+          <title>{`${frontmatter.title} | Resume`}</title>
+          
+          <style type="text/css">
+
+
+            { printMode ? `
+
+            #___gatsby{
+              border-radius: 0;
+              border: unset;
+              margin: 0;
+              padding: 0;
+              height: 100vh;
+              width: 100vw;
+            }
+
+            :root{
+              --print-visibility: none;
+              --head-space: 0;
+            }
+
+            ` :`
+            :root{
+              --head-space: 0;
+            }`
+          }
+
+          </style>
+
+        </Helmet>
+
+        <aside className={`${generalStyles.tag} ${styles.controls}`}>
+          <button type="button" onClick={() => printPage()}>
+            Print / Save
+          </button>
+        </aside>
+        <main className={styles.document}>
+          <header className={styles.header}>
+            <h1 className={styles.name}>{frontmatter.title}</h1>
+            {frontmatter.headline && <p className={styles.headline}>{frontmatter.headline}</p>}
+            {contactDetails.length > 0 && (
+              <p className={styles.contact}>{contactDetails.join(" | ")}</p>
+            )}
+          </header>
+          <article
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </main>
+
+      </ContentRouterAnimation>
+
+    </Layout>
   )
 }
 

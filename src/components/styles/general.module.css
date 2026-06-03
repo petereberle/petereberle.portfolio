@@ -29,6 +29,8 @@
     /*CARD WIDTH*/
     --card-width:3;
 
+    --print-visibility: flex;
+
     /******GRID VARIABLES******/
 
     /*6 COL AUTO ROWS*/
