@@ -81,11 +81,17 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
         </aside>
         <main className={styles.document}>
           <header className={styles.header}>
-            <h1 className={styles.name}>{frontmatter.title}</h1>
-            {frontmatter.headline && <p className={styles.headline}>{frontmatter.headline}</p>}
-            {contactDetails.length > 0 && (
-              <p className={styles.contact}>{contactDetails.join(" | ")}</p>
-            )}
+          
+            <div>
+              <h1 className={styles.name}>{frontmatter.title}</h1>
+              {frontmatter.headline && <p className={styles.headline}>{frontmatter.headline}</p>}
+            </div>
+
+            <ul className={styles.contact}>
+              {contactDetails.length > 0 ? contactDetails.map( (c) => {
+                return <li>{c}</li>
+              }) : '' }
+            </ul>
           </header>
           <article
             className={styles.content}

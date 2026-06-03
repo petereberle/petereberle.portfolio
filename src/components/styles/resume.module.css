@@ -1,3 +1,11 @@
+
+
+:root{
+  --document-padding-t-b:0.7in ;
+  --document-padding-l-r:0.78in;
+  --resume-font-basis: 9pt;
+}
+
 @page {
   size: letter;
   margin: 0.7in 0.78in;
@@ -13,45 +21,66 @@
   background-color: #fff;
   box-sizing: border-box;
   color: #202020;
-  font-size: 10.25pt;
+  font-size: var(--resume-font-basis);
   letter-spacing: 0.008rem;
   line-height: 1.42;
   margin: 0 auto;
   max-width: 8.5in;
+  position:relative;
 }
 
 .header {
-  margin: 0 0 1rem;
-  padding: 0 0 1.15rem;
+  margin: 0;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .name {
-  font-size: 20pt;
+  font-size: calc(var(--resume-font-basis) *2);
   font-weight: 500;
   letter-spacing: 0.02rem;
   line-height: 1.14;
   margin: 0 0 0.5rem;
-  text-transform: none;
+
 }
 
 .headline {
-  font-size: 10.75pt;
+  font-size: var(--resume-font-basis);
   margin: 0 0 0.42rem;
 }
 
 .contact {
-/*  color: #383838;
-  font-size: 9.4pt;
-  letter-spacing: 0.018rem;*/
+  color: #383838;
+  font-size: var(--resume-font-basis);
+  letter-spacing: 0.018rem;
   margin: 0;
+  list-style: none;
+  text-align:right;
 }
 
 .content :global(.resume-section) {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
 }
 
 .content :global(.resume-section:last-child) {
   margin-bottom: 0;
+}
+
+.content :global(.resume-section._3-col) {
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--resume-font-basis);
+}
+
+.content :global(.resume-section._3-col ) > h4 {
+  grid-area: span 1/span 12;
+}
+
+.content :global(.resume-section._3-col) > div {
+  grid-area: span 1/span 4;
+  margin-bottom:0;
 }
 
 .content :global(h4) {
@@ -61,18 +90,19 @@
 }
 
 .content :global(.section-title) {
-  border-bottom: var(--border-width) solid var(--whitespace-background);
+/*  border-bottom: var(--border-solid);*/
   break-after: avoid;
-  font-size: 12pt;
+  font-size: calc( var(--resume-font-basis) * 1.125);
   letter-spacing: 0.105rem;
-  margin: 0 0 0.85rem;
-  padding: 0 0 0.38rem;
+  margin:0;
+  margin-bottom: var(--resume-font-basis);
   text-transform: uppercase;
 }
 
 .content :global(.resume-entry) {
   break-inside: avoid;
-  margin: 0 0 1.05rem;
+  margin:0;
+  margin-bottom: var(--resume-font-basis);
 }
 
 .content :global(.resume-entry:last-child) {
@@ -80,9 +110,10 @@
 }
 
 .content :global(.entry-title) {
-  font-size: 10.5pt;
+  font-size: var(--resume-font-basis);
   letter-spacing: 0.018rem;
-  margin: 0 0 0.12rem;
+  margin: 0;
+  margin-bottom: var(--resume-font-basis);
   text-transform: none;
 }
 
@@ -93,7 +124,8 @@
 }
 */
 .content :global(p) {
-  margin: 0 0 0.55rem;
+  margin:0;
+  margin-bottom: var(--resume-font-basis);
 }
 
 .content :global(ul) {
@@ -103,13 +135,14 @@
 }
 
 .content :global(li) {
-  margin: 0 0 0.18rem;
+  margin:0;
+  margin-bottom: var(--resume-font-basis);
   padding-left: 0.15rem;
 }
 
 .content :global(li)::marker {
   color: currentColor;
-  content: "• ";
+  content: "- ";
   font-size: 0.8em;
 }
 
@@ -130,7 +163,7 @@
     box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.1);
     margin: 1.5rem auto;
     min-height: 11in;
-    padding: 0.7in 0.78in;
+    padding: var(--document-padding-t-b) var(--document-padding-l-r);
     width: 8.5in;
   }
 }
