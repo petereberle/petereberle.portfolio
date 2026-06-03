@@ -21,7 +21,7 @@
 }
 
 .header {
-  margin: 0 0 1.7rem;
+  margin: 0 0 1rem;
   padding: 0 0 1.15rem;
 }
 
@@ -63,7 +63,7 @@
 .content :global(.section-title) {
   border-bottom: var(--border-width) solid var(--whitespace-background);
   break-after: avoid;
-  font-size: 10pt;
+  font-size: 12pt;
   letter-spacing: 0.105rem;
   margin: 0 0 0.85rem;
   padding: 0 0 0.38rem;
@@ -99,12 +99,18 @@
 .content :global(ul) {
   list-style: disc;
   margin: 0.25rem 0 0;
-  padding-left: 1.1rem;
+  padding-left: 0.75rem;
 }
 
 .content :global(li) {
   margin: 0 0 0.18rem;
   padding-left: 0.15rem;
+}
+
+.content :global(li)::marker {
+  color: currentColor;
+  content: "• ";
+  font-size: 0.8em;
 }
 
 .content :global(strong) {
