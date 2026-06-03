@@ -62,15 +62,17 @@
     display: var(--mobile-visibility);
     position: fixed;
     background-color: var(--whitespace-background);
-    top: var(--head-space);
-    top: calc(var(--item-padding) * 3);
-    left: 0;
+    top: calc((var(--item-padding) * 3));
+    left: calc(-1 * var(--item-padding));
     right: 0;
     bottom: 0;
-    width: 100%;
-    height: calc(100% - var(--item-padding) * 6);
+    width: calc(100% + var(--item-padding) * 2);
+    height: calc((100% - var(--item-padding) * 6));
+    padding: 0 var(--item-padding);
     box-sizing: border-box;
     z-index: 120;
+    border: var(--border-solid);
+    border-radius: var(--container-radius);
 }
 
 .menu_inner{

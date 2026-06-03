@@ -1,6 +1,6 @@
 var primary =  '#f4642a',
 	secondary = '#8ED8F8',
-	whitespace = '#E8E8E8',
+	whitespace = '#FFFFFF',
 	themeColorSets = {
 		primary,
 		secondary,

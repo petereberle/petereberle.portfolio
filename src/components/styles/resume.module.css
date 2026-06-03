@@ -112,10 +112,9 @@
 }
 
 .controls {
-  position: fixed;
-  right: var(--item-padding);
-  top: calc(var(--item-padding) * 3);
-  background-color: var(--whitespace);
+  position: sticky;
+  top:var(--item-padding);
+  background-color: var(--whitespace-background);
   z-index: 2;
 }
 
