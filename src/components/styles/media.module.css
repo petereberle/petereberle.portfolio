@@ -10,6 +10,10 @@
 	object-fit: contain;
 }
 
+.contain > img{
+	object-fit: contain!important;
+}
+
 .icon{
 	width:25px;
 	height: 25px;

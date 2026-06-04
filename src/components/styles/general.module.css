@@ -58,7 +58,7 @@
     --item-padding: calc( var(--unit) * 1.75);
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:calc( var(--unit) * 10);
+    --head-space:calc( var(--unit) * 20);
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -325,16 +325,16 @@ a, button {
     width:fit-content;
 }
 
-.profile_wrapper:after{
+/*.profile_wrapper:after{
     content: '';
     position: absolute;
     right: 7px;
     top: 7.5px;
     width: 200px;
     height: 200px;
-    background: var(--theme-background-primary);
+    background: var(--color-primary);
     border-radius: 200px;
-}
+}*/
 
 .profile {
     width: 200px;

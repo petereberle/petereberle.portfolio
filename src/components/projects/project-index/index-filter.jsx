@@ -22,7 +22,7 @@ const FilterMenu = ({data, filter, filterProject, setProject, menuItems, hash}) 
 
   return (
     <>
-      <div className={`${containerStyles.flex_row} ${containerStyles.sidebar_inner} ${generalStyles.position_relative}`}>
+      <div className={`${containerStyles.flex_row} ${containerStyles.sidebar_inner} ${mobileWindow ? generalStyles.position_relative : generalStyles.position_sticky} `}>
         {menuItems.map((tag, id) => {
           return (
             <button className={ `${buttonStyles} ${activeStyle(tag)}` } onClick={() => { filterProject(tag); resetPath() } }  key={id} >

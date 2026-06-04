@@ -131,6 +131,7 @@
 
 .cardStack {
   display: grid;
+  gap: var(--item-padding);
 }
 
 .cardStack > a {
