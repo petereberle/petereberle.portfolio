@@ -1,17 +1,64 @@
 /*STYLING VARIABLES*/
 
 :root{
-    --border-color: var(--theme-text-color);
+
+      /*FALLBACK COLORS*/
+      --red:          #F03009;
+      --red-orange:   #ff2e00;
+      --hot-orange:   #FF5C00;
+      --orange:       #ff7105;
+      --brown:        #716558;
+      --warm-yellow:  #FFE310;
+      --yellow:       #FFF310;
+      --light-yellow: rgb(255, 255, 179);
+      --green:        rgb(18, 192, 91);
+      --ocean-green:  #008f5d;
+      --pear-green:   rgb(119, 221, 134);
+      --blue:         rgb(3, 102, 214);
+      --sunset-pink:  #ff7b81;
+      --light-pink:   #ffb3ba;
+      --xlight-pink:  #ffd1d9;
+      --medium-grey:  #231F20;
+      --cream:        rgb(253 252 243);
+      --white:        #ffffff;
+
+      @media (color-gamut: p3) {
+
+          @supports (color: color(display-p3 1 1 1)) {
+            --red:          color(display-p3 0.94 0.19 0.04);
+            --red-orange:   color(display-p3 0.97 0.26 0.11);
+            --hot-orange:   color(display-p3 1.0 0.36 0.0);
+            --orange:       color(display-p3 0.99 0.49 0.16);
+            --brown:        color(display-p3 0.44 0.393 0.341);
+            --warm-yellow:  color(display-p3 1.0  0.87 0.05);
+            --yellow:       color(display-p3 1.0  0.96 0.05);
+            --light-yellow: color(display-p3 1.0  1.0  0.7);
+            --ocean-green:  color(display-p3 0.0 0.55 0.37);
+            --sunset-pink:  color(display-p3 1 0.495 0.54);
+            --light-pink:   color(display-p3 1 0.69 0.718);
+            --xlight-pink:  color(display-p3 1 0.845 0.869);
+            --cream:        color(display-p3 0.98 0.97 0.90);
+          }
+
+        }
+
+    /*FONT UNIT BASIS*/
+    --font-basis: 12pt;
+    --unit: calc(var(--font-basis) * 0.5);
+
+    --whitespace-background: var(--white);
+    --color-primary: var(--red);
+
+    --border-color: var(--color-primary);
     --border-width: .085rem;
     --border-solid: var(--border-width) solid var(--border-color);
     --container-radius: 1rem;
-    --container-shadow: 0 0 24px rgba(0, 0, 0, 0.09);;
-    --whitespace-background: var(--theme-whitespace-background);
+    --container-shadow: 0 0 24px color(from var(--color-primary) display-p3 r g b / 10%);
 
-    --item-padding: 0.875rem;
+    --item-padding: calc( var(--unit) * 1.75);
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
 
-    --head-space:4.5rem;
+    --head-space:calc( var(--unit) * 10);
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -22,14 +69,10 @@
 
     /*MAX PAGE VARIABLES */
     --page-width: 100vw;
-
-    /*FONT SCALING*/
-    --font-basis: 1rem;
+    --page-margin: auto;
 
     /*CARD WIDTH*/
     --card-width:3;
-
-    --print-visibility: flex;
 
     /******GRID VARIABLES******/
 
@@ -42,21 +85,23 @@
     --card-width:3;
 
     /*TRANSITION*/
-    /*UI*/
     --transition-ease: all .35s ease;
 
-
-    /**************************/
+        /**************************/
 
     /*VISIBILITY*/
     --mobile-visibility: none;
     --desktop-visibility: block;
+    --print-visibility: flex;
+
 }
+
+
 
 /*GENERAL ELEMENTS*/
 
 body {
-    
+    background-color: var(--whitespace-background);
 }
 
 .home{
@@ -65,11 +110,13 @@ body {
 }
 
 .page_wrapper{
-    border: var(--border-solid);
+/*    border: var(--border-solid);
     border-radius: var(--container-radius);
     margin: calc( var(--item-padding) * 3) var(--screen-margin);
     max-width: var(--screen-width);
-    height: calc(100vh - var(--item-padding) * 6);
+    height: calc(100vh - var(--item-padding) * 6);*/
+    height:100vh;
+    margin: 0 var(--screen-margin);
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -134,7 +181,7 @@ a, button {
 
 .position_sticky{
     position:sticky;
-    top:0;
+    top:var(--head-space);
 }
 
 .position_fixed{
@@ -186,14 +233,8 @@ a, button {
     
 }
 
-/*.item:after{
-    content:'';
-    transition: width .3s ease;
-    width:0px;
-}*/
-
 .item.active > button > h4{
-    color: var(--theme-background-primary);
+    color: var(--color-primary);
 }
 
 /*UI Elements*/
@@ -343,22 +384,9 @@ a, button {
     margin-right:var(--border-width);
 }
 
-button, .tag{
-/*    -webkit-filter: invert(0); 
-    filter: invert(0);*/
-}
-
-.button:hover{
-/*    -webkit-filter: invert(1); 
-    filter: invert(1);*/
-    background-color: var(--theme-background-primary);
-    transition: var(--transition-ease);
-}
-
 .tag:hover{
-/*    -webkit-filter: invert(1); 
-    filter: invert(1);*/
-    background-color: var(--theme-background-primary);
+    color: var(--whitespace-background);
+    background-color: var(--border-color);
     transition: var(--transition-ease);
 }
 

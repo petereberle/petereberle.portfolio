@@ -77,7 +77,6 @@
 .showcaseSection {
   display: grid;
   gap: var(--item-padding);
-  padding: var(--item-padding);
   align-items: start;
   align-content: start;
 }

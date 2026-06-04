@@ -65,7 +65,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 		<div className={`${containerStyles.grid} ${containerStyles._15_85}`}>
 
-			<div className={`${containerStyles.flex_column} ${mobileWindow ? '' : generalStyles.full_height}`}>
+			<div className={`${containerStyles.flex_column} ${generalStyles.margin_negative} ${mobileWindow ? '' : generalStyles.full_height}`}>
 
 					<FilterMenu data={data} filter={filter} filterProject={filterProject} setProject={setProject} menuItems={menuItems()} hash={hash}/>
 

@@ -42,7 +42,6 @@
 
 .form_message{
     border:var(--border-solid);
-    background-color: var(--theme-background-primary);
     padding:var(--item-padding);
 }
 

@@ -15,7 +15,7 @@
 
 	:root{
 
-		--head-space: 0;
+		--head-space: calc( var(--item-padding) * 2);
 
 		/* MAX SCREEN VARIABLES*/
 		 --screen-height: unset;

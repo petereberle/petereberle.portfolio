@@ -3,7 +3,7 @@ body {
     font-weight: 100;
     font-size: calc(var(--font-basis) * 1);
     letter-spacing: .075rem;
-    color: var(--theme-text-color);
+    color: var(--color-primary);
     line-height: 1.4;
 }
 
@@ -70,7 +70,7 @@ hr{
 /*HIGHLIGHT SELECTION*/
 
 ::selection {
-    background: var(--theme-background-primary);
+    background: var(--color-primary);
 }
 
 /*TEXT RENDERING*/

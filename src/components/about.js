@@ -68,11 +68,11 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
   return (
     <MotionLink
       to={`/${directory}${fields.slug}`}
-      className={`${containerStyles.card_wrapper} ${accentClass}`}
+      className={`${containerStyles.card_wrapper} ${containerStyles.vignette} ${accentClass}`}
       whileHover={{ y: -4 }}
       transition={showcaseTransition}
     >
-      <div className={containerStyles.card}>
+      <div className={`${containerStyles.card}`}>
         <div className={containerStyles.card_landscape_inner}>
           {!isVideo ? (
             <GatsbyImage

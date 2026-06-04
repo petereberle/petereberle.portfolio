@@ -66,7 +66,7 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
 
             ` :`
             :root{
-              --head-space: 0;
+
             }`
           }
 
@@ -74,7 +74,7 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
 
         </Helmet>
 
-        <aside className={`${generalStyles.tag} ${styles.controls}`}>
+        <aside className={`${generalStyles.tag} ${styles.controls} ${generalStyles.position_sticky} `}>
           <button type="button" onClick={() => printPage()}>
             Print / Save
           </button>
