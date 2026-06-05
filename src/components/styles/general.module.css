@@ -112,10 +112,9 @@ body {
 .page_wrapper{
 /*    border: var(--border-solid);
     border-radius: var(--container-radius);
-    margin: calc( var(--item-padding) * 3) var(--screen-margin);
-    max-width: var(--screen-width);
-    height: calc(100vh - var(--item-padding) * 6);*/
-    height:100vh;
+    max-width: var(--screen-width);*/
+    height: calc(100vh - var(--item-padding) * 3);
+    margin: 0 var(--screen-margin) calc( var(--item-padding) * 3) var(--screen-margin);
     margin: 0 var(--screen-margin);
     overflow-y: auto;
     box-sizing: border-box;

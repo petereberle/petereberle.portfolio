@@ -67,10 +67,15 @@ hr{
     text-align: center;
 }
 
+
+.text_justify{
+    text-align: justify;
+}
+
 /*HIGHLIGHT SELECTION*/
 
 ::selection {
-    background: var(--color-primary);
+    background: var(--warm-yellow);
 }
 
 /*TEXT RENDERING*/

@@ -28,7 +28,7 @@ const showcaseTransition = {
   duration: 0.35,
 };
 
-const bookmarkOffset = 16;
+const bookmarkOffset = 60;
 
 const getSectionId = (value) =>
   value
@@ -337,7 +337,7 @@ const About = ({ urlParam }) => {
               <div className={`${containerStyles.flex_column} ${containerStyles.flex_gap} `}>
               
                 <h1 className={`${typographyStyles.text_left} ${generalStyles._0_margin}`}>{title}</h1>
-                <p className={`${generalStyles._0_margin}`}>{`${bio_statement}`}</p>
+                <p className={`${typographyStyles.text_justify} ${generalStyles._0_margin}`}>{`${bio_statement}`}</p>
 
               </div>
 

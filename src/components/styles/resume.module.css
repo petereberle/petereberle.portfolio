@@ -3,7 +3,8 @@
 :root{
   --document-padding-t-b:0.7in ;
   --document-padding-l-r:0.78in;
-  --resume-font-basis: 9pt;
+  --resume-font-basis: 9.15pt;
+  --resume-color-primary: #202020;
 }
 
 @page {
@@ -20,17 +21,17 @@
 .document {
   background-color: #fff;
   box-sizing: border-box;
-  color: #202020;
+  color: var(--resume-color-primary);
   font-size: var(--resume-font-basis);
-  letter-spacing: 0.008rem;
-  line-height: 1.42;
+  letter-spacing: calc( var(--resume-font-basis) * .03 );
+  line-height: calc( var(--resume-font-basis) * 1.25);
   margin: 0 auto;
   max-width: 8.5in;
   position:relative;
 }
 
 .header {
-  margin: 0;
+  margin-bottom: calc( var(--resume-font-basis) * 1.75);
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -39,10 +40,8 @@
 .name {
   font-size: calc(var(--resume-font-basis) *2);
   font-weight: 500;
-  letter-spacing: 0.02rem;
+  letter-spacing: calc( var(--resume-font-basis) * .25 );
   line-height: 1.14;
-  margin: 0 0 0.5rem;
-
 }
 
 .headline {
@@ -53,10 +52,16 @@
 .contact {
   color: #383838;
   font-size: var(--resume-font-basis);
-  letter-spacing: 0.018rem;
+  letter-spacing: calc( var(--resume-font-basis) * 0.01 );
   margin: 0;
   list-style: none;
   text-align:right;
+}
+
+.content :global(h4) {
+  font-family: "Apercu Pro Mono", sans-serif;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .content :global(.resume-section) {
@@ -76,6 +81,7 @@
 
 .content :global(.resume-section._3-col ) > h4 {
   grid-area: span 1/span 12;
+  margin-bottom: 0;
 }
 
 .content :global(.resume-section._3-col) > div {
@@ -83,19 +89,17 @@
   margin-bottom:0;
 }
 
-.content :global(h4) {
-  font-family: "Apercu Pro Mono", sans-serif;
-  font-weight: 500;
-  line-height: 1.25;
+.content :global(.resume-section._3-col)  p {
+  margin-bottom: 0;
 }
 
 .content :global(.section-title) {
-/*  border-bottom: var(--border-solid);*/
+  /*border-bottom: calc( var(--resume-font-basis) * 0.083) solid var(--resume-color-primary);*/
   break-after: avoid;
   font-size: calc( var(--resume-font-basis) * 1.125);
-  letter-spacing: 0.105rem;
+  letter-spacing: calc( var(--resume-font-basis) * 0.09 );
   margin:0;
-  margin-bottom: var(--resume-font-basis);
+  margin-bottom: calc( var(--resume-font-basis) * 0.75);
   text-transform: uppercase;
 }
 
@@ -111,18 +115,15 @@
 
 .content :global(.entry-title) {
   font-size: var(--resume-font-basis);
-  letter-spacing: 0.018rem;
+  letter-spacing: calc( var(--resume-font-basis) * 0.03 );
   margin: 0;
-  margin-bottom: var(--resume-font-basis);
   text-transform: none;
 }
 
-/*.content :global(.resume-meta) {
-  color: #4a4a4a;
-  font-size: 9.25pt;
-  margin: 0 0 0.45rem;
+.content :global(.resume-meta) {
+  margin-bottom: calc( var(--resume-font-basis) * 0.5);
 }
-*/
+
 .content :global(p) {
   margin:0;
   margin-bottom: var(--resume-font-basis);
@@ -136,7 +137,7 @@
 
 .content :global(li) {
   margin:0;
-  margin-bottom: var(--resume-font-basis);
+  margin-bottom: calc(var(--resume-font-basis) * 0.25);
   padding-left: 0.15rem;
 }
 
