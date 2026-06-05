@@ -28,7 +28,7 @@ const ContentRouterAnimation = ({children, urlParam}) => {
 				type: "spring",
 		        mass: 0.5,
 		        stiffness: 50,
-		        duration: 0.3
+		        duration: 1
 	    	},
 			animationDirection = ({pathName, hash, initial, exit}) => {
 

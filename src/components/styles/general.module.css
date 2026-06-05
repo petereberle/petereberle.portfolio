@@ -53,12 +53,13 @@
     --border-width: .085rem;
     --border-solid: var(--border-width) solid var(--border-color);
     --container-radius: 1rem;
-    --container-shadow: 0 0 24px color(from var(--color-primary) display-p3 r g b / 10%);
+    --container-shadow: 0 0 18px color(from var(--color-primary) display-p3 r g b / 15%);
 
     --item-padding: calc( var(--unit) * 1.75);
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
+    --vignette-margin: calc( var(--unit) * 8.75 );
 
-    --head-space:calc( var(--unit) * 20);
+    --head-space:calc( var(--unit) * 18);
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;

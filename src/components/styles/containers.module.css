@@ -142,6 +142,7 @@
 .grid._15_85{
 	display:grid;
 	grid-template-columns: calc(var(--screen-width)/6.66) 1fr;
+	gap: var(--item-padding);
 }
 
 .grid.reverse{
@@ -327,6 +328,10 @@
 	margin-bottom: var(--item-padding);
 }
 
+.card_wrapper h4{
+	margin-left: var(--item-padding);
+}
+
 .card_landscape_inner {
     padding-top: 66%;
     position: relative;
@@ -343,7 +348,6 @@
     display: block;
     inset: 0;
     border-radius: var(--container-radius);
-	box-shadow: var(--container-shadow);
 	object-fit: cover;
 }
 .card_landscape_inner>.card_image, .card_portrait_inner>.card_image{
@@ -357,7 +361,7 @@
 /*POST STYLING*/
 
 .vignette{
-	margin: 0 calc(var(--item-padding) *5);
+	margin: 0 var(--vignette-margin);
 }
 
 .vignette .card_landscape_inner {

@@ -17,6 +17,8 @@
 
 		--head-space: calc( var(--item-padding) * 4);
 
+		--vignette-margin: 0;
+
 		/* MAX SCREEN VARIABLES*/
 		 --screen-height: unset;
 
@@ -36,8 +38,6 @@
     	--mobile-visibility: block;
     	--desktop-visibility: none;
 
-    	/*FONT SCALING*/
-    	--h1-size: 2.5rem;
 
 	}
 

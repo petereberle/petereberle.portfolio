@@ -53,9 +53,8 @@ const IndexCards = ({urlParam, article, path, indexConstraint}) => {
 	  							<div className={containerStyles.card_landscape_inner}>
 		  							<FeaturedMedia/>
 	  							</div>
-	  							<div className={`${containerStyles.flex_row} ${containerStyles.justify_space_between} ${containerStyles.align_center}`} >
+	  							<div className={`${containerStyles.flex_row} ${containerStyles.justify_start} ${containerStyles.align_center}`} >
 		  							<h4>{title}</h4>
-		  							<span>{year}</span>
 		  						</div>
 
 		  					</Card>
