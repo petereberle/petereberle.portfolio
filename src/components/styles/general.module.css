@@ -21,6 +21,8 @@
       --medium-grey:  #231F20;
       --cream:        rgb(253 252 243);
       --white:        #ffffff;
+      --warm-black: rgb(22, 18, 14); 
+      --cool-black: #12161a;
 
       @media (color-gamut: p3) {
 
@@ -38,6 +40,8 @@
             --light-pink:   color(display-p3 1 0.69 0.718);
             --xlight-pink:  color(display-p3 1 0.845 0.869);
             --cream:        color(display-p3 0.98 0.97 0.90);
+            --warm-black:   color(display-p3 0.08 0.06 0.04);
+            --cool-black:   color(display-p3 0.05 0.08 0.10);
           }
 
         }
@@ -47,7 +51,7 @@
     --unit: calc(var(--font-basis) * 0.5);
 
     --whitespace-background: var(--white);
-    --color-primary: var(--red);
+    --color-primary: var(--red-orange);
 
     --border-color: var(--color-primary);
     --border-width: .085rem;

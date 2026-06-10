@@ -328,7 +328,7 @@
 	margin-bottom: var(--item-padding);
 }
 
-.card_wrapper h4{
+.card_wrapper h4, .card_wrapper p{
 	margin-left: var(--item-padding);
 }
 

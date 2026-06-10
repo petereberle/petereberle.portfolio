@@ -41,7 +41,7 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
     return (
       <MotionLink
         to={hash ? `/${directory}/#${hash}` : `/${directory}/`}
-        className={`${homeStyles.viewAllCard} ${containerStyles.flex_row} ${containerStyles.justify_center} `}
+        className={`${homeStyles.viewAllCard} ${containerStyles.flex_row} ${containerStyles.justify_center} ${homeStyles.snapSection}`}
         whileHover={{ y: -4 }}
         transition={showcaseTransition}
       >
@@ -68,7 +68,7 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
   return (
     <MotionLink
       to={`/${directory}${fields.slug}`}
-      className={`${containerStyles.card_wrapper} ${containerStyles.vignette} ${accentClass}`}
+      className={`${containerStyles.card_wrapper} ${containerStyles.vignette} ${accentClass} ${homeStyles.snapSection}`}
       whileHover={{ y: -4 }}
       transition={showcaseTransition}
     >
@@ -138,7 +138,7 @@ const ShowcaseTagSection = React.forwardRef(({ section }, ref) => {
     <motion.section
       ref={ref}
       id={section.id}
-      className={homeStyles.showcaseSection}
+      className={`${homeStyles.showcaseSection}`}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.25 }}
@@ -267,6 +267,18 @@ const About = ({ urlParam }) => {
   const wrapperScrollTo = useWrapperScrollTo(bookmarkOffset);
 
   React.useEffect(() => {
+    const pageWrapper = document.getElementById("___gatsby");
+
+    if (!pageWrapper) return;
+
+    pageWrapper.classList.add(homeStyles.snapScrollContainer);
+
+    return () => {
+      pageWrapper.classList.remove(homeStyles.snapScrollContainer);
+    };
+  }, []);
+
+  React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntries = entries
@@ -317,7 +329,7 @@ const About = ({ urlParam }) => {
                 sectionRefs.current.bio = element;
               }}
               id="bio"
-              className={`${homeStyles.bioCard} ${generalStyles.profile_card} ${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.align_center}`}
+              className={`${homeStyles.bioCard} ${homeStyles.snapSection} ${generalStyles.profile_card} ${containerStyles.grid} ${containerStyles._25_75} ${containerStyles.align_center}`}
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={showcaseTransition}
@@ -365,7 +377,7 @@ const About = ({ urlParam }) => {
                 sectionRefs.current.about_website = element;
               }}
               id="about_website"
-              className={`${containerStyles.align_center} ${generalStyles.profile_card}`}
+              className={`${homeStyles.snapSection} ${containerStyles.align_center} ${generalStyles.profile_card}`}
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={showcaseTransition}

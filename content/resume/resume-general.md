@@ -24,10 +24,13 @@ Clean, single-column resume layout intended to preserve information order for hu
 <h3 class="entry-title">Marketing Specialist | Design and Direct Source</h3>
 <p class="resume-meta">Portland, OR | 2024 - Present</p>
 
-- Managed teams of highly skilled technicians across multiple departments in a fast-paced fabrication and casting facility for monumental sculpture.
-- Ensured adherence to clients’ artistic vision by implementing rigorous quality assurance throughout production.
-- Held departments accountable for targets and labor hour budgets.
-- Initiated project development by designing workflow plans with digital, engineering, and production team leads.
+- Product launches / product campaigns. Copywriting all descriptions, creating product identity for B2B designer audience.
+- Automated ERP integrations: eblast contacts, lead import from external sample catalog (material bank), product data (update/create), e-blast crm
+- Weekly e-blasts. Content calendar built around variety and audience relevance, segemented for contact relevance.
+- BigCommerce theme development / website work
+- Sales collateral
+- Trade show coordination
+- Brand voice
 
 
 </div>

@@ -26,7 +26,6 @@
 }
 
 .showcaseBookmarks {
-  gap: 0.35rem;
   padding-top: 32vh;
 }
 
@@ -67,10 +66,19 @@
   min-width: 0;
 }
 
+.snapScrollContainer {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--head-space);
+}
+
+.snapSection {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 .showcaseColumn aside,
 .showcaseColumn section {
   min-height: var(--showcase-section-height);
-  scroll-margin-top: 132px;
 }
 
 .bioCard,
@@ -131,11 +139,12 @@
 
 .cardStack {
   display: grid;
-  gap: var(--item-padding);
+  gap: calc( var(--item-padding) * 6);
 }
 
 .cardStack > a {
   padding: 0;
+  min-height: var(--showcase-section-height);
 }
 
 .showcaseCard {
@@ -193,6 +202,16 @@
 }
 
 @media screen and (max-width: 1150px) {
+  .snapScrollContainer {
+    scroll-snap-type: none;
+    scroll-padding-top: 0;
+  }
+
+  .snapSection {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
   .homepageLayout {
     grid-template-columns: 1fr;
   }
