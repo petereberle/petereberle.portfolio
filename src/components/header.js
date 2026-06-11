@@ -95,7 +95,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 				
 					<div className={`${headerStyles.menu_wrapper} ${isToggled ? headerStyles.active : ''}`}>
 						<div className={`${headerStyles.menu_inner}`}>
-							<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${headerStyles.menu_list}`}>
+							<div className={`${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.align_center} ${headerStyles.menu_list}`}>
 								<MenuLinks linkStyle={(l)=>( <button> <h4 className={`${generalStyles._0_margin}`} >{l}</h4> </button>)} />
 								<ResumeLink />
 							</div>

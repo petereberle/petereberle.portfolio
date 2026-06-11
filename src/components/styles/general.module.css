@@ -47,23 +47,23 @@
         }
 
     /*FONT UNIT BASIS*/
-    --font-basis: 12pt;
+    --font-basis: 14pt;
     --unit: calc(var(--font-basis) * 0.5);
 
-    --whitespace-background: var(--white);
-    --color-primary: var(--red-orange);
+    --whitespace-background: var(--warm-black);
+    --color-primary: var(--cream);
 
-    --border-color: var(--color-primary);
+    --head-space:calc( var(--unit) * 16);
+    --item-padding: calc( var(--unit) * 1.65);
     --border-width: .085rem;
-    --border-solid: var(--border-width) solid var(--border-color);
-    --container-radius: 1rem;
-    --container-shadow: 0 0 18px color(from var(--color-primary) display-p3 r g b / 15%);
-
-    --item-padding: calc( var(--unit) * 1.75);
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
     --vignette-margin: calc( var(--unit) * 8.75 );
 
-    --head-space:calc( var(--unit) * 18);
+
+    --border-color: var(--color-primary);
+    --border-solid: var(--border-width) solid var(--border-color);
+    --container-radius: calc( var(--item-padding) * 0.1 );
+    --container-shadow: 0 0 18px color(from var(--color-primary) display-p3 r g b / 10%);
 
     /* MAX SCREEN VARIABLES*/
     --screen-width: 100vw;
@@ -75,9 +75,6 @@
     /*MAX PAGE VARIABLES */
     --page-width: 100vw;
     --page-margin: auto;
-
-    /*CARD WIDTH*/
-    --card-width:3;
 
     /******GRID VARIABLES******/
 
@@ -120,6 +117,7 @@ body {
     max-width: var(--screen-width);*/
     height: calc(100vh - var(--item-padding) * 3);
     margin: 0 var(--screen-margin) calc( var(--item-padding) * 3) var(--screen-margin);
+    /*height:100vh;*/
     margin: 0 var(--screen-margin);
     overflow-y: auto;
     box-sizing: border-box;
@@ -355,10 +353,10 @@ a, button {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    border-radius: var(--container-radius);
-    outline: var(--border-solid);
-    box-shadow: var(--container-shadow);
+    position: relative;
+    text-shadow: var(--container-shadow);
     padding: calc(var(--item-padding) / 2) var(--item-padding);
+    /*padding: calc(var(--item-padding) / 3) 0;*/
     margin: var(--item-padding);
     text-align: left;
 }
@@ -367,11 +365,7 @@ a, button {
     margin:0;
 }
 
-.tag.navigation_tag{
-/*    width: calc(50% - var(--item-padding)*2 - var(--border-width)*6);*/
-}
-
-.tag.active{
+/*.tag.active{
     background-color: var(--border-color);
     color: var(--whitespace-background);
 }
@@ -379,19 +373,33 @@ a, button {
 .tag.active>button{
     color: var(--whitespace-background);
 }
+*/
 
-/*.tag:first-child{
-    margin-left:var(--border-width);
-}*/
+.tag::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: var(--border-solid);
+    border-radius: var(--container-radius);
+    
+    clip-path: inset(calc(100% - var(--border-width)) var(--item-padding) 0 var(--item-padding) );
 
-.tag:last-child{
-    margin-right:var(--border-width);
+    transition: var(--transition-ease);
+    pointer-events: none;
+
 }
 
-.tag:hover{
-    color: var(--whitespace-background);
-    background-color: var(--border-color);
-    transition: var(--transition-ease);
+.tag:hover::after,
+.tag.active::after {
+    clip-path: inset(0 0 0 0);
+}
+
+/*.tag:first-child{
+    margin-left: 0;
+}
+*/
+.tag:last-child{
+    margin-right: 0;
 }
 
 .theme_background{

@@ -29,8 +29,8 @@
 	    --6col-large-area: calc( var(--6col-template-columns) );
 	    --6col-small-area: calc( var(--6col-template-columns)/var(--card-width) );
 
-	    /*CARD WIDTH*/
-	    --card-width:2;
+	    /*CARD COLUMNS*/
+	    --index-grid-columns: 2;
 
 	    /**************************/
 
@@ -38,6 +38,16 @@
     	--mobile-visibility: block;
     	--desktop-visibility: none;
 
+
+	}
+
+}
+
+@media screen and (max-width: 950px) {
+
+	:root {
+
+	--index-grid-columns: 1;
 
 	}
 

@@ -1,5 +1,6 @@
 :root {
   --showcase-section-height: calc(100vh - var(--head-space));
+  --showcase-card-spacing: var(--head-space);
 }
 
 .homepageLayout {
@@ -62,13 +63,13 @@
 
 .showcaseColumn {
   display: grid;
-  gap: calc(var(--item-padding) * 2);
+  gap: var(--showcase-card-spacing);
   min-width: 0;
 }
 
 .snapScrollContainer {
   scroll-snap-type: y mandatory;
-  scroll-padding-top: var(--head-space);
+  scroll-padding-top: var(--showcase-card-spacing);
 }
 
 .snapSection {
@@ -139,7 +140,7 @@
 
 .cardStack {
   display: grid;
-  gap: calc( var(--item-padding) * 6);
+  gap: var(--showcase-card-spacing);
 }
 
 .cardStack > a {
@@ -169,7 +170,7 @@
   box-sizing: border-box;
 }
 
-.cardBody > * {
+.cardBody  * {
   margin: 0;
 }
 

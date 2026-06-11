@@ -1,7 +1,7 @@
 ---
 type: "about"
 title: "Hi, I'm Peter"
-profile: ../images/resources/PE_port_red.jpg
+profile: ../images/resources/PE_port.jpg
 interests:
   - Vegetable Gardening
   - Sourdough baking

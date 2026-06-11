@@ -36,21 +36,8 @@ const getSectionId = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash }) => {
-  if (isViewAll) {
-    return (
-      <MotionLink
-        to={hash ? `/${directory}/#${hash}` : `/${directory}/`}
-        className={`${homeStyles.viewAllCard} ${containerStyles.flex_row} ${containerStyles.justify_center} ${homeStyles.snapSection}`}
-        whileHover={{ y: -4 }}
-        transition={showcaseTransition}
-      >
-        <div className={generalStyles.tag}>
-          <h4 className={generalStyles._0_margin}>All {directory === "projects" ? hash + " Projects" : "Artwork"}</h4>
-        </div>
-      </MotionLink>
-    );
-  }
+
+const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) => {
 
   const { frontmatter, fields } = item.node;
   const title = frontmatter.title;
@@ -66,13 +53,10 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
   const details = frontmatter.tagline || frontmatter.materials || frontmatter.tags?.join(', ');
 
   return (
-    <MotionLink
-      to={`/${directory}${fields.slug}`}
+    <div
       className={`${containerStyles.card_wrapper} ${containerStyles.vignette} ${accentClass} ${homeStyles.snapSection}`}
-      whileHover={{ y: -4 }}
-      transition={showcaseTransition}
     >
-      <div className={`${containerStyles.card}`}>
+      <a href={`/${directory}${fields.slug}`} className={`${containerStyles.card}`}>
         <div className={containerStyles.card_landscape_inner}>
           {!isVideo ? (
             <GatsbyImage
@@ -88,13 +72,30 @@ const ShowcaseCard = ({ item, directory, accentClass, isViewAll = false, hash })
             />
           )}
         </div>
-      </div>
+      </a>
 
-      <div className={`${homeStyles.cardBody} ${containerStyles.flex_column} ${containerStyles.full_width} ${containerStyles.justify_start}`}>
-        <h4>{title}</h4>
-        {details && <p>( {details} )</p>}
+
+
+      <div className={`${homeStyles.cardBody} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between}`}>
+        
+        <div className={`${containerStyles.flex_column}`}>
+          <h4>{title}</h4>
+          {details && <p>{details}</p>}
+        </div>
+
+      {isLast ? 
+        <a href={hash ? `/${directory}/#${hash}` : `/${directory}/`} className={`${containerStyles.flex_row}`}>
+          
+          <div className={`${generalStyles.tag} ${generalStyles._0_margin}`}>
+            <h4 className={generalStyles._0_margin}>All</h4>
+          </div>
+
+        </a>
+
+      : '' }
+
       </div>
-    </MotionLink>
+    </div>
   );
 };
 
@@ -144,28 +145,25 @@ const ShowcaseTagSection = React.forwardRef(({ section }, ref) => {
       viewport={{ once: false, amount: 0.25 }}
       transition={showcaseTransition}
     >
-{/*      <div className={homeStyles.sectionHeader}>
-        <div>
-          <h2>{section.label}</h2>
-        </div>
-      </div>*/}
 
       <div className={homeStyles.cardStack}>
-        {cards.map((item) => (
-          <ShowcaseCard
-            key={item.node.id}
-            item={item}
-            directory="projects"
-            accentClass={``}
-          />
-        ))}
+        {cards.map((item, index, array) => {
 
-        <ShowcaseCard
-          directory="projects"
-          accentClass={``}
-          isViewAll={true}
-          hash={section.label}
-        />
+            const isLast = index === array.length - 1;
+
+            return ( <ShowcaseCard
+                key={item.node.id}
+                item={item}
+                directory="projects"
+                accentClass={``}
+                hash={section.label}
+                isLast={isLast}
+              />
+            )
+
+          })
+        }
+
       </div>
     </motion.section>
   );
