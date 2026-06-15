@@ -6,7 +6,7 @@ import SEO from "../seo"
 
 import ContentRouterAnimation from "./content-router-animation"
 
-import useMobileWindow from "../hooks/use-mobile-window"
+// import useMobileWindow from "../hooks/use-mobile-window"
 
 import PostNavigation from "./post-navigation"
 import Video from "./video"
@@ -23,8 +23,8 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 			postImageData = frontmatter.images,
 			tags = frontmatter.tags ? frontmatter.tags : null, 
 			{title, client, tagline, year, year_start, year_end, materials} = frontmatter,
-			postYear = year ? year : year_end && year_start !== year_end ? year_start + ' - ' + year_end : year_start,
-			mobileWindow = useMobileWindow();
+			postYear = year ? year : year_end && year_start !== year_end ? year_start + ' - ' + year_end : year_start;
+			// mobileWindow = useMobileWindow();
 
 	const 	FeaturedPostMedia = () => {
 
@@ -113,7 +113,7 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 		<SEO pageTitle={title}/>
 
 		<div className={`${containerStyles.content_section}`}>
-			<div className={`${containerStyles.grid} ${containerStyles._25_75} ${mobileWindow ? containerStyles.reverse : ''}`}>
+			<div className={`${containerStyles.grid} ${containerStyles._25_75}`}>
 				<div className={`${containerStyles.flex_column} ${containerStyles.justify_start}`}>
 					<div className={`${generalStyles.position_sticky}`}>
 						{tagline ? <h1 className={generalStyles._0_margin} >{tagline}</h1>  : <h1 className={generalStyles._0_margin} >{title}</h1>} 

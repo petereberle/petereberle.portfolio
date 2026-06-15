@@ -5,15 +5,16 @@ title: Peter Eberle
 headline: 
 location: Portland, OR
 phone: 509.520.6548
-email: eberleapeter@gmail.com
 website: paeberle.com
+email: eberleapeter@gmail.com
+qr_code: ../images/resume/paeberle-qr-code.png
 active: true
 ---
 
 <section class="resume-section">
 <h4 class="section-title">Summary</h4>
 
-Clean, single-column resume layout intended to preserve information order for human review and applicant tracking system parsing.
+Technical marketing specialist with strong experience in product information management, systems integration, analytics, and digital content. Adept at translating vision into structured systems that build in growth potential and brand consistency.
 
 </section>
 
@@ -24,13 +25,15 @@ Clean, single-column resume layout intended to preserve information order for hu
 <h3 class="entry-title">Marketing Specialist | Design and Direct Source</h3>
 <p class="resume-meta">Portland, OR | 2024 - Present</p>
 
-- Product launches / product campaigns. Copywriting all descriptions, creating product identity for B2B designer audience.
-- Automated ERP integrations: eblast contacts, lead import from external sample catalog (material bank), product data (update/create), e-blast crm
-- Weekly e-blasts. Content calendar built around variety and audience relevance, segemented for contact relevance.
-- BigCommerce theme development / website work
-- Sales collateral
-- Trade show coordination
-- Brand voice
+- Expanded and optimized an online product catalog spanning thousands of tile and stone products, managing technical data, product descriptions, collateral, and product launches.
+
+- Built NetSuite–BigCommerce product, category, and sample order integrations that automated updates, aligned website content with internal product data, and eliminated manual maintenance workflows.
+
+- Produced targeted email campaigns and automated lead nurturing programs for architects, designers, and developers.
+
+- Created NetSuite reporting and analytics tools used for marketing performance analysis, sample program tracking, inventory visibility, and product-line evaluation.
+
+- Led content strategy focused on the A&D community, strengthening DDS's position as a project-based sourcing partner.
 
 
 </div>
@@ -39,10 +42,14 @@ Clean, single-column resume layout intended to preserve information order for hu
 <h3 class="entry-title">Project Manager | Walla Walla Foundry</h3>
 <p class="resume-meta">Walla Walla, WA | 2023 - 2024</p>
 
-- Managed teams of highly skilled technicians across multiple departments in a fast-paced fabrication and casting facility for monumental sculpture.
-- Ensured adherence to clients’ artistic vision by implementing rigorous quality assurance throughout production.
-- Held departments accountable for targets and labor hour budgets.
-- Initiated project development by designing workflow plans with digital, engineering, and production team leads.
+- Managed teams of 40+ artisans, fabricators, engineers, and technicians to deliver large-scale contemporary sculpture projects in bronze, stainless steel, aluminum, wood, resin, and mixed media.
+
+- Directed project execution from planning through completion, ensuring adherence to artistic intent, quality standards, labor hour targets, and exhibition deadlines.
+
+- Established rigorous quality assurance across production, evaluating craftsmanship, surface & finish quality.
+
+- Coordinated communication among artists, engineers, vendors, and production teams to resolve technical challenges and maintain project schedules.
+
 
 </div>
 
@@ -50,20 +57,29 @@ Clean, single-column resume layout intended to preserve information order for hu
 <h3 class="entry-title">Project Management Assistant | Walla Walla Foundry</h3>
 <p class="resume-meta">Walla Walla, WA | 2020 - 2023</p>
 
-- Created extensive installation manuals, incorporating assembly, handling, and maintenance instructions, and translated complex engineering drawings into accessible client-facing documents.
-- Documented daily shop-floor processes with photography and write-ups to support project management, fabrication, and finishing teams.
-- Coordinated artwork approval photography and progress photo updates. 
-- Facilitated conservation projects by scheduling intake assessments and developing repair strategies for client approval.
+- Designed and developed the company website, showcasing major projects, capabilities, and the organization's story.
+
+- Created technical manuals incorporating assembly, handling, installation, and maintenance procedures, translating complex engineering drawings into client-facing documentation.
+
+- Documented fabrication, casting, and finishing processes through photography and written reports to support project management and production teams.
+
+- Managed artwork approval photography and project progress documentation, providing clients with visual updates throughout production.
+
+- Coordinated conservation projects by scheduling condition assessments, documenting treatment recommendations, and preparing proposals for client review.
+
 
 </div>
 
 <div class="resume-entry">
 <h3 class="entry-title">Marketing Coordinator | ArtWalla</h3>
-<p class="resume-meta">Walla Walla, WA | 2020 - 2023</p>
+<p class="resume-meta">Walla Walla, WA | 2019 - 2020</p>
 
 - Led ArtWalla’s rebranding effort by defining a new look and feel.
+
 - Built and launched a new website.
+
 - Strengthened social media marketing with targeted ads and curated content.
+
 - Managed communication with ArtWalla’s membership and broader audience, conducting accountability surveys and analyzing membership databases.
 
 </div>
@@ -76,19 +92,20 @@ Clean, single-column resume layout intended to preserve information order for hu
 
 <div class="resume-entry">
 
-Project management, web development, graphic design, content strategy, cross-functional communication
+Project Management, Cross-Functional Leadership, Technical Documentation, Content Strategy, Marketing Analytics
 
 </div>
 
 <div class="resume-entry">
 
-Project management, web development, graphic design, content strategy, cross-functional communication
+NetSuite, BigCommerce, Celigo, Google Analytics 4, Google Tag Manager, Brevo, Airtable
+
 
 </div>
 
 <div class="resume-entry">
 
-Project management, web development, graphic design, content strategy, cross-functional communication
+HTML, CSS, JavaScript, React, SQL, Figma, Adobe Creative Cloud
 
 </div>
 
@@ -98,8 +115,8 @@ Project management, web development, graphic design, content strategy, cross-fun
 <h4 class="section-title">Education</h4>
 
 <div class="resume-entry">
-<h3 class="entry-title">Bachelor of Arts in Art | Whitman College</h3>
-<p class="resume-meta">2020</p>
+<h3 class="entry-title">Bachelor of Arts (Fine Art) | Summa Cum Laude</h3>
+<p class="resume-meta">Whitman College | 2020</p>
 </div>
 
 </section>

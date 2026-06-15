@@ -172,6 +172,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       phone: String
       location: String
       website: String
+      qr_code: File @fileByRelativePath
       active: Boolean
     }
   `)

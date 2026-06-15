@@ -3,7 +3,7 @@
 :root{
   --document-padding-t-b:0.7in ;
   --document-padding-l-r:0.78in;
-  --resume-font-basis: 9pt;
+  --resume-font-basis: 10pt;
   --resume-color-primary: #202020;
 }
 
@@ -32,16 +32,30 @@
 
 .header {
   margin-bottom: calc( var(--resume-font-basis) * 1.5);
-  display:grid;
+/*  display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+}
+
+.header > div {
+  gap: calc( var(--resume-font-basis) * 0.75);
+}
+
+.header :global(.gatsby-image-wrapper){
+    height: 90px;
+    width: 90px;
 }
 
 .name {
-  font-size: calc(var(--resume-font-basis) *2);
+/*  font-size: calc(var(--resume-font-basis) *2);
   font-weight: 500;
   letter-spacing: calc( var(--resume-font-basis) * .25 );
-  line-height: 1.14;
+  line-height: 1.14;*/
+  margin:0;
 }
 
 .headline {
@@ -50,18 +64,19 @@
 }
 
 .contact {
-  color: #383838;
   font-size: var(--resume-font-basis);
-  letter-spacing: calc( var(--resume-font-basis) * 0.01 );
   margin: 0;
   list-style: none;
-  text-align:right;
+  text-align:left;
 }
 
-.content :global(h4) {
+.document :global(h4) {
   font-family: "Apercu Pro Mono", sans-serif;
-  font-weight: 500;
   line-height: 1.25;
+  font-size: calc( var(--resume-font-basis) * 1);
+  letter-spacing: calc( var(--resume-font-basis) * 0.09 );
+  margin:0;
+  text-transform: uppercase;
 }
 
 .content :global(.resume-section) {
@@ -79,7 +94,7 @@
   display:grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto auto;
-  gap: var(--resume-font-basis);
+  gap: calc( var(--resume-font-basis) * 0.75);
 }
 
 .content :global(.resume-section._3-col ) > h4 {
@@ -98,11 +113,8 @@
 
 .content :global(.section-title) {
   break-after: avoid;
-  font-size: calc( var(--resume-font-basis) * 1.125);
-  letter-spacing: calc( var(--resume-font-basis) * 0.09 );
   margin:0;
   margin-bottom: calc( var(--resume-font-basis) * 0.5);
-  text-transform: uppercase;
 }
 
 .content :global(.resume-entry) {
@@ -149,7 +161,7 @@
 .content :global(li)::marker {
   color: currentColor;
   content: "— ";
-  font-size: 0.8em;
+  font-size: var(--resume-font-basis)
 }
 
 .content :global(strong) {
@@ -157,7 +169,6 @@
 }
 
 .controls {
-  float: right;
   background-color: var(--whitespace-background);
   z-index: 2;
 }

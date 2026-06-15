@@ -86,8 +86,8 @@
  padding: 0 var(--item-padding) 0 0;
 }
 
-.menu_item>.last{
- padding: 0;
+.menu_list > .menu_item:last-child{
+    padding-right: 0;
 }
 
 .menu_animation{

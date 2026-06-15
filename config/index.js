@@ -49,6 +49,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `resume-images`,
+        path: `${__dirname}/../content/images/resume`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `social-markdown`,
         path: `${__dirname}/../content/social`,
       },

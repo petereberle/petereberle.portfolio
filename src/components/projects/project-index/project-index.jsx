@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
 
-import useMobileWindow from "../../hooks/use-mobile-window"
-
 import * as generalStyles from "../../styles/general.module.css"
 import * as containerStyles from "../../styles/containers.module.css"
 
@@ -13,8 +11,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 	const 	[project, setProject] = useState(data),
 			[filter, setFilter] = useState('all'),
-			hash = urlParam.hash.substring(1),
-			mobileWindow = useMobileWindow();
+			hash = urlParam.hash.substring(1);
 
 	const menuItems = () => {
 
@@ -65,7 +62,7 @@ const ProjectIndex = ({ data, urlParam }) => {
 
 		<div className={`${containerStyles.grid} ${containerStyles._15_85}`}>
 
-			<div className={`${containerStyles.flex_column} ${generalStyles.margin_negative} ${mobileWindow ? '' : generalStyles.full_height}`}>
+			<div className={`${containerStyles.flex_column} ${generalStyles.margin_negative} `}>
 
 					<FilterMenu data={data} filter={filter} filterProject={filterProject} setProject={setProject} menuItems={menuItems()} hash={hash}/>
 

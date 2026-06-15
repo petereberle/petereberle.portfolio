@@ -23,6 +23,7 @@
       --white:        #ffffff;
       --warm-black: rgb(22, 18, 14); 
       --cool-black: #12161a;
+      --warm-charcoal: #161311;
 
       @media (color-gamut: p3) {
 
@@ -42,6 +43,7 @@
             --cream:        color(display-p3 0.98 0.97 0.90);
             --warm-black:   color(display-p3 0.08 0.06 0.04);
             --cool-black:   color(display-p3 0.05 0.08 0.10);
+            --warm-charcoal:color(display-p3 0.085 0.073 0.067);
           }
 
         }
@@ -55,7 +57,7 @@
 
     --head-space:calc( var(--unit) * 16);
     --item-padding: calc( var(--unit) * 1.65);
-    --border-width: .085rem;
+    --border-width: calc( var(--unit) * 0.15);
     --negative-padding: calc(-1 * var(--item-padding) + var(--border-width));
     --vignette-margin: calc( var(--unit) * 8.75 );
 
@@ -69,8 +71,6 @@
     --screen-width: 100vw;
     --screen-margin: var(--item-padding);
     --screen-height: calc( 100vh - var(--head-space) );
-
-    --wide-screen-max: 1200px;
 
     /*MAX PAGE VARIABLES */
     --page-width: 100vw;
@@ -356,7 +356,6 @@ a, button {
     position: relative;
     text-shadow: var(--container-shadow);
     padding: calc(var(--item-padding) / 2) var(--item-padding);
-    /*padding: calc(var(--item-padding) / 3) 0;*/
     margin: var(--item-padding);
     text-align: left;
 }
@@ -365,15 +364,6 @@ a, button {
     margin:0;
 }
 
-/*.tag.active{
-    background-color: var(--border-color);
-    color: var(--whitespace-background);
-}
-
-.tag.active>button{
-    color: var(--whitespace-background);
-}
-*/
 
 .tag::after {
     content: "";
@@ -382,7 +372,7 @@ a, button {
     border: var(--border-solid);
     border-radius: var(--container-radius);
     
-    clip-path: inset(calc(100% - var(--border-width)) var(--item-padding) 0 var(--item-padding) );
+    clip-path: inset( calc(var(--item-padding) / 4) calc(100% - var(--border-width) ) calc(var(--item-padding) / 4) 0 );
 
     transition: var(--transition-ease);
     pointer-events: none;

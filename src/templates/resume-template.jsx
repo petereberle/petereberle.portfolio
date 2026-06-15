@@ -1,25 +1,32 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
+
+import useMobileWindow from "../components/hooks/use-mobile-window"
 
 import ContentRouterAnimation from "../components/partials/content-router-animation"
 
 import "normalize.css"
 import * as generalStyles from "../components/styles/general.module.css"
+import * as containerStyles from "../components/styles/containers.module.css"
 import "../components/styles/typography.module.css"
 import * as styles from "../components/styles/resume.module.css"
 
 const ResumeTemplate = ({ data, pageContext, location}) => {
 
+  const mobileWindow = useMobileWindow();
+
   const { html, frontmatter } = data.markdownRemark
   const contactDetails = [
     frontmatter.location,
+    frontmatter.website,
     frontmatter.phone,
     frontmatter.email,
-    frontmatter.website,
-  ].filter(Boolean)
+  ].filter(Boolean);
+  const qrCode = frontmatter.qr_code;
 
   const [printMode, setPrintMode] = useState(false);
 
@@ -74,30 +81,40 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
 
         </Helmet>
 
-        <aside className={`${generalStyles.tag} ${styles.controls} ${generalStyles.position_sticky} `}>
-          <button type="button" onClick={() => printPage()}>
-            Print / Save
-          </button>
-        </aside>
-        <main className={styles.document}>
-          <header className={styles.header}>
-          
-            <div>
-              <h1 className={styles.name}>{frontmatter.title}</h1>
-              {frontmatter.headline && <p className={styles.headline}>{frontmatter.headline}</p>}
-            </div>
+        <div className={`${containerStyles.grid} ${ printMode ? containerStyles.flex_column : containerStyles._15_85} `}>
 
-            <ul className={styles.contact}>
-              {contactDetails.length > 0 ? contactDetails.map( (c) => {
-                return <li>{c}</li>
-              }) : '' }
-            </ul>
-          </header>
-          <article
-            className={styles.content}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </main>
+          <aside className={`${containerStyles.flex_column} ${generalStyles.margin_negative} `}>
+            <div className={`${mobileWindow ? generalStyles.position_relative + ' ' + containerStyles.flex_row : generalStyles.position_sticky  + ' ' + containerStyles.flex_column } `}>
+              <button className={`${generalStyles.tag} ${styles.controls}`} type="button" onClick={() => printPage()}>
+                Print / Save
+              </button>
+            </div>
+          </aside>
+          <main className={styles.document}>
+            <header className={styles.header}>
+            
+                <div className={`${containerStyles.flex_column}`}>
+
+                  <h4 className={styles.name}>{frontmatter.title}</h4>
+
+                  <ul className={styles.contact}>
+                    {contactDetails.length > 0 ? contactDetails.map( (c) => {
+                      return <li><h4>{c}</h4></li>
+                    }) : '' }
+                  </ul>
+
+                </div>
+
+                { qrCode ? <GatsbyImage className={``} image={getImage(frontmatter.qr_code)} alt="website-qr-code"/> : ''}
+
+            </header>
+            <article
+              className={styles.content}
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </main>
+
+        </div>
 
       </ContentRouterAnimation>
 
@@ -113,9 +130,21 @@ export const pageQuery = graphql`
         title
         headline
         location
+        website
         phone
         email
-        website
+        qr_code {
+          extension
+          publicURL
+          childImageSharp {
+            gatsbyImageData(
+            width: 200
+            height: 200
+            placeholder: BLURRED
+            formats: AUTO
+            )
+          }
+        }
       }
     }
   }

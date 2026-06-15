@@ -1,15 +1,12 @@
 import * as React from "react";
 
-import {Link} from "gatsby"
-
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
-import {AnimatePresence, motion} from "framer-motion"
+import {AnimatePresence} from "framer-motion"
 
 import Card from "../partials/card-elem"
 import Video from "../partials/video"
 
-import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
 import * as mediaStyles from "../styles/media.module.css"
 
@@ -24,34 +21,24 @@ const IndexCards = ({urlParam, article, path, indexConstraint}) => {
 			{ article.map( (data, i) => {
 
 		  				const 	{node} = data,
-		  						{frontmatter, html, fields} = node,
+		  						{frontmatter, fields} = node,
 		  						title = frontmatter.title,
-		  						body = html,
 		  						slug = fields.slug,
-		  						year = frontmatter.year_end || frontmatter.year,
-		  						FeaturedMedia = () => { 
-
-		  							const 	extension = frontmatter.featured_image.extension,
-		  									videoExtension = extension.includes('mp4') || extension.includes('mov'),
-		  									publicUrl = frontmatter.featured_image.publicURL;
-
-		  							return !videoExtension ? 
-
-		  								<GatsbyImage className={`${containerStyles.card_image} ${mediaStyles.cover}`} image={getImage(frontmatter.featured_image)} alt={title}/>
-
-		  							: videoExtension ? 
-
-		  							<Video source={publicUrl} title={title} classes={`${containerStyles.card_image} ${mediaStyles.cover} ${mediaStyles.reel}`}/>  
-
-		  							: null;
-		  						};
+		  						extension = frontmatter.featured_image.extension,
+		  						videoExtension = extension.includes('mp4') || extension.includes('mov'),
+		  						publicUrl = frontmatter.featured_image.publicURL,
+		  						featuredMedia = !videoExtension ?
+		  							<GatsbyImage className={`${containerStyles.card_image} ${mediaStyles.cover}`} image={getImage(frontmatter.featured_image)} alt={title}/>
+		  						: videoExtension ?
+		  							<Video source={publicUrl} title={title} classes={`${containerStyles.card_image} ${mediaStyles.cover} ${mediaStyles.reel}`}/>
+		  						: null;
 		  				
 		  				return i < indexConstraint ? (
 
-		  					<Card link={directory + slug} key={i}>
+		  					<Card link={directory + slug} key={slug}>
 
 	  							<div className={containerStyles.card_landscape_inner}>
-		  							<FeaturedMedia/>
+		  							{featuredMedia}
 	  							</div>
 	  							<div className={`${containerStyles.flex_row} ${containerStyles.justify_start} ${containerStyles.align_center}`} >
 		  							<h4>{title}</h4>
