@@ -10,6 +10,7 @@ import ContentRouterAnimation from "./content-router-animation"
 
 import PostNavigation from "./post-navigation"
 import Video from "./video"
+import FeaturedMedia from "./featured-media"
 
 import * as generalStyles from "../styles/general.module.css"
 import * as containerStyles from "../styles/containers.module.css"
@@ -20,41 +21,18 @@ const PostTemplate = ({postData, urlParam, pageContext}) => {
 	
 	const 	{html, frontmatter, fields} = postData,
 			featuredImage = frontmatter.featured_image,
+			featuredMedia = frontmatter.featured_media,
 			postImageData = frontmatter.images,
 			tags = frontmatter.tags ? frontmatter.tags : null, 
 			{title, client, tagline, year, year_start, year_end, materials} = frontmatter,
 			postYear = year ? year : year_end && year_start !== year_end ? year_start + ' - ' + year_end : year_start;
 			// mobileWindow = useMobileWindow();
 
-	const 	FeaturedPostMedia = () => {
-
-			const 	extension = featuredImage.extension,
-					videoExtension = extension.includes('mp4') || extension.includes('move'),
-					publicUrl = featuredImage.publicURL;
-
-			return (
-
-			<div className={`${containerStyles.card}`}>
-
-				<div className={`${containerStyles.card_landscape_inner}`}>
-
-					{!videoExtension ? 
-					
-					<GatsbyImage image={getImage(featuredImage)} className={containerStyles.card_image} alt={title}/>
-
-					: videoExtension ? 
-
-					<Video source={publicUrl} title={title} classes={`${mediaStyles.reel} ${containerStyles.card_image}`}/>  
-
-					: null}
-
+	const 	FeaturedPostMedia = () => (
+				<div className={`${containerStyles.card}`}>
+					<FeaturedMedia media={featuredMedia} fallbackMedia={featuredImage} title={title}/>
 				</div>
-
-			</div>
-
-			)
-
-	};
+			);
 
 	const 	PostMedia = () => {
 

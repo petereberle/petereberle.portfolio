@@ -5,6 +5,8 @@ title: Dia de Los Muertos Festival
 year_start: 2019
 year_end: 2019
 featured_image: ../images/projects/wallawalladdlm.com_fin.jpg
+featured_media:
+  - {source: ../images/projects/wallawalladdlm.com_fin.jpg}
 images: 
   - {source: ../images/projects/www.wallawalladdlm.com_mobile.jpg, 
     caption: Responsive mobile experience}

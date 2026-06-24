@@ -37,6 +37,19 @@ const Projects = ({urlParam}) => {
                   )
                 }
               }
+              featured_media {
+                source {
+                  extension
+                  publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                    width: 800
+                    placeholder: BLURRED
+                    formats: AUTO
+                    )
+                  }
+                }
+              }
 			      }
 			      fields {
 			      	slug

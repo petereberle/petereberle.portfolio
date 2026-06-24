@@ -49,6 +49,19 @@ export const pageQuery = graphql`
 	                  )
 	                }
               	}
+				featured_media {
+					source {
+		              	extension
+					    publicURL
+		                childImageSharp {
+		                  gatsbyImageData(
+		                  width: 800
+		                  placeholder: BLURRED
+		                  formats: AUTO
+		                  )
+		                }
+					}
+				}
             	images {
 	              	source {
 	              		extension

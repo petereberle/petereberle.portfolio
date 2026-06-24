@@ -5,6 +5,8 @@ title: Builtscape
 year: 2019
 materials: linoleum relief
 featured_image: ../images/artwork/Builtscape_lino.jpg
+featured_media:
+  - {source: ../images/artwork/Builtscape_lino.jpg}
 images: 
 ---
 

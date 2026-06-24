@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 import SEO from "./seo";
 import ContentRouterAnimation from "./partials/content-router-animation";
+import FeaturedMedia from "./partials/featured-media";
 
 import useWrapperScrollTo from "./hooks/use-wrapper-scroll-to";
 
@@ -16,8 +17,6 @@ import * as containerStyles from "./styles/containers.module.css";
 import * as typographyStyles from "./styles/typography.module.css";
 import * as mediaStyles from "./styles/media.module.css";
 import * as homeStyles from "./styles/homepage.module.css";
-
-import Video from "./partials/video";
 
 const MotionLink = motion(Link);
 
@@ -41,8 +40,6 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
 
   const { frontmatter, fields } = item.node;
   const title = frontmatter.title;
-  const extension = frontmatter.featured_image.extension;
-  const isVideo = extension.includes("mp4") || extension.includes("mov");
   const year =
     frontmatter.year ||
     (frontmatter.year_start && frontmatter.year_end
@@ -56,23 +53,15 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
     <div
       className={`${containerStyles.card_wrapper} ${containerStyles.vignette} ${accentClass} ${homeStyles.snapSection}`}
     >
-      <a href={`/${directory}${fields.slug}`} className={`${containerStyles.card}`}>
-        <div className={containerStyles.card_landscape_inner}>
-          {!isVideo ? (
-            <GatsbyImage
-              className={`${containerStyles.card_image} ${mediaStyles.cover}`}
-              image={getImage(frontmatter.featured_image)}
-              alt={title}
-            />
-          ) : (
-            <Video
-              source={frontmatter.featured_image.publicURL}
-              title={title}
-              classes={`${containerStyles.card_image} ${mediaStyles.cover} ${mediaStyles.reel}`}
-            />
-          )}
-        </div>
-      </a>
+      <div className={`${containerStyles.card}`}>
+        <FeaturedMedia
+          media={frontmatter.featured_media}
+          fallbackMedia={frontmatter.featured_image}
+          title={title}
+          imageClassName={`${containerStyles.card_image} ${mediaStyles.cover}`}
+          href={`/${directory}${fields.slug}`}
+        />
+      </div>
 
 
 
@@ -205,6 +194,15 @@ const About = ({ urlParam }) => {
                 publicURL
                 childImageSharp {
                   gatsbyImageData(width: 900, placeholder: BLURRED, formats: AUTO)
+                }
+              }
+              featured_media {
+                source {
+                  extension
+                  publicURL
+                  childImageSharp {
+                    gatsbyImageData(width: 900, placeholder: BLURRED, formats: AUTO)
+                  }
                 }
               }
             }

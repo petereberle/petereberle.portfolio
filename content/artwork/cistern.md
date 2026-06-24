@@ -5,6 +5,8 @@ title: Cistern
 year: 2019
 materials: cast concrete, oil paint, screen print on japanese paper
 featured_image: ../images/artwork/cistern.jpg
+featured_media:
+  - {source: ../images/artwork/cistern.jpg}
 images: 
   - {source: ../images/artwork/cistern_detail.jpg, 
     caption: trough detail}

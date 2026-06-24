@@ -5,6 +5,8 @@ title: Slip
 year: 2019
 materials: oil on canvas
 featured_image: ../images/artwork/Slip_oil.jpg
+featured_media:
+  - {source: ../images/artwork/Slip_oil.jpg}
 images: 
 ---
 

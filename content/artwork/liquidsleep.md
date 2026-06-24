@@ -5,6 +5,8 @@ title: Liquid Sleep
 year: 2018
 materials: woodblock relief
 featured_image: ../images/artwork/Liquid_Sleep.jpg
+featured_media:
+  - {source: ../images/artwork/Liquid_Sleep.jpg}
 images: 
 ---
 

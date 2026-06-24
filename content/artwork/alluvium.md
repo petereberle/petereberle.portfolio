@@ -5,6 +5,8 @@ title: Alluvium
 year: 2020
 materials: cast cement, clay, shellac, mortar & oil paint on board
 featured_image: ../images/artwork/thesis_test.jpg
+featured_media:
+  - {source: ../images/artwork/thesis_test.jpg}
 images: 
   - {source: ../images/artwork/Alluvium_1.jpg, 
     caption: front}

@@ -7,6 +7,8 @@ tagline: Online product explorer for Boutique Design New York 2025 trade fair bo
 year_start: 2025
 year_end:
 featured_image: ../images/projects/bdny-dds-virtual-booth_comp_01.mp4
+featured_media:
+  - {source: ../images/projects/bdny-dds-virtual-booth_comp_01.mp4}
 images: 
   # - {source: ../images/projects/WWF_About_Preview.jpg, 
   #   caption: About Page}

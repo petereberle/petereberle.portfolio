@@ -5,6 +5,8 @@ title: blue moon vol. 33
 year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/Bluemoon_cover_shot.jpg
+featured_media:
+  - {source: ../images/projects/Bluemoon_cover_shot.jpg}
 images: 
   - {source: ../images/projects/BM_1.jpg,
     caption: ''}
