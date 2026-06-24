@@ -25,9 +25,7 @@ Technical marketing specialist with strong experience in product information man
 
 Marketing Specialist — *Marketing Systems & Analytics*
 
-Design and Direct Source
-
-Portland, OR | 2024 - Present
+Design and Direct Source | Portland, OR | 2024 - Present
 
 
 - Expanded and optimized an online product catalog spanning thousands of tile and stone products, managing technical data, product descriptions, collateral, and product launches.
@@ -45,16 +43,12 @@ Portland, OR | 2024 - Present
 
 Project Manager — *Production & Client Coordination*
 
-Walla Walla Foundry
-
-Walla Walla, WA | 2023 - 2024
+Walla Walla Foundry | Walla Walla, WA | 2023 - 2024
 
 
 - Managed teams of 40+ artisans, fabricators, engineers, and technicians to deliver large-scale contemporary sculpture projects in bronze, stainless steel, aluminum, wood, resin, and mixed media.
 
 - Directed project execution from planning through completion, ensuring adherence to artistic intent, quality standards, and project deadlines.
-
-- Established rigorous quality assurance across production, evaluating craftsmanship, surface & finish quality.
 
 - Coordinated communication among artists, engineers, vendors, and production teams to resolve technical challenges and maintain project schedules.
 
@@ -65,16 +59,12 @@ Walla Walla, WA | 2023 - 2024
 
 Project Management Assistant — *Website & Technical Documentation*
 
-Walla Walla Foundry
-
-Walla Walla, WA | 2020 - 2023
+Walla Walla Foundry | Walla Walla, WA | 2020 - 2023
 
 
-- Designed and developed the company website, showcasing major projects, capabilities, and the organization's story.
+- Designed and developed the company website, showcasing major projects, capabilities, and the brand's story.
 
 - Created technical manuals incorporating assembly, handling, installation, and maintenance procedures, translating complex engineering drawings into client-facing documentation.
-
-- Documented fabrication, casting, finishing, and conservation processes through photography and written reports.
 
 - Managed artwork approval photography and project progress documentation, providing clients with visual updates throughout production.
 
@@ -85,9 +75,7 @@ Walla Walla, WA | 2020 - 2023
 
 Marketing Coordinator
 
-ArtWalla
-
-Walla Walla, WA | 2019 - 2020
+ArtWalla | Walla Walla, WA | 2019 - 2020
 
 
 - Led ArtWalla’s rebranding initiative, establishing a new visual identity and brand standards.
@@ -102,19 +90,17 @@ Walla Walla, WA | 2019 - 2020
 
 <section class="resume-section _3-col">
 
-<h4 class="section-title">Skills</h4>
-
 <div class="resume-entry">
 
-Core Skills
+#### Core Skills
 
-Project Management, Cross-Functional Leadership, Product Data Management, Technical Documentation, Product Photography, Content Strategy, Marketing Analytics
+Project Management, Product Data Management, Technical Documentation, Product Photography, Content Strategy, Marketing Analytics
 
 </div>
 
 <div class="resume-entry">
 
-Platforms & Analytics
+#### Platforms & Analytics
 
 NetSuite, BigCommerce, Celigo, Google Analytics 4, Google Tag Manager, Brevo, Airtable
 
@@ -123,7 +109,7 @@ NetSuite, BigCommerce, Celigo, Google Analytics 4, Google Tag Manager, Brevo, Ai
 
 <div class="resume-entry">
 
-Technical & Design
+#### Technical & Design
 
 HTML, CSS, JavaScript, React, SQL, Figma, Illustrator, Indesign, Photoshop, Lightroom
 
