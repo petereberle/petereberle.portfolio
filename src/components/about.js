@@ -48,6 +48,7 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
         : `${frontmatter.year_start} - ${frontmatter.year_end}`
       : frontmatter.year_end || frontmatter.year_start);
   const details = frontmatter.tagline || frontmatter.materials || frontmatter.tags?.join(', ');
+  const href = `/${directory}${fields.slug}`;
 
   return (
     <div
@@ -58,8 +59,8 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
           media={frontmatter.featured_media}
           fallbackMedia={frontmatter.featured_image}
           title={title}
-          imageClassName={`${containerStyles.card_image} ${mediaStyles.cover}`}
-          href={`/${directory}${fields.slug}`}
+          imageClassName={`${containerStyles.card_image} ${mediaStyles.contain} ${mediaStyles.contain_left}`}
+          href={href}
         />
       </div>
 
@@ -68,8 +69,10 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
       <div className={`${homeStyles.cardBody} ${containerStyles.flex_row} ${containerStyles.full_width} ${containerStyles.justify_space_between}`}>
         
         <div className={`${containerStyles.flex_column}`}>
-          <h4>{title}</h4>
-          {details && <p>{details}</p>}
+          <a href={href} >
+            <h4>{title}</h4>
+            {details && <p>{details}</p>}
+          </a>
         </div>
 
       {isLast ? 

@@ -23,7 +23,7 @@ const isVideoFile = (source) => {
   return extension.includes("mp4") || extension.includes("mov");
 };
 
-const MediaItem = ({ source, title, imageClassName, href }) => {
+const MediaItem = ({ source, title, imageClassName}) => {
   const isVideo = isVideoFile(source);
   const media = isVideo ? (
     <Video
@@ -35,13 +35,7 @@ const MediaItem = ({ source, title, imageClassName, href }) => {
     <GatsbyImage image={getImage(source)} className={imageClassName} alt={title} />
   );
 
-  return href ? (
-    <a href={href} className={carouselStyles.mediaLink}>
-      {media}
-    </a>
-  ) : (
-    media
-  );
+  return media
 };
 
 const FeaturedMedia = ({
@@ -64,14 +58,15 @@ const FeaturedMedia = ({
 
   if (!shouldCarousel) {
     return (
-      <div className={containerStyles.card_landscape_inner}>
-        <MediaItem
-          source={mediaItems[0]}
-          title={title}
-          imageClassName={imageClassName}
-          href={href}
-        />
-      </div>
+      <a href={href}>
+        <div className={containerStyles.card_landscape_inner}>
+          <MediaItem
+            source={mediaItems[0]}
+            title={title}
+            imageClassName={imageClassName}
+          />
+        </div>
+      </a>
     );
   }
 
@@ -93,7 +88,7 @@ const FeaturedMedia = ({
       </div>
 
       {showControls && (
-        <>
+        <div className={` ${containerStyles.flex_row} ${carouselStyles.controls} `}>
           <button
             className={`${carouselStyles.arrow} ${carouselStyles.previous}`}
             type="button"
@@ -106,7 +101,7 @@ const FeaturedMedia = ({
             aria-label="Next media"
             onClick={scrollNext}
           />
-        </>
+        </div>
       )}
     </div>
   );

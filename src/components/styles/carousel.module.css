@@ -28,15 +28,18 @@
   display: block;
 }
 
-.arrow {
+.controls {
   position: absolute;
-  top: 50%;
+  bottom:0;
+  right:0;
+}
+
+.arrow {
+  position: relative;
   z-index: 2;
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--theme-background-primary) 86%, transparent);
-  transform: translateY(-50%);
+  background: color-mix(in srgb, var(--whitespace-background) 86%, transparent);
 }
 
 .arrow::before {
@@ -50,16 +53,8 @@
   border-left: var(--border-solid);
 }
 
-.previous {
-  left: var(--item-padding);
-}
-
 .previous::before {
   transform: translate(-35%, -50%) rotate(-45deg);
-}
-
-.next {
-  right: var(--item-padding);
 }
 
 .next::before {

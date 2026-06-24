@@ -14,6 +14,19 @@
 	object-fit: contain!important;
 }
 
+.contain_left, .contain_left > img {
+	object-position: left;
+}
+
+.contain_right, .contain_right > img {
+	object-position: right;
+}
+
+.contain_center, .contain_center > img {
+	object-position: center;
+}
+
+
 .icon{
 	width:25px;
 	height: 25px;
