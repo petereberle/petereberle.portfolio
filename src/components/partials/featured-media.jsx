@@ -88,7 +88,7 @@ const FeaturedMedia = ({
       </div>
 
       {showControls && (
-        <div className={` ${containerStyles.flex_row} ${carouselStyles.controls} `}>
+        <div className={` ${containerStyles.flex_row} ${containerStyles.flex_gap} ${containerStyles.justify_space_between} ${carouselStyles.controls} `}>
           <button
             className={`${carouselStyles.arrow} ${carouselStyles.previous}`}
             type="button"

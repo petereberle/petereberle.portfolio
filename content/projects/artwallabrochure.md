@@ -7,6 +7,7 @@ year_end: 2020
 featured_image: ../images/projects/ArtWalla_Brochure_render_2.jpg
 featured_media:
   - {source: ../images/projects/ArtWalla_Brochure_render_2.jpg}
+  - {source: ../images/projects/ArtWalla_Brochure_render_2.jpg}
 images: 
   - {source: ../images/projects/ArtWalla_Brochure_1.jpg,
     caption: front and cover}

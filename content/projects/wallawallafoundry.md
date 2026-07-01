@@ -9,6 +9,8 @@ year_end: 2024
 featured_image: ../images/projects/wwf_website_featuredpreview_2.mp4
 featured_media:
   - {source: ../images/projects/wwf_website_featuredpreview_2.mp4}
+  - {source: ../images/projects/wwf_website_featuredpreview_2.mp4}
+  - {source: ../images/projects/wwf_website_featuredpreview_2.mp4}
 images: 
   # - {source: ../images/projects/WWF_About_Preview.jpg, 
   #   caption: About Page}

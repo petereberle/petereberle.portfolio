@@ -11,7 +11,18 @@ const PostNavigation = ({urlParam, currentTags, pageContext}) => {
 
 	const	upperDirectoryPath = '/' + urlParam.pathname.split('/')[1],
 			allTags = pageContext.tags ? pageContext.tags : undefined,
-			Tags = () => (allTags.map(
+			sortedTags = [...allTags].sort((a, b) => {
+
+			  const isACurrent = currentTags?.includes(a);
+			  const isBCurrent = currentTags?.includes(b);
+
+			  if (isACurrent && !isBCurrent) return -1;
+			  if (!isACurrent && isBCurrent) return 1;
+
+			  return 0;
+			  
+			}),
+			Tags = () => (sortedTags.map(
 					(t) => {
 
 						return <Link className={`${generalStyles.tag} ${currentTags?.includes(t) ? generalStyles.active : ''}`} key={t} to={upperDirectoryPath + '/#' + t}><button>{t.toUpperCase()}</button></Link>

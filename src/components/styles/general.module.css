@@ -49,7 +49,7 @@
         }
 
     /*FONT UNIT BASIS*/
-    --font-basis: 14pt;
+    --font-basis: 12pt;
     --unit: calc(var(--font-basis) * 0.5);
 
     --whitespace-background: var(--warm-black);
