@@ -200,6 +200,8 @@ const About = ({ urlParam }) => {
                 }
               }
               featured_media {
+                iframe
+                scroll
                 source {
                   extension
                   publicURL

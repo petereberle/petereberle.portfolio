@@ -1,42 +1,108 @@
-import * as React from "react";
+import * as React from "react"
 
-import useEmblaCarousel from "embla-carousel-react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import useEmblaCarousel from "embla-carousel-react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Video from "./video";
+import Video from "./video"
 
-import * as carouselStyles from "../styles/carousel.module.css";
-import * as containerStyles from "../styles/containers.module.css";
-import * as mediaStyles from "../styles/media.module.css";
+import * as carouselStyles from "../styles/carousel.module.css"
+import * as containerStyles from "../styles/containers.module.css"
+import * as mediaStyles from "../styles/media.module.css"
 
 const normalizeMedia = (media, fallbackMedia) => {
-  const mediaItems = Array.isArray(media) ? media : media ? [media] : [];
+  const mediaItems = Array.isArray(media) ? media : media ? [media] : []
   const normalized = mediaItems
-    .map((item) => item?.source || item)
-    .filter(Boolean);
+    .map(item => {
+      const isDescriptor =
+        item &&
+        typeof item === "object" &&
+        ("source" in item || "iframe" in item || "scroll" in item)
 
-  return normalized.length ? normalized : fallbackMedia ? [fallbackMedia] : [];
-};
+      return {
+        source: isDescriptor ? item.source : item,
+        iframe: isDescriptor ? item.iframe : null,
+        scroll: isDescriptor && item.scroll === true,
+      }
+    })
+    .filter(({ source, iframe }) => Boolean(source || iframe))
 
-const isVideoFile = (source) => {
-  const extension = source?.extension?.toLowerCase() || "";
-  return extension.includes("mp4") || extension.includes("mov");
-};
+  return normalized.length
+    ? normalized
+    : fallbackMedia
+    ? [{ source: fallbackMedia, scroll: false }]
+    : []
+}
 
-const MediaItem = ({ source, title, imageClassName}) => {
-  const isVideo = isVideoFile(source);
-  const media = isVideo ? (
-    <Video
-      source={source.publicURL}
-      title={title}
-      classes={`${imageClassName} ${mediaStyles.reel}`}
-    />
-  ) : (
-    <GatsbyImage image={getImage(source)} className={imageClassName} alt={title} />
-  );
+const isVideoFile = source => {
+  const extension = source?.extension?.toLowerCase() || ""
+  return extension.includes("mp4") || extension.includes("mov")
+}
 
-  return media
-};
+const MediaItem = ({
+  source,
+  iframe,
+  title,
+  imageClassName,
+  scroll = false,
+}) => {
+  const isVideo = isVideoFile(source)
+  const Media = () => {
+    if (iframe) {
+      return (
+        <iframe
+          src={iframe}
+          title={title}
+          className={`${imageClassName}  ${
+            scroll
+              ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+              : ""
+          }`}
+          frameBorder="0"
+          loading="lazy"
+        />
+      )
+    }
+
+    if (isVideo) {
+      return (
+        <Video
+          source={source.publicURL}
+          title={title}
+          classes={`${imageClassName} ${mediaStyles.reel} ${
+            scroll
+              ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+              : ""
+          }`}
+        />
+      )
+    }
+
+    return (
+      <GatsbyImage
+        image={getImage(source)}
+        className={`${imageClassName} ${
+          scroll
+            ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+            : ""
+        }`}
+        alt={title}
+      />
+    )
+  }
+
+  if (!scroll || isVideo) return <Media />
+
+  return (
+    <div
+      className={carouselStyles.scrollPane}
+      role="region"
+      aria-label={`Scrollable media: ${title}`}
+      tabIndex="0"
+    >
+      <Media />
+    </div>
+  )
+}
 
 const FeaturedMedia = ({
   media,
@@ -47,39 +113,46 @@ const FeaturedMedia = ({
   showControls = true,
   href,
 }) => {
-  const mediaItems = normalizeMedia(media, fallbackMedia);
-  const shouldCarousel = enableCarousel && mediaItems.length > 1;
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const mediaItems = normalizeMedia(media, fallbackMedia)
+  const shouldCarousel = enableCarousel && mediaItems.length > 1
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" })
 
-  const scrollPrev = React.useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = React.useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = React.useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
+  const scrollNext = React.useCallback(() => emblaApi?.scrollNext(), [emblaApi])
 
-  if (!mediaItems.length) return null;
+  if (!mediaItems.length) return null
 
   if (!shouldCarousel) {
-    return (
-      <a href={href}>
-        <div className={containerStyles.card_landscape_inner}>
-          <MediaItem
-            source={mediaItems[0]}
-            title={title}
-            imageClassName={imageClassName}
-          />
-        </div>
-      </a>
-    );
+    const content = (
+      <div className={containerStyles.card_landscape_inner}>
+        <MediaItem
+          source={mediaItems[0].source}
+          iframe={mediaItems[0].iframe}
+          title={title}
+          imageClassName={imageClassName}
+          scroll={mediaItems[0].scroll}
+        />
+      </div>
+    )
+
+    return href ? <a href={href}>{content}</a> : content
   }
 
   return (
     <div className={containerStyles.card_landscape_inner}>
       <div className={carouselStyles.viewport} ref={emblaRef}>
         <div className={carouselStyles.container}>
-          {mediaItems.map((source, index) => (
-            <div className={carouselStyles.slide} key={`${source.publicURL || title}-${index}`}>
+          {mediaItems.map(({ source, iframe, scroll }, index) => (
+            <div
+              className={carouselStyles.slide}
+              key={`${source?.publicURL || iframe || title}-${index}`}
+            >
               <MediaItem
                 source={source}
+                iframe={iframe}
                 title={title}
                 imageClassName={imageClassName}
+                scroll={scroll}
                 href={href}
               />
             </div>
@@ -88,7 +161,9 @@ const FeaturedMedia = ({
       </div>
 
       {showControls && (
-        <div className={` ${containerStyles.flex_row} ${containerStyles.flex_gap} ${containerStyles.justify_space_between} ${carouselStyles.controls} `}>
+        <div
+          className={` ${containerStyles.flex_row} ${containerStyles.flex_gap} ${containerStyles.justify_space_between} ${carouselStyles.controls} `}
+        >
           <button
             className={`${carouselStyles.arrow} ${carouselStyles.previous}`}
             type="button"
@@ -104,7 +179,7 @@ const FeaturedMedia = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default FeaturedMedia;
+export default FeaturedMedia

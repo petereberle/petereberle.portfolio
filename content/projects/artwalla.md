@@ -6,7 +6,8 @@ year_start: 2019
 year_end: 2020
 featured_image: ../images/projects/artwalla.com_fin.jpg
 featured_media:
-  - {source: ../images/projects/artwalla.com_fin.jpg}
+  - {source: ../images/projects/artwalla.com_fin.jpg,
+    scroll: false}
 images: 
   - {source: ../images/projects/artwalla.com_mobile.jpg, 
     caption: Responsive mobile experience}

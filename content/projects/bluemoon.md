@@ -6,7 +6,8 @@ year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/Bluemoon_cover_shot.jpg
 featured_media:
-  - {source: ../images/projects/Bluemoon_cover_shot.jpg}
+  - {source: ../images/projects/Bluemoon_cover_shot.jpg,
+    scroll: false}
 images: 
   - {source: ../images/projects/BM_1.jpg,
     caption: ''}

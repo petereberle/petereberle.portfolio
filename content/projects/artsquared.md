@@ -6,7 +6,8 @@ year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/artsquaredwallawalla.com_fin.jpg
 featured_media:
-  - {source: ../images/projects/artsquaredwallawalla.com_fin.jpg}
+  - {source: ../images/projects/artsquaredwallawalla.com_fin.jpg,
+    scroll: false}
 images: 
   - {source: ../images/projects/artsquaredwallawalla.com_square_mobile_gallery.jpg, 
     caption: Randomized gallery reimagined the traditional event experience}

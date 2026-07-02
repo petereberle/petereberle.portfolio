@@ -10,6 +10,14 @@
 
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
+const express = require("express");
+
+exports.onCreateDevServer = ({ app }) => {
+  app.use(
+    "/projects",
+    express.static(path.resolve(__dirname, "static/projects"))
+  )
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
 

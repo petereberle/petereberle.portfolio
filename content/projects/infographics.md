@@ -6,7 +6,8 @@ year_start: 2016
 year_end: 2018
 featured_image: ../images/projects/IG_6.jpg
 featured_media:
-  - {source: ../images/projects/IG_6.jpg}
+  - {source: ../images/projects/IG_6.jpg,
+    scroll: false}
 images: 
   - {source: ../images/projects/IG_5.jpg}
   - {source: ../images/projects/IG_3.jpg}

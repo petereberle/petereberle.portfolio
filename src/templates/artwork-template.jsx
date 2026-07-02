@@ -50,6 +50,8 @@ export const pageQuery = graphql`
 	                }
               	}
 				featured_media {
+					iframe
+					scroll
 					source {
 		              	extension
 					    publicURL

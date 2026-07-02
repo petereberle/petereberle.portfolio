@@ -6,7 +6,8 @@ year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/art-tour_fin.jpg
 featured_media:
-  - {source: ../images/projects/art-tour_fin.jpg}
+  - {source: ../images/projects/art-tour_fin.jpg,
+    scroll: false}
 images: 
 tags:
   - Web

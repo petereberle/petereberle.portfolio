@@ -24,6 +24,39 @@
   height: 100%;
 }
 
+.scrollPane {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  border-radius: var(--container-radius);
+  -webkit-overflow-scrolling: touch;
+}
+
+.slide .scrollPane .scrollMedia {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.scrollMedia img, .scrollMedia video, .scrollMedia iframe {
+  height: auto!important;
+}
+
+.scrollMedia:before{
+  content: "SCROLL";
+  position: absolute;
+  left: calc(var(--item-padding) * -1);
+  top: 50%;
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+}
+
 .mediaLink {
   display: block;
 }

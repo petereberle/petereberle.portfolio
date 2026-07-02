@@ -360,6 +360,12 @@
 
 .vignette{
 	margin: 0 var(--vignette-margin);
+	max-width: calc( 100% -  var(--vignette-margin) * 2);
+}
+
+.tallVignette{
+	margin: 0 calc( var(--vignette-margin) * 2);
+	max-width: calc( 100% -  var(--vignette-margin) * 4);
 }
 
 .vignette .card_landscape_inner {

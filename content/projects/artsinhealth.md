@@ -6,7 +6,8 @@ year_start: 2020
 year_end: 2020
 featured_image: ../images/projects/aih_fin.jpg
 featured_media:
-  - {source: ../images/projects/aih_fin.jpg}
+  - {source: ../images/projects/aih_fin.jpg,
+    scroll: false}
 images: 
   - {source: ../images/projects/artwalla.com_artshealth_mobile.jpg, 
     caption: Responsive mobile experience}
