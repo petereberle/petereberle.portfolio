@@ -52,9 +52,9 @@ const MediaItem = ({
         <iframe
           src={iframe}
           title={title}
-          className={`${imageClassName}  ${
+          className={`${
             scroll
-              ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+              ? ` ${carouselStyles.scrollMedia} ${carouselStyles.iframeScroll}`
               : ""
           }`}
           frameBorder="0"
@@ -94,7 +94,7 @@ const MediaItem = ({
 
   return (
     <div
-      className={carouselStyles.scrollPane}
+      className={` ${carouselStyles.scrollPane} ${!iframe ? carouselStyles.overflowScrollY : ""}`}
       role="region"
       aria-label={`Scrollable media: ${title}`}
       tabIndex="0"

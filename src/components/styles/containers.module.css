@@ -368,6 +368,12 @@
 	max-width: calc( 100% -  var(--vignette-margin) * 4);
 }
 
+.iframeVignette{
+	width:50%;
+	left:50%;
+	transform: translateX(-50%);
+}
+
 .vignette .card_landscape_inner {
 	padding-top: 63%;
 }

@@ -79,7 +79,7 @@ const ShowcaseCard = ({ item, directory, accentClass, hash, isLast = false }) =>
         <a href={hash ? `/${directory}/#${hash}` : `/${directory}/`} className={`${containerStyles.flex_row}`}>
           
           <div className={`${generalStyles.tag} ${generalStyles._0_margin}`}>
-            <h4 className={generalStyles._0_margin}>All</h4>
+            <h4 className={generalStyles._0_margin}>All {hash} Projects</h4>
           </div>
 
         </a>
