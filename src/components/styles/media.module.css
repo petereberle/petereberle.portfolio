@@ -1,44 +1,46 @@
 /*IMAGES*/
 
-.cover{
-	object-fit: cover;
-    background-size: cover;
-    inset:0;
+.cover {
+  object-fit: cover;
+  background-size: cover;
+  inset: 0;
 }
 
-.contain{
-	object-fit: contain;
+.contain {
+  object-fit: contain;
 }
 
-.contain > img{
-	object-fit: contain!important;
+.contain > img {
+  object-fit: contain !important;
 }
 
-.contain_left, .contain_left > img {
-	object-position: left;
+.contain_left,
+.contain_left > img {
+  object-position: left;
 }
 
-.contain_right, .contain_right > img {
-	object-position: right;
+.contain_right,
+.contain_right > img {
+  object-position: right;
 }
 
-.contain_center, .contain_center > img {
-	object-position: center;
+.contain_center,
+.contain_center > img {
+  object-position: center;
 }
 
-
-.icon{
-	width:25px;
-	height: 25px;
-	stroke: #000;
-    stroke-width: 3px;
-    paint-order: stroke;
+.icon {
+  width: 25px;
+  height: 25px;
+  stroke: #000;
+  stroke-width: 3px;
+  paint-order: stroke;
 }
 
 /* FULL COVER VIDEO */
 
-.reel{
-	width:100%;
-	height:100%;
-	inset:0;
+.reel {
+  width: 100%;
+  height: 100%;
+  inset: 0;
 }

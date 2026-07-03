@@ -1,36 +1,35 @@
 @font-face {
-    font-family: "LFT Etica Mono";
-    src: url('/fonts/LFT_Etica_Mono.otf') format("opentype");
-    font-weight:100;
+  font-family: "LFT Etica Mono";
+  src: url("/fonts/LFT_Etica_Mono.otf") format("opentype");
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: "LFT Etica";
-    src: url('/fonts/LFT_Etica_Book.otf') format("opentype");
-    font-weight:100;
+  font-family: "LFT Etica";
+  src: url("/fonts/LFT_Etica_Book.otf") format("opentype");
+  font-weight: 100;
 }
 @font-face {
-    font-family: "LFT Etica";
-    src: url('/fonts/LFT_Etica_Semibold.otf') format("opentype");
-    font-weight: 500;
+  font-family: "LFT Etica";
+  src: url("/fonts/LFT_Etica_Semibold.otf") format("opentype");
+  font-weight: 500;
 }
 @font-face {
-    font-family: "LFT Etica";
-    src: url('/fonts/LFT_Etica_Bold.otf') format("opentype");
-    font-weight: bold;
+  font-family: "LFT Etica";
+  src: url("/fonts/LFT_Etica_Bold.otf") format("opentype");
+  font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Apercu Pro';
-  src: url('/fonts/ApercuPro-Light.woff2') format('woff2');
+  font-family: "Apercu Pro";
+  src: url("/fonts/ApercuPro-Light.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Apercu Pro Mono';
-  src: url('/fonts/ApercuMonoPro-Light.woff2') format('woff2');
+  font-family: "Apercu Pro Mono";
+  src: url("/fonts/ApercuMonoPro-Light.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
-

@@ -22,7 +22,6 @@
   margin-right: var(--item-padding);
   width: var(--border-width);
   min-height: var(--showcase-section-height);
-/*  background-color: var(--border-color);*/
   opacity: 0.55;
 }
 
@@ -57,7 +56,6 @@
   position: absolute;
   inset: 0;
   border-left: var(--border-solid);
-/*  background: color-mix(in srgb, var(--theme-background-primary) 18%, transparent);*/
   z-index: -1;
 }
 
@@ -91,40 +89,20 @@
 }
 
 .bioCard > *,
-.showcaseSection > *{
+.showcaseSection > * {
   align-items: start;
 }
 
-.bioCard p{
-
+.bioCard p {
   max-width: 66ch;
 }
-
-
-/*.bioText > div > * {
-  margin: 0;
-}
-
-.bioText > div:first-child > h4:first-of-type {
-  margin: calc(var(--item-padding) / 2) 0;
-}
-
-.bioText > div:nth-child(2) > h4:not(:first-of-type) {
-  margin: calc(var(--item-padding) / 2) 0;
-}
-
-.bioText > div:nth-child(2) > h4:first-of-type {
-  margin: 0 0 calc(var(--item-padding) / 2) 0;
-}*/
-
 
 .bioText > div:nth-child(2) > h4:not(:first-of-type) {
   margin: 0.47em 0;
 }
 
-
 .bioText > div > p {
-  margin:0;
+  margin: 0;
 }
 
 .sectionHeader {
@@ -170,7 +148,7 @@
   box-sizing: border-box;
 }
 
-.cardBody  * {
+.cardBody * {
   margin: 0;
 }
 
@@ -183,9 +161,6 @@
 .year {
   font-size: 0.75rem;
   text-transform: uppercase;
-}
-
-.viewAllCard {
 }
 
 .viewAllInner {
@@ -218,13 +193,7 @@
   }
 
   .showcaseRail {
-    display:none;
- /*   position: sticky;
-    top: var(--head-space);
-    min-height: auto;
-    padding-bottom: 0;
-    background: var(--whitespace-background);
-    z-index: 20;*/
+    display: none;
   }
 
   .showcaseAnchor {

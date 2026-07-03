@@ -1,54 +1,40 @@
 @media screen and (min-width: 1800px) {
-
-	:root{
-
-		/* MAX SCREEN VARIABLES*/
-		--screen-width: 1750px;
-		--screen-margin: auto;
-
-
-	}
-
+  :root {
+    /* MAX SCREEN VARIABLES*/
+    --screen-width: 1750px;
+    --screen-margin: auto;
+  }
 }
 
 @media screen and (max-width: 1150px) {
+  :root {
+    --head-space: calc(var(--item-padding) * 4);
 
-	:root{
+    --vignette-margin: 0;
 
-		--head-space: calc( var(--item-padding) * 4);
+    /* MAX SCREEN VARIABLES*/
+    --screen-height: unset;
 
-		--vignette-margin: 0;
+    /******GRID VARIABLES******/
 
-		/* MAX SCREEN VARIABLES*/
-		 --screen-height: unset;
+    /*6 COL AUTO ROWS*/
+    --6col-template-columns: 6;
+    --6col-large-area: calc(var(--6col-template-columns));
+    --6col-small-area: calc(var(--6col-template-columns) / var(--card-width));
 
-	   /******GRID VARIABLES******/
+    /*CARD COLUMNS*/
+    --index-grid-columns: 2;
 
-	    /*6 COL AUTO ROWS*/
-	    --6col-template-columns: 6;
-	    --6col-large-area: calc( var(--6col-template-columns) );
-	    --6col-small-area: calc( var(--6col-template-columns)/var(--card-width) );
+    /**************************/
 
-	    /*CARD COLUMNS*/
-	    --index-grid-columns: 2;
-
-	    /**************************/
-
-    	/* VISIBILITY*/
-    	--mobile-visibility: block;
-    	--desktop-visibility: none;
-
-
-	}
-
+    /* VISIBILITY*/
+    --mobile-visibility: block;
+    --desktop-visibility: none;
+  }
 }
 
 @media screen and (max-width: 950px) {
-
-	:root {
-
-	--index-grid-columns: 1;
-
-	}
-
+  :root {
+    --index-grid-columns: 1;
+  }
 }

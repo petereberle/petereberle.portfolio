@@ -45,11 +45,12 @@ const MediaItem = ({
   imageClassName,
   scroll = false,
 }) => {
-  const isVideo = isVideoFile(source)
-  const Media = () => {
+  const isVideo = isVideoFile(source);
+
+  var media;
+
     if (iframe) {
-      return (
-        <iframe
+      media = <iframe
           src={iframe}
           title={title}
           className={`${
@@ -60,12 +61,9 @@ const MediaItem = ({
           frameBorder="0"
           loading="lazy"
         />
-      )
-    }
-
-    if (isVideo) {
-      return (
-        <Video
+      
+    } else if (isVideo) {
+      media = <Video
           source={source.publicURL}
           title={title}
           classes={`${imageClassName} ${mediaStyles.reel} ${
@@ -74,11 +72,9 @@ const MediaItem = ({
               : ""
           }`}
         />
-      )
-    }
-
-    return (
-      <GatsbyImage
+      
+    } else {
+      media = <GatsbyImage
         image={getImage(source)}
         className={`${imageClassName} ${
           scroll
@@ -87,10 +83,9 @@ const MediaItem = ({
         }`}
         alt={title}
       />
-    )
-  }
-
-  if (!scroll || isVideo) return <Media />
+    }
+  
+  if (!scroll || isVideo) return media;
 
   return (
     <div
@@ -99,7 +94,7 @@ const MediaItem = ({
       aria-label={`Scrollable media: ${title}`}
       tabIndex="0"
     >
-      <Media />
+      {media}
     </div>
   )
 }

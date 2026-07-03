@@ -1,8 +1,6 @@
-
-
-:root{
-  --document-padding-t-b:0.7in ;
-  --document-padding-l-r:0.78in;
+:root {
+  --document-padding-t-b: 0.7in;
+  --document-padding-l-r: 0.78in;
   --resume-font-basis: 10pt;
   --resume-color-primary: #202020;
 }
@@ -12,51 +10,38 @@
   margin: 0.5in 0.5in;
 }
 
-/*:global(body > div) {
-  height: calc(100vh - var(--item-padding) * 2) !important;
-  margin: var(--item-padding) var(--screen-margin) !important;
-  overflow-y: auto;
-}*/
-
 .document {
   background-color: #fff;
   box-sizing: border-box;
   color: var(--resume-color-primary);
   font-size: var(--resume-font-basis);
-  letter-spacing: calc( var(--resume-font-basis) * .03 );
-  line-height: calc( var(--resume-font-basis) * 1.1);
+  letter-spacing: calc(var(--resume-font-basis) * 0.03);
+  line-height: calc(var(--resume-font-basis) * 1.1);
   text-align: justify;
   margin: 0 auto;
   max-width: 8.5in;
-  position:relative;
+  position: relative;
 }
 
 .header {
-  margin-bottom: calc( var(--resume-font-basis) * 1.5);
-/*  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;*/
+  margin-bottom: calc(var(--resume-font-basis) * 1.5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width:100%;
+  width: 100%;
 }
 
 .header > div {
-  gap: calc( var(--resume-font-basis) * 0.75);
+  gap: calc(var(--resume-font-basis) * 0.75);
 }
 
-.header :global(.gatsby-image-wrapper){
-    height: 90px;
-    width: 90px;
+.header :global(.gatsby-image-wrapper) {
+  height: 90px;
+  width: 90px;
 }
 
 .name {
-/*  font-size: calc(var(--resume-font-basis) *2);
-  font-weight: 500;
-  letter-spacing: calc( var(--resume-font-basis) * .25 );
-  line-height: 1.14;*/
-  margin:0;
+  margin: 0;
 }
 
 .headline {
@@ -68,22 +53,21 @@
   font-size: var(--resume-font-basis);
   margin: 0;
   list-style: none;
-  text-align:left;
+  text-align: left;
 }
 
 .document :global(h4) {
   font-family: "Apercu Pro Mono", sans-serif;
   line-height: 1.25;
-  font-size: calc( var(--resume-font-basis) * 1);
-  letter-spacing: calc( var(--resume-font-basis) * 0.09 );
-  margin:0;
+  font-size: calc(var(--resume-font-basis) * 1);
+  letter-spacing: calc(var(--resume-font-basis) * 0.09);
+  margin: 0;
   text-transform: uppercase;
 }
 
 .content :global(.resume-section) {
-/*  border-bottom: calc( var(--resume-font-basis) * 0.08) solid var(--resume-color-primary);*/
-  padding: 0 0 calc( var(--resume-font-basis) * 0.75) 0;
-  margin: 0 0 calc( var(--resume-font-basis) * 0.75) 0;
+  padding: 0 0 calc(var(--resume-font-basis) * 0.75) 0;
+  margin: 0 0 calc(var(--resume-font-basis) * 0.75) 0;
 }
 
 .content :global(.resume-section:last-child) {
@@ -92,36 +76,36 @@
 }
 
 .content :global(.resume-section._3-col) {
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto auto;
-  gap: calc( var(--resume-font-basis) * 0.75);
-  padding-bottom:0;
+  gap: calc(var(--resume-font-basis) * 0.75);
+  padding-bottom: 0;
 }
 
-.content :global(.resume-section._3-col ) h4 {
-  margin-bottom: calc( var(--resume-font-basis) * 0.5);
+.content :global(.resume-section._3-col) h4 {
+  margin-bottom: calc(var(--resume-font-basis) * 0.5);
 }
 
 .content :global(.resume-section._3-col) > div {
-  grid-area: span 1/span 4;
-  margin-bottom:0;
+  grid-area: span 1 / span 4;
+  margin-bottom: 0;
 }
 
-.content :global(.resume-section._3-col)  p {
+.content :global(.resume-section._3-col) p {
   margin-bottom: 0;
   text-align: left;
 }
 
 .content :global(.section-title) {
   break-after: avoid;
-  margin:0;
-  margin-bottom: calc( var(--resume-font-basis) * 0.5);
+  margin: 0;
+  margin-bottom: calc(var(--resume-font-basis) * 0.5);
 }
 
 .content :global(.resume-entry) {
   break-inside: avoid;
-  margin:0;
+  margin: 0;
   margin-bottom: var(--resume-font-basis);
 }
 
@@ -131,17 +115,17 @@
 
 .content :global(.entry-title) {
   font-size: var(--resume-font-basis);
-  letter-spacing: calc( var(--resume-font-basis) * 0.03 );
+  letter-spacing: calc(var(--resume-font-basis) * 0.03);
   margin: 0;
   text-transform: none;
 }
 
 .content :global(.resume-meta) {
-  margin-bottom: calc( var(--resume-font-basis) * 0.5);
+  margin-bottom: calc(var(--resume-font-basis) * 0.5);
 }
 
 .content :global(p) {
-  margin:0;
+  margin: 0;
 }
 
 .content :global(ul) {
@@ -151,19 +135,19 @@
 }
 
 .content :global(li) {
-  margin:0;
+  margin: 0;
   margin-bottom: calc(var(--resume-font-basis) * 0.25);
   padding-left: 0.15rem;
 }
 
 .content :global(li):last-child {
-  margin:0;
+  margin: 0;
 }
 
 .content :global(li)::marker {
   color: currentColor;
   content: "— ";
-  font-size: var(--resume-font-basis)
+  font-size: var(--resume-font-basis);
 }
 
 .content :global(strong) {

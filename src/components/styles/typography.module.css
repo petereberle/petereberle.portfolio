@@ -1,85 +1,98 @@
 body {
-	font-family: 'Apercu Pro', sans-serif;
-    font-weight: 100;
-    font-size: calc(var(--font-basis) * 1);
-    letter-spacing: .075rem;
-    color: var(--color-primary);
-    line-height: 1.4;
+  font-family: "Apercu Pro", sans-serif;
+  font-weight: 100;
+  font-size: calc(var(--font-basis) * 1);
+  letter-spacing: 0.075rem;
+  color: var(--color-primary);
+  line-height: 1.4;
 }
 
-h1, h2, h3 {
-    font-family: 'Apercu Pro', sans-serif;
-    font-weight: 100;
-    letter-spacing: .125rem;
+h1,
+h2,
+h3 {
+  font-family: "Apercu Pro", sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.125rem;
 }
 
 h1 {
-    font-size: calc(var(--font-basis) * 2.5);
-    margin: 0.47em 0;
+  font-size: calc(var(--font-basis) * 2.5);
+  margin: 0.47em 0;
 }
 
 h2 {
-
-    font-size: calc(var(--font-basis) *1.5);
-    margin: 0.47em 0;
+  font-size: calc(var(--font-basis) * 1.5);
+  margin: 0.47em 0;
 }
 
-h3{
-    font-size: calc(var(--font-basis) * 1);
-    margin: 0.47em 0;
+h3 {
+  font-size: calc(var(--font-basis) * 1);
+  margin: 0.47em 0;
 }
 
-h4{
-    font-family: 'Apercu Pro Mono', sans-serif;
-    font-size: calc(var(--font-basis) * 1);
-    text-transform: uppercase;
-    margin: 0.47em 0;
+h4 {
+  font-family: "Apercu Pro Mono", sans-serif;
+  font-size: calc(var(--font-basis) * 1);
+  text-transform: uppercase;
+  margin: 0.47em 0;
 }
 
-button{
-    font-family: inherit;
-    font-weight:100;
-    font-size: var(--font-basis);
-    letter-spacing: .1rem;
-    line-height: 1.4;
+button {
+  font-family: inherit;
+  font-weight: 100;
+  font-size: var(--font-basis);
+  letter-spacing: 0.1rem;
+  line-height: 1.4;
 }
 
-hr{
-    border: unset;
-    margin: 0.47em 0;
+hr {
+  border: unset;
+  margin: 0.47em 0;
 }
 
 /*TEXT COLOR*/
-.white{
-    color:white;
+.white {
+  color: white;
 }
 
 /*TEXT JUSTIFICATION*/
-.text_left{
-    text-align: left;
+.text_left {
+  text-align: left;
 }
 
-.text_right{
-    text-align: right;
+.text_right {
+  text-align: right;
 }
 
-.text_center{
-    text-align: center;
+.text_center {
+  text-align: center;
 }
 
-
-.text_justify{
-    text-align: justify;
+.text_justify {
+  text-align: justify;
 }
 
 /*HIGHLIGHT SELECTION*/
 
 ::selection {
-    background: var(--warm-yellow);
+  background: var(--warm-yellow);
 }
 
 /*TEXT RENDERING*/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, a {
-    text-rendering: optimizelegibility;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+a {
+  text-rendering: optimizelegibility;
 }
