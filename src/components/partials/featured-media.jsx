@@ -44,6 +44,7 @@ const MediaItem = ({
   title,
   imageClassName,
   scroll = false,
+  href
 }) => {
   const isVideo = isVideoFile(source);
 
@@ -55,7 +56,7 @@ const MediaItem = ({
           title={title}
           className={`${
             scroll
-              ? ` ${carouselStyles.scrollMedia} ${carouselStyles.iframeScroll}`
+              ? `${carouselStyles.iframeScroll}`
               : ""
           }`}
           frameBorder="0"
@@ -68,7 +69,7 @@ const MediaItem = ({
           title={title}
           classes={`${imageClassName} ${mediaStyles.reel} ${
             scroll
-              ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+              ? ` ${carouselStyles.scrollMedia}`
               : ""
           }`}
         />
@@ -78,7 +79,7 @@ const MediaItem = ({
         image={getImage(source)}
         className={`${imageClassName} ${
           scroll
-            ? ` ${carouselStyles.scrollMedia} ${containerStyles.tallVignette} `
+            ? ` ${carouselStyles.scrollMedia}`
             : ""
         }`}
         alt={title}
@@ -88,14 +89,15 @@ const MediaItem = ({
   if (!scroll || isVideo) return media;
 
   return (
-    <div
+    <a
       className={` ${carouselStyles.scrollPane} ${!iframe ? carouselStyles.overflowScrollY : ""}`}
       role="region"
       aria-label={`Scrollable media: ${title}`}
       tabIndex="0"
+      href={href}
     >
       {media}
-    </div>
+    </a>
   )
 }
 
@@ -126,6 +128,7 @@ const FeaturedMedia = ({
           title={title}
           imageClassName={imageClassName}
           scroll={mediaItems[0].scroll}
+          href={href}
         />
       </div>
     )

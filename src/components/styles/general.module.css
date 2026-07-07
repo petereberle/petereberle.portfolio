@@ -82,8 +82,9 @@
     var(--6col-template-columns) / var(--6col-template-columns)
   );
 
-  /*CARD WIDTH*/
+  /*CONTAINER WIDTHS*/
   --card-width: 3;
+  --scroll-media-width: 50%;
 
   /*TRANSITION*/
   --transition-ease: all 0.35s ease;
@@ -95,7 +96,7 @@
   /*VISIBILITY*/
   --mobile-visibility: none;
   --desktop-visibility: block;
-  --print-visibility: flex;
+  --print-visibility-hide: flex;
 }
 
 /*GENERAL ELEMENTS*/
@@ -336,7 +337,7 @@ button {
   width: fit-content;
   position: relative;
   text-shadow: var(--container-shadow);
-  padding: calc(var(--item-padding) / 2) var(--item-padding);
+  padding: calc(var(--item-padding) / 1.75) var(--item-padding);
   margin: var(--item-padding);
   text-align: left;
 }
@@ -353,18 +354,44 @@ button {
   border-radius: var(--container-radius);
 
   clip-path: inset(
-    calc(var(--item-padding) / 4) calc(100% - var(--border-width))
-      calc(var(--item-padding) / 4) 0
+    calc(var(--item-padding) / 4) 
+    calc(100% - var(--border-width))
+    calc(var(--item-padding) / 10)
+    0
   );
 
   transition: var(--transition-ease);
   pointer-events: none;
 }
 
+.tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--border-solid);
+  border-radius: var(--container-radius);
+
+  clip-path: inset(
+    calc(100% - var(--border-width))
+    0
+    0
+    0
+  );
+
+  transition: var(--transition-ease);
+  pointer-events: none;
+}
+
+.tag.active,
+.tag:hover{
+
+}
+
 .tag:hover::after,
 .tag.active::after {
   clip-path: inset(0 0 0 0);
 }
+
 
 .tag:last-child {
   margin-right: 0;

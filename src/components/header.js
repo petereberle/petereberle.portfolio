@@ -79,7 +79,7 @@ const Header = ({ paths, layout, isToggled, setToggle, toggleMenu}) => {
 	const ResumeLink = () => resumePath ? (
 		<a className={`${headerStyles.menu_item} ${generalStyles.item}`} href={resumePath}>
 			<button>
-				<h4 className={`${generalStyles._0_margin}`}>CV</h4>
+				<h4 className={`${generalStyles._0_margin}`}>Resume</h4>
 			</button>
 		</a>
 	) : null;

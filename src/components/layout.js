@@ -17,7 +17,7 @@ import Header from "./header"
 import Footer from "./footer"
 import menuLinks from "./menu-links"
 
-const Layout = ({ children, path}) => {
+const Layout = ({ children, path, pageClassName = "", mainClassName = ""}) => {
 
 	const 	[isToggled, setToggle] = useState(false),
 			toggleMenu = (toggleState) => {
@@ -59,11 +59,11 @@ const Layout = ({ children, path}) => {
 
 	return (
 
-		<div className={`${containerStyles.page} ${headerStyles.head_space} ${generalStyles.position_relative}`}>
+		<div className={`${containerStyles.page} ${headerStyles.head_space} ${generalStyles.position_relative} ${pageClassName}`}>
 
 			<Header paths={menuLinks} layout={path.pathname} isToggled={checkToggleState().state} setToggle={setToggle} toggleMenu={toggleMenu}/>
 
-			<main className={`${containerStyles.inner}`}>
+			<main className={`${containerStyles.inner} ${mainClassName}`}>
 
 				{checkChildren()}
 

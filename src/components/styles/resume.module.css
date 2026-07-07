@@ -1,8 +1,10 @@
 :root {
   --document-padding-t-b: 0.7in;
   --document-padding-l-r: 0.78in;
-  --resume-font-basis: 10pt;
+  --resume-font-basis: var(--font-basis);
   --resume-color-primary: #202020;
+
+  --print-visibility: none;
 }
 
 @page {
@@ -11,16 +13,13 @@
 }
 
 .document {
-  background-color: #fff;
   box-sizing: border-box;
-  color: var(--resume-color-primary);
   font-size: var(--resume-font-basis);
   letter-spacing: calc(var(--resume-font-basis) * 0.03);
   line-height: calc(var(--resume-font-basis) * 1.1);
-  text-align: justify;
-  margin: 0 auto;
-  max-width: 8.5in;
+  max-width: 70rem;
   position: relative;
+  text-align: justify;
 }
 
 .header {
@@ -54,6 +53,10 @@
   margin: 0;
   list-style: none;
   text-align: left;
+}
+
+.qrCode{
+  display:var(--print-visibility)!important;
 }
 
 .document :global(h4) {
@@ -159,17 +162,39 @@
   z-index: 2;
 }
 
+.resumePage {
+  position: relative;
+}
+
+/*.resumeMain.resumeMain {
+  padding-left: 0;
+  padding-right: 0;
+}
+*/
+.resumeLayout {
+  align-items: start;
+}
+
+.printControls {
+  min-width: 0;
+  height: 100%;
+}
+
 @media screen {
   .document {
-    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.1);
-    margin: 1.5rem auto;
-    min-height: 11in;
-    padding: var(--document-padding-t-b) var(--document-padding-l-r);
-    width: 8.5in;
+    color: var(--color-primary);
+    margin: 0;
+    padding: 0 0 calc(var(--item-padding) * 3);
+    width: 100%;
   }
 }
 
 @media print {
+  :global(:root) {
+    --head-space: 0;
+    --print-visibility: none;
+  }
+
   :global(html),
   :global(body) {
     background: #fff;
@@ -183,11 +208,42 @@
     overflow: visible !important;
   }
 
-  .document {
+  :global(#___gatsby) {
+    border: unset;
+    border-radius: 0;
+    height: auto;
     margin: 0;
-    max-width: none;
+    padding: 0;
+    width: auto;
   }
 
+  .resumePage.resumePage,
+  .resumeMain.resumeMain {
+    margin: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .resumeLayout.resumeLayout {
+    display: block !important;
+    grid-template-columns: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .document {
+    background-color: #fff;
+    color: var(--resume-color-primary);
+    margin: 0;
+    max-width: none;
+    min-height: 10in;
+    width: 100%;
+  }
+
+  .printControls,
   .controls {
     display: none;
   }

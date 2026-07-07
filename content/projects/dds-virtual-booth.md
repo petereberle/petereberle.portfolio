@@ -11,8 +11,8 @@ featured_media:
   - {source: ../images/projects/bdny-dds-virtual-booth_comp_01.mp4,
     scroll: false}
 images: 
-  # - {source: ../images/projects/WWF_About_Preview.jpg, 
-  #   caption: About Page}
+  - {source: ../images/projects/BDNY_Booth_NYC_2025.jpg, 
+    caption: DDS Booth at BNDY Trade Fair 2025 | New York, NY}
 tags:
   - Web
 ---

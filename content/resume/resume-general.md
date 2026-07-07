@@ -14,7 +14,7 @@ active: true
 <section class="resume-section">
 <h4 class="section-title">Summary</h4>
 
-Technical marketing specialist with strong experience in product information management, systems integration, analytics, and digital content. Skilled at building structured workflows that scale with growth while maintaining brand consistency.
+Designer and web developer with experience spanning branding, digital marketing, workflow automation, and custom web applications. Combines visual design, technical implementation, and strategic thinking to deliver user-focused solutions that improve communication, streamline processes, and support business goals.
 
 </section>
 

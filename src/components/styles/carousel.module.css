@@ -1,3 +1,4 @@
+
 .viewport {
   position: absolute;
   inset: 0;
@@ -30,18 +31,22 @@
   overflow-y: auto;
   border-radius: var(--container-radius);
   -webkit-overflow-scrolling: touch;
+  background-color: #F6F6F4;
 }
 
 .overflowScrollY {
-  overscroll-behavior-y: contain;
+
 }
 
-.slide .scrollPane .scrollMedia:not(.iframeScroll) {
+.scrollPane .scrollMedia{
+  display: block;
   position: relative;
   inset: auto;
-  width: 100%;
+  width: var(--scroll-media-width);
+  margin: 0 auto;
   height: auto !important;
   overflow-y: scroll;
+  overscroll-behavior-y: contain;
   min-height: 100%;
   border-radius: 0;
 }
@@ -55,7 +60,7 @@
 .iframeScroll {
   position: absolute;
   inset: auto;
-  width: 50%;
+  width: var(--scroll-media-width);
   height: auto !important;
   left: 50%;
   min-height: 100%;

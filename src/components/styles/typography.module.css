@@ -75,7 +75,7 @@ hr {
 /*HIGHLIGHT SELECTION*/
 
 ::selection {
-  background: var(--warm-yellow);
+  background: var(--hot-orange);
 }
 
 /*TEXT RENDERING*/

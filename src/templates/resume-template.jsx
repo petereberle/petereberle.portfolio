@@ -44,46 +44,51 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
   };
 
   return (
-    <Layout path={location}>
+    <Layout
+      path={location}
+      pageClassName={styles.resumePage}
+      mainClassName={styles.resumeMain}
+    >
 
       <ContentRouterAnimation urlParam={location}>
 
         <Helmet> 
 
           <title>{`${frontmatter.title} | Resume`}</title>
-          
+
           <style type="text/css">
 
+              { printMode ? `
 
-            { printMode ? `
+              #___gatsby{
+                border-radius: 0;
+                border: unset;
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                width: 100vw;
+              }
 
-            #___gatsby{
-              border-radius: 0;
-              border: unset;
-              margin: 0;
-              padding: 0;
-              height: 100vh;
-              width: 100vw;
+              :root{
+                --resume-font-basis: 10pt;
+                --print-visibility: block;
+                --print-visibility-hide: none;
+                --head-space: 0;
+              }
+
+              ` :`
+              :root{
+
+              }`
             }
-
-            :root{
-              --print-visibility: none;
-              --head-space: 0;
-            }
-
-            ` :`
-            :root{
-
-            }`
-          }
 
           </style>
-
+          
         </Helmet>
 
-        <div className={`${containerStyles.grid} ${ printMode ? containerStyles.flex_column : containerStyles._15_85} `}>
+        <div className={`${containerStyles.grid} ${containerStyles._25_75} ${styles.resumeLayout}`}>
 
-          <aside className={`${containerStyles.flex_column} ${generalStyles.margin_negative} `}>
+          <aside className={`${containerStyles.flex_column} ${generalStyles.margin_negative} ${styles.printControls}`}>
             <div className={`${mobileWindow ? generalStyles.position_relative + ' ' + containerStyles.flex_row : generalStyles.position_sticky  + ' ' + containerStyles.flex_column } `}>
               <button className={`${generalStyles.tag} ${styles.controls}`} type="button" onClick={() => printPage()}>
                 Print / Save
@@ -99,13 +104,13 @@ const ResumeTemplate = ({ data, pageContext, location}) => {
 
                   <ul className={styles.contact}>
                     {contactDetails.length > 0 ? contactDetails.map( (c) => {
-                      return <li><h4>{c}</h4></li>
+                      return <li key={c}><h4>{c}</h4></li>
                     }) : '' }
                   </ul>
 
                 </div>
 
-                { qrCode ? <GatsbyImage className={``} image={getImage(frontmatter.qr_code)} alt="website-qr-code"/> : ''}
+                { qrCode ? <GatsbyImage className={styles.qrCode} image={getImage(frontmatter.qr_code)} alt="website-qr-code"/> : ''}
 
             </header>
             <article

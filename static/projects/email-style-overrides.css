@@ -1,4 +1,9 @@
 a, button {
-	pointer-events: none;
+
+}
+
+body, table{
+	background: unset!important;
+	width: 100%!important;
 }
 
