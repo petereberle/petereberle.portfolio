@@ -3,7 +3,7 @@ isDraft: false
 slug: dds-email-campaigns
 title: Product & Case Studies
 client: Design and Direct Source
-tagline: B2B Email Campaigns
+tagline: B2B Email Design & Strategy
 year_start: 2024
 year_end: 2026
 featured_image: ../images/projects/wwf_website_featuredpreview_2.mp4
@@ -21,6 +21,8 @@ tags:
   - Copywriting
 ---
 
+Planned, designed, and optimized B2B email campaigns for a commercial tile and stone distributor, connecting product launches with marketing systems, audience segmentation, analytics, and ecommerce to improve engagement and support sales.
+
 [Design and Direct Source](https://ddstile.com)
 
-**Technologies**: Next.js, Leaflet
+**Technologies**: Brevo, Illustrator, Photoshop, HTML, CSS

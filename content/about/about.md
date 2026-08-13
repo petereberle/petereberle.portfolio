@@ -45,12 +45,11 @@ BA in Art, Whitman College
 
 #### Capabilities
 
-- Something
-- Something
-- Something
-- Something
-- Something
-- Something
-- Something
+- Digital Marketing
+- Marketing Operations
+- Front End Web Design & Development
+- Automation & Integrations
+- Brand & Visual Design
+- Product & Project Strategy
 
 </div>

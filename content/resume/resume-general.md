@@ -14,7 +14,7 @@ active: true
 <section class="resume-section">
 <h4 class="section-title">Summary</h4>
 
-Designer and web developer with experience spanning branding, digital marketing, workflow automation, and custom web applications. Combines visual design, technical implementation, and strategic thinking to deliver user-focused solutions that improve communication, streamline processes, and support business goals.
+Marketing systems specialist with experience spanning marketing operations, ecommerce, workflow automation, analytics, and web development. Combines technical implementation with marketing strategy to improve data workflows, automate processes, and build scalable digital experiences.
 
 </section>
 
@@ -28,11 +28,11 @@ Marketing Specialist — *Marketing Systems & Analytics*
 Design and Direct Source | Portland, OR | 2024 - Present
 
 
-- Expanded and optimized an online product catalog spanning thousands of tile and stone products, managing technical data, product descriptions, collateral, and product launches.
+- Expanded and optimized an online product catalog spanning 8000+ tile and stone products, managing technical data, product descriptions, collateral, and product launches.
 
 - Built NetSuite–BigCommerce integrations that automated product, category, and order updates, eliminating manual maintenance and keeping website content aligned with internal data.
 
-- Created NetSuite reporting and analytics tools used for marketing performance analysis, sample program tracking, inventory visibility, and product-line evaluation.
+- Built NetSuite reporting, SuiteScript automations, and lead integrations supporting marketing analysis, sample fulfillment, product evaluation, and document generation while eliminating a 20 hours a week of manual data entry.
 
 - Led content strategy focused on the A&D community, producing targeted email campaigns and automated lead nurturing programs.
 
@@ -94,24 +94,24 @@ ArtWalla | Walla Walla, WA | 2019 - 2020
 
 #### Core Skills
 
-Project Management, Product Data Management, Technical Documentation, Product Photography, Content Strategy, Marketing Analytics
+Marketing Operations, CRM & Lifecycle Marketing, Product Data Management, Workflow Automation, Marketing Analytics, Ecommerce Operations, Project Management, Content Strategy
 
 </div>
 
 <div class="resume-entry">
 
-#### Platforms & Analytics
+#### Platforms
 
-NetSuite, BigCommerce, Celigo, Google Analytics 4, Google Tag Manager, Brevo, Airtable
+NetSuite, BigCommerce, Celigo, Salesforce, Brevo, Google Analytics 4, Google Tag Manager, Airtable
 
 
 </div>
 
 <div class="resume-entry">
 
-#### Technical & Design
+#### Technical
 
-HTML, CSS, JavaScript, React, SQL, Figma, Illustrator, Indesign, Photoshop, Lightroom
+JavaScript, SuiteScript, HTML/CSS, SQL, React, Figma, Adobe Creative Suite
 
 </div>
 
